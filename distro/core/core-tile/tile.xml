@@ -24,6 +24,7 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/kar/archive</dependency>
 							<dependency>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/kar/archive</dependency>
 
                         </dependencies>
                     </configuration>
@@ -45,7 +46,8 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/logservice-karafarchive/${platform.plugins.modules.logservice.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/xml/features</repository>
 							<repository>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/xml/features</repository>
-                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>							
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>							
 
                         </bootRepositories>
                         <installedBundles combine.children="append">
@@ -61,6 +63,7 @@
                             <feature>logservice</feature>
                             <feature>cachemanager</feature>
                             <feature>configurationmanager</feature>
+                            <feature>message</feature>
                             <feature>journeyblueprint</feature>
                             <feature>events-rdb</feature>
                             <feature>journeyworkflowengine-gateway-rest-cxf</feature>

@@ -7,8 +7,8 @@
 	</Root>
 
 	<Logger name="org.apache.aries.spifly.dynamic.bundle" level="ERROR"/>
-	<Logger name="io.digitaljourney.platform.modules" level="DEBUG"/>
-	<Logger name="io.digitaljourney.platform.plugins.modules" level="DEBUG"/>
-	<Logger name="io.digitaljourney.platform.plugins.plugins.modules" level="DEBUG"/>
-	<Logger name="io.digitaljourney.platform.plugins.modules" level="DEBUG"/>
+	<Logger name="io.digitaljourney.platform.modules" level="ERROR"/>
+	<Logger name="io.digitaljourney.platform.plugins.modules" level="ERROR"/>
+	<Logger name="io.digitaljourney.platform.apps" level="ERROR"/>
+	<Logger name="io.digitaljourney.platform.plugins.apps" level="ERROR"/>
 </Loggers>

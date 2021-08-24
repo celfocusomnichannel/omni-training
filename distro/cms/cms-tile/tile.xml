@@ -30,11 +30,13 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/ufe-karafarchive/${platform.plugins.apps.ufe.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/operationconsole-karafarchive/${platform.plugins.apps.operationconsole.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/journeydesigner-karafarchive/${platform.plugins.apps.journeydesigner.version}/kar/archive</dependency>
-                            <!-- Add additional dependencies here -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/errorpages-karafarchive/${platform.plugins.apps.errorpages.version}/kar/archive</dependency>
 							<dependency>mvn:io.digitaljourney.platform.plugins.apps/logviewer-karafarchive/${platform.plugins.apps.logviewer.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/cachemanagerapp-karafarchive/${platform.plugins.apps.cachemanagerapp.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/kar/archive</dependency>
+                            
+                            <!--  Training -->
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -67,10 +69,12 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/ufe-karafarchive/${platform.plugins.apps.ufe.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/journeydesigner-karafarchive/${platform.plugins.apps.journeydesigner.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/operationconsole-karafarchive/${platform.plugins.apps.operationconsole.version}/xml/features</repository>
-                            
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/logviewer-karafarchive/${platform.plugins.apps.logviewer.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/cachemanagerapp-karafarchive/${platform.plugins.apps.cachemanagerapp.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/xml/features</repository>
+                            
+                            <!-- Training -->
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>
@@ -84,6 +88,9 @@
                             <feature>events-rdb</feature>
                             <feature>journeyworkflowengine-gateway-rest-spring</feature>
                             <feature>journeyworkflowengine-gateway-aspect-mvc</feature>
+                            
+                            <!-- Training -->
+                            <feature>trainingbase</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
