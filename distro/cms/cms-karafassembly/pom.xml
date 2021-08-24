@@ -1,0 +1,121 @@
+<!--
+  #%L
+  Distro :: CMS :: Karaf Assembly
+  %%
+  Copyright (C) 2017 - 2019 Celfocus Omnichannel
+  %%
+  All rights reserved. This software is protected under several
+  Laws in various countries. All content, layout, design of this document are the
+  intellectual property of Celfocus, Novabase Business Solutions S.A. 
+  and its licensors. The disclosure,copying, adaptation, citation, transcription, 
+  translation, modification, decompilation, reverse engineering, derivatives, 
+  integration, development and/or any other form of total or partial use of the 
+  content of this document and/or accessible through or via the contents, by any 
+  possible means without the respective authorization or licensing by the owner of 
+  the intellectual property rights is prohibited, the offenders being subject to civil 
+  and/or criminal prosecution and liability. The user or licensee of all or part of this 
+  document by any means may only use the document under the terms and conditions agreed
+  upon with the owner of the intellectual property rights, and for the purposes
+  justifying the granting of the license or authorization, without which the
+  unauthorized use may subject the offenders to civil or criminal prosecution
+  under applicable Laws.
+  #L%
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.distro.cms</groupId>
+		<artifactId>cms</artifactId>
+		<version>2.9.99-SNAPSHOT</version>
+		<relativePath>../cms</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<artifactId>cms-karafassembly</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Distro :: CMS :: Karaf Assembly</name>
+	<description>CMS karaf assembly</description>
+
+	<properties>
+		<appserver.0.maxMem>3086m</appserver.0.maxMem>
+		<appserver.0.minMem>1536m</appserver.0.minMem>
+	</properties>
+
+	<!-- ====================================================================== -->
+	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.platform.plugins.distro.cms.coordinates}</tile>
+						<tile>${tile.platform.distro.cms.coordinates}</tile>
+						<tile>${tile.karafassembly.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.karaf.features</groupId>
+			<artifactId>framework</artifactId>
+			<type>kar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
+			<artifactId>rsprovider-karafarchive</artifactId>
+			<version>${platform.plugins.providers.rsprovider.version}</version>
+			<type>xml</type>
+			<classifier>features</classifier>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
+			<artifactId>xmlprovider-karafarchive</artifactId>
+			<version>${platform.plugins.providers.xmlprovider.version}</version>
+			<type>xml</type>
+			<classifier>features</classifier>
+			<scope>compile</scope>
+		</dependency>
+	
+
+	</dependencies>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O F I L E S ==================================================== -->
+	<!-- ====================================================================== -->
+
+	<profiles>
+		<profile>
+			<id>startServer</id>
+		</profile>
+
+		<profile>
+			<id>stopServer</id>
+		</profile>
+	</profiles>
+</project>

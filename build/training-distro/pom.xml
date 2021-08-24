@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  #%L
+  Distro
+  %%
+  Copyright (C) 2017 - 2019 Celfocus Omnichannel
+  %%
+  All rights reserved. This software is protected under several
+  Laws in various countries. All content, layout, design of this document are the
+  intellectual property of Celfocus, Novabase Business Solutions S.A. 
+  and its licensors. The disclosure,copying, adaptation, citation, transcription, 
+  translation, modification, decompilation, reverse engineering, derivatives, 
+  integration, development and/or any other form of total or partial use of the 
+  content of this document and/or accessible through or via the contents, by any 
+  possible means without the respective authorization or licensing by the owner of 
+  the intellectual property rights is prohibited, the offenders being subject to civil 
+  and/or criminal prosecution and liability. The user or licensee of all or part of this 
+  document by any means may only use the document under the terms and conditions agreed
+  upon with the owner of the intellectual property rights, and for the purposes
+  justifying the granting of the license or authorization, without which the
+  unauthorized use may subject the offenders to civil or criminal prosecution
+  under applicable Laws.
+  #L%
+  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- ====================================================================== -->
+    <!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>io.digitaljourney.platform.distro.base</groupId>
+        <artifactId>base</artifactId>
+        <version>1.6.13</version>
+    </parent>
+    <!-- ====================================================================== -->
+    <!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+    <!-- ====================================================================== -->
+    <groupId>io.digitaljourney.platform.plugins</groupId>
+    <artifactId>training-distro</artifactId>
+    <version>2.9.99-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Distro</name>
+    <description>Distro</description>
+    <inceptionYear>2017</inceptionYear>
+    <!-- ====================================================================== -->
+    <!-- = P R O J E C T- P R O P E R T I E S ================================= -->
+    <!-- ====================================================================== -->
+    <properties>
+        <!-- SCM MANAGEMENT -->
+        <scm.path>v3/nbtfs-digitaljourney/omni-core/omni-platform-plugins</scm.path>
+        <!-- GITFLOW MANAGEMENT -->
+        <gitflow.versionTagPrefix>version/distro/</gitflow.versionTagPrefix>
+		
+		<!-- Laucher Overrides -->
+		<!-- CORE -->
+		<appserver.1.minMem>1536m</appserver.1.minMem>
+		<appserver.1.maxMem>1536m</appserver.1.maxMem>
+		<!-- CMS -->
+		<appserver.2.minMem>1536m</appserver.2.minMem>
+		<appserver.2.maxMem>1536m</appserver.2.maxMem>
+		
+		<lib.org.codehaus.groovy.groovy.version>2.4.21</lib.org.codehaus.groovy.groovy.version>		
+
+		
+        <!-- ###############################################      -->
+        <!-- ###########   DISTRO MANAGEMENT   ############      -->
+        <!-- ###############################################      -->
+        
+		<!-- Modules -->
+		<platform.plugins.modules.uam.version>13.5.0</platform.plugins.modules.uam.version>
+		<platform.plugins.modules.processcontinuity.version>4.2.3</platform.plugins.modules.processcontinuity.version>
+		<platform.plugins.modules.rulesengine.version>3.3.2</platform.plugins.modules.rulesengine.version>
+		<platform.plugins.modules.logservice.version>4.1.2</platform.plugins.modules.logservice.version>
+		<platform.plugins.modules.cachemanager.version>4.2.2</platform.plugins.modules.cachemanager.version>
+		<platform.plugins.modules.events.version>1.1.1</platform.plugins.modules.events.version>
+		<platform.plugins.modules.journeyworkflowengine.version>2.2.8</platform.plugins.modules.journeyworkflowengine.version>
+		<platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
+		<platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
+		<platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+
+		<!-- Providers -->
+		<platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
+		<platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
+
+		<!-- Apps -->
+		<platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
+		<!-- UFE Current versions -->
+		<platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
+		<platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
+		<platform.plugins.apps.journeydesigner.version>3.1.1</platform.plugins.apps.journeydesigner.version>
+		<!-- Generic Apps -->
+		<platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
+		<platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
+		<platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
+		<platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
+
+        <!-- # Common -->
+		<!-- TILE MANAGEMENT -->
+		<tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
+		<tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
+		<tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+
+    </properties>
+    <!-- ====================================================================== -->
+    <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
+    <!-- ====================================================================== -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- # Apps -->
+            <!-- # Modules -->
+        </dependencies>
+    </dependencyManagement>
+    <!-- ====================================================================== -->
+    <!-- = P R O J E C T- M O D U L E S ======================================= -->
+    <!-- ====================================================================== -->
+    <modules>
+        <module>../../distro/core/core</module>
+        <module>../../distro/cms/cms</module>
+    </modules>
+</project>
