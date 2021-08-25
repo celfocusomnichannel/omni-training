@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.distro.base</groupId>
+		<artifactId>base</artifactId>
+		<version>1.6.13</version>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+	<artifactId>productservice</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Modules :: Training Product Microservice</name>
+	<description>Training Product Microservice</description>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- P R O P E R T I E S ================================= -->
+	<!-- ====================================================================== -->
+
+	<properties>
+		<!-- SCM MANAGEMENT -->
+		<scm.path>celfocus/omni-platform-plugins.git</scm.path>
+
+		<!-- GITFLOW MANAGEMENT -->
+		<gitflow.versionTagPrefix>version/modules/productservice/</gitflow.versionTagPrefix>
+
+		<!-- BUNDLE INSTRUCTIONS -->
+		<bundle.category>platform-training</bundle.category>
+
+		<!-- RS Provider -->
+		<!-- CHECK IF THERE IS A NEWER VERSION! -->
+		<platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
+
+	</properties>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C Y- M A N A G E M E N T =========================== -->
+	<!-- ====================================================================== -->
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.digitaljourney.platform.plugins.providers</groupId>
+				<artifactId>rsprovider-core</artifactId>
+				<version>${platform.plugins.providers.rsprovider.version}</version>
+			</dependency>
+			<!-- Add other dependencies here -->
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- M O D U L E S ======================================= -->
+	<!-- ====================================================================== -->
+
+	<modules>
+		<module>../productservice-service-api</module>
+		<module>../productservice-service-ri</module>
+		<module>../productservice-entity</module>
+		<module>../productservice-data-api</module>
+		<module>../productservice-data-ri</module>
+		<module>../productservice-karafarchive</module>
+	</modules>
+</project>
