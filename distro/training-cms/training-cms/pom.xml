@@ -40,7 +40,7 @@
 	<!-- ====================================================================== -->
 	
 	<groupId>io.digitaljourney.platform.plugins.distro.cms</groupId>
-	<artifactId>cms-training</artifactId>
+	<artifactId>training-cms</artifactId>
 	<packaging>pom</packaging>
 	
 	<name>Distro :: CMS Training</name>
@@ -52,8 +52,8 @@
 	<!-- ====================================================================== -->
 
 	<modules>
-		<module>../cms-training-tile</module>
-		<module>../cms-training-configuration</module>
-		<module>../cms-training-karafassembly</module>
+		<module>../training-cms-tile</module>
+		<module>../training-cms-configuration</module>
+		<module>../training-cms-karafassembly</module>
 	</modules>
 </project>

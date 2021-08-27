@@ -1,6 +1,6 @@
 <!--
   #%L
-  Distro :: Core :: Tile
+  Distro :: CMS :: Configuration
   %%
   Copyright (C) 2017 - 2019 Celfocus Omnichannel
   %%
@@ -30,20 +30,19 @@
 
 	<parent>
 		<groupId>io.digitaljourney.platform.plugins.distro.cms</groupId>
-		<artifactId>cms-training</artifactId>
+		<artifactId>training-cms</artifactId>
 		<version>2.9.99-SNAPSHOT</version>
-		<relativePath>../cms-training</relativePath>
+		<relativePath>../training-cms</relativePath>
 	</parent>
 
 	<!-- ====================================================================== -->
 	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
 	<!-- ====================================================================== -->
 
-	<artifactId>cms-training-tile</artifactId>
-	<packaging>tile</packaging>
+	<artifactId>training-cms-configuration</artifactId>
 
-	<name>Distro :: CMS :: Training :: Tile</name>
-	<description>CMS Training Tile</description>
+	<name>Distro :: CMS :: Training :: Configuration</name>
+	<description>Configuration Training</description>
 
 	<!-- ====================================================================== -->
 	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
@@ -51,12 +50,42 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-remote-resources-directory</id>
+
+						<phase>generate-resources</phase>
+					</execution>
+				
+					<execution>
+						<phase>package</phase>
+						
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						
+						<configuration>
+							<artifacts>
+								<!-- Add cms feature configurations here -->
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
 				<artifactId>tiles-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<buildSmells>pluginmanagement</buildSmells>
+					<tiles>
+						<tile>${tile.resource-bundle.coordinates}</tile>
+						<tile>${tile.module-package.coordinates}</tile>
+					</tiles>
 				</configuration>
 			</plugin>
 		</plugins>

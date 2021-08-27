@@ -1,6 +1,6 @@
 <!--
   #%L
-  Distro :: CMS :: Karaf Assembly
+  Distro :: Core :: Tile
   %%
   Copyright (C) 2017 - 2019 Celfocus Omnichannel
   %%
@@ -30,33 +30,20 @@
 
 	<parent>
 		<groupId>io.digitaljourney.platform.plugins.distro.cms</groupId>
-		<artifactId>cms-training</artifactId>
+		<artifactId>training-cms</artifactId>
 		<version>2.9.99-SNAPSHOT</version>
-		<relativePath>../cms-training</relativePath>
+		<relativePath>../training-cms</relativePath>
 	</parent>
 
 	<!-- ====================================================================== -->
 	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
 	<!-- ====================================================================== -->
 
-	<artifactId>cms-training-karafassembly</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>training-cms-tile</artifactId>
+	<packaging>tile</packaging>
 
-	<name>Distro :: CMS :: Training :: Karaf Assembly</name>
-	<description>CMS Training karaf assembly</description>
-
-	<properties>
-		<appserver.0.maxMem>3086m</appserver.0.maxMem>
-		<appserver.0.minMem>1536m</appserver.0.minMem>
-		<appserver.0.httpPort>4502</appserver.0.httpPort>
-    	<appserver.0.debugPort>4555</appserver.0.debugPort>
-	    <appserver.0.rmiServerHost>0.0.0.0</appserver.0.rmiServerHost>
-	    <appserver.0.rmiServerPort>4551</appserver.0.rmiServerPort>
-	    <appserver.0.rmiRegistryHost>127.0.0.1</appserver.0.rmiRegistryHost>
-	    <appserver.0.rmiRegistryPort>4552</appserver.0.rmiRegistryPort>
-	    <appserver.0.sshHost>0.0.0.0</appserver.0.sshHost>
-	    <appserver.0.sshPort>4553</appserver.0.sshPort>    	
-	</properties>
+	<name>Distro :: CMS :: Training :: Tile</name>
+	<description>CMS Training Tile</description>
 
 	<!-- ====================================================================== -->
 	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
@@ -69,61 +56,9 @@
 				<artifactId>tiles-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<tiles>
-						<tile>${tile.platform.plugins.distro.cms.training.coordinates}</tile>
-						<tile>${tile.platform.distro.cms.coordinates}</tile>
-						<tile>${tile.karafassembly.coordinates}</tile>
-					</tiles>
+					<buildSmells>pluginmanagement</buildSmells>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- ====================================================================== -->
-	<!-- = D E P E N D E N C I E S ============================================ -->
-	<!-- ====================================================================== -->
-
-	<dependencies>
-
-		<dependency>
-			<groupId>org.apache.karaf.features</groupId>
-			<artifactId>framework</artifactId>
-			<type>kar</type>
-			<scope>compile</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
-			<artifactId>rsprovider-karafarchive</artifactId>
-			<version>${platform.plugins.providers.rsprovider.version}</version>
-			<type>xml</type>
-			<classifier>features</classifier>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
-			<artifactId>xmlprovider-karafarchive</artifactId>
-			<version>${platform.plugins.providers.xmlprovider.version}</version>
-			<type>xml</type>
-			<classifier>features</classifier>
-			<scope>compile</scope>
-		</dependency>
-	
-
-	</dependencies>
-
-	<!-- ====================================================================== -->
-	<!-- = P R O F I L E S ==================================================== -->
-	<!-- ====================================================================== -->
-
-	<profiles>
-		<profile>
-			<id>startServer</id>
-		</profile>
-
-		<profile>
-			<id>stopServer</id>
-		</profile>
-	</profiles>
 </project>

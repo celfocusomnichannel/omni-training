@@ -1,6 +1,6 @@
 <!--
   #%L
-  Distro :: CMS :: Configuration
+  Distro :: Core :: Tile
   %%
   Copyright (C) 2017 - 2019 Celfocus Omnichannel
   %%
@@ -29,20 +29,21 @@
 	<!-- ====================================================================== -->
 
 	<parent>
-		<groupId>io.digitaljourney.platform.plugins.distro.cms</groupId>
-		<artifactId>cms-training</artifactId>
+		<groupId>io.digitaljourney.platform.plugins.distro.core</groupId>
+		<artifactId>training-core</artifactId>
 		<version>2.9.99-SNAPSHOT</version>
-		<relativePath>../cms-training</relativePath>
+		<relativePath>../training-core</relativePath>
 	</parent>
 
 	<!-- ====================================================================== -->
 	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
 	<!-- ====================================================================== -->
 
-	<artifactId>cms-training-configuration</artifactId>
+	<artifactId>training-core-tile</artifactId>
+	<packaging>tile</packaging>
 
-	<name>Distro :: CMS :: Training :: Configuration</name>
-	<description>Configuration Training</description>
+	<name>Distro :: Core :: Training :: Tile</name>
+	<description>Tile Training</description>
 
 	<!-- ====================================================================== -->
 	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
@@ -50,42 +51,12 @@
 
 	<build>
 		<plugins>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-remote-resources-directory</id>
-
-						<phase>generate-resources</phase>
-					</execution>
-				
-					<execution>
-						<phase>package</phase>
-						
-						<goals>
-							<goal>attach-artifact</goal>
-						</goals>
-						
-						<configuration>
-							<artifacts>
-								<!-- Add cms feature configurations here -->
-							</artifacts>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 			<plugin>
 				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
 				<artifactId>tiles-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<tiles>
-						<tile>${tile.resource-bundle.coordinates}</tile>
-						<tile>${tile.module-package.coordinates}</tile>
-					</tiles>
+					<buildSmells>pluginmanagement</buildSmells>
 				</configuration>
 			</plugin>
 		</plugins>

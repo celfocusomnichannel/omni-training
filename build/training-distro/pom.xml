@@ -98,8 +98,8 @@
 		<tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
 		<tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
 		<tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
-		<tile.platform.plugins.distro.core.training.coordinates>io.digitaljourney.platform.plugins.distro.core:core-training-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.training.coordinates>
-		<tile.platform.plugins.distro.cms.training.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-training-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.training.coordinates>
+		<tile.platform.plugins.distro.core.training.coordinates>io.digitaljourney.platform.plugins.distro.core:training-core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.training.coordinates>
+		<tile.platform.plugins.distro.cms.training.coordinates>io.digitaljourney.platform.plugins.distro.cms:training-cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.training.coordinates>
 		
 		<!-- Dependency Management -->
 		<lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
@@ -133,7 +133,7 @@
     <modules>
         <module>../../distro/core/core</module>
         <module>../../distro/cms/cms</module>
-        <module>../../distro/core-training/core-training</module>
-        <module>../../distro/cms-training/cms-training</module>        
+        <module>../../distro/training-core/training-core</module>
+        <module>../../distro/training-cms/training-cms</module>
     </modules>
 </project>

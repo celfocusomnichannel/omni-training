@@ -1,6 +1,6 @@
 <!--
   #%L
-  Distro :: Core :: Karaf Assembly
+  Distro :: Core :: Configuration
   %%
   Copyright (C) 2017 - 2019 Celfocus Omnichannel
   %%
@@ -30,33 +30,19 @@
 
 	<parent>
 		<groupId>io.digitaljourney.platform.plugins.distro.core</groupId>
-		<artifactId>core-training</artifactId>
+		<artifactId>training-core</artifactId>
 		<version>2.9.99-SNAPSHOT</version>
-		<relativePath>../core-training</relativePath>
+		<relativePath>../training-core</relativePath>
 	</parent>
-
-	<properties>
-		<appserver.0.maxMem>3086m</appserver.0.maxMem>
-		<appserver.0.minMem>1536m</appserver.0.minMem>
-		<appserver.0.httpPort>4501</appserver.0.httpPort>
-    	<appserver.0.debugPort>4554</appserver.0.debugPort>
-	    <appserver.0.rmiServerHost>0.0.0.0</appserver.0.rmiServerHost>
-	    <appserver.0.rmiServerPort>4551</appserver.0.rmiServerPort>
-	    <appserver.0.rmiRegistryHost>127.0.0.1</appserver.0.rmiRegistryHost>
-	    <appserver.0.rmiRegistryPort>4552</appserver.0.rmiRegistryPort>
-	    <appserver.0.sshHost>0.0.0.0</appserver.0.sshHost>
-	    <appserver.0.sshPort>4553</appserver.0.sshPort>
-	</properties>
 
 	<!-- ====================================================================== -->
 	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
 	<!-- ====================================================================== -->
 
-	<artifactId>core-training-karafassembly</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>training-core-configuration</artifactId>
 
-	<name>Distro :: Core :: Training :: Karaf Assembly</name>
-	<description>Core Training karaf assembly</description>
+	<name>Distro :: Core :: Training :: Configuration</name>
+	<description>Configuration Trainnig</description>
 
 	<!-- ====================================================================== -->
 	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
@@ -64,65 +50,44 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-remote-resources-directory</id>
+
+						<phase>generate-resources</phase>
+					</execution>
+				
+					<execution>
+						<phase>package</phase>
+						
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						
+						<configuration>
+							<artifacts>
+								<!-- Add core feature configurations here -->
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
 				<artifactId>tiles-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
 					<tiles>
-						<tile>${tile.platform.plugins.distro.core.training.coordinates}</tile>
-						<tile>${tile.platform.distro.core.coordinates}</tile>
-						<tile>${tile.karafassembly.coordinates}</tile>
+						<tile>${tile.resource-bundle.coordinates}</tile>
+						<tile>${tile.module-package.coordinates}</tile>
 					</tiles>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- ====================================================================== -->
-	<!-- = D E P E N D E N C I E S ============================================ -->
-	<!-- ====================================================================== -->
-
-	<dependencies>
-
-		<dependency>
-			<groupId>org.apache.karaf.features</groupId>
-			<artifactId>framework</artifactId>
-			<type>kar</type>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
-			<artifactId>rsprovider-karafarchive</artifactId>
-			<version>${platform.plugins.providers.rsprovider.version}</version>
-			<type>xml</type>
-			<classifier>features</classifier>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
-			<artifactId>xmlprovider-karafarchive</artifactId>
-			<version>${platform.plugins.providers.xmlprovider.version}</version>
-			<type>xml</type>
-			<classifier>features</classifier>
-			<scope>compile</scope>
-		</dependency>
-
-	</dependencies>
-
-	<!-- ====================================================================== -->
-	<!-- = P R O F I L E S ==================================================== -->
-	<!-- ====================================================================== -->
-
-	<profiles>
-		<profile>
-			<id>startServer</id>
-		</profile>
-
-		<profile>
-			<id>stopServer</id>
-		</profile>
-	</profiles>
 </project>

@@ -92,7 +92,7 @@
                             <id>process-installable-remote-resources</id>
                             <configuration tiles-keep-id="true">
                                 <resourceBundles combine.children="append">
-                                    <resourceBundle>mvn:io.digitaljourney.platform.plugins.distro.cms/cms-training-configuration/${io.digitaljourney.platform.plugins.version}</resourceBundle>
+                                    <resourceBundle>mvn:io.digitaljourney.platform.plugins.distro.cms/training-cms-configuration/${io.digitaljourney.platform.plugins.version}</resourceBundle>
                                 </resourceBundles>
                             </configuration>
                         </execution>
