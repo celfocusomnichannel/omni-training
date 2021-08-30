@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features
-	name="platform-null-productmanagement-modules-${project.version}"
+	name="platform-training-productmanagement-modules-${project.version}"
 	xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
 
 	<feature name="productmanagement-api" description="ProductManagement API" version="${project.version}">

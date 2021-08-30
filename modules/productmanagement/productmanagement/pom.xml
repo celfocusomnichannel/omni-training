@@ -37,7 +37,7 @@
 		<gitflow.versionTagPrefix>version/modules/productmanagement/</gitflow.versionTagPrefix>
 
 		<!-- BUNDLE INSTRUCTIONS -->
-		<bundle.category>platform-null</bundle.category>
+		<bundle.category>platform-training</bundle.category>
 
 		<!-- VERSION MANAGEMENT -->
 		<platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
