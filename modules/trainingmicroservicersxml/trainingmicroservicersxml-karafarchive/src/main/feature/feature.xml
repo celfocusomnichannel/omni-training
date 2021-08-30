@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+	name="platform-training-trainingmicroservicersxml-modules-${project.version}"
+	xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+
+	<feature name="trainingmicroservicersxml-api" description="TrainingMicroserviceRSXML API" version="${project.version}">
+		<feature>base-ws-rs</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/trainingmicroservicersxml-service-api/${project.version}</bundle>
+	</feature>
+
+	<feature name="trainingmicroservicersxml-modules"
+		description="TrainingMicroserviceRSXML Modules" version="${project.version}">
+		<feature>rsprovider</feature>
+		<feature>trainingmicroservicersxml-api</feature>
+		<feature>base-ws-xml</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/trainingmicroservicersxml-data-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/trainingmicroservicersxml-entity/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/trainingmicroservicersxml-service-ri/${project.version}</bundle>
+	</feature>
+
+	<feature name="trainingmicroservicersxml" description="TrainingMicroserviceRSXML" version="${project.version}">
+			<feature>trainingmicroservicersxml-modules</feature>
+	</feature>
+</features>

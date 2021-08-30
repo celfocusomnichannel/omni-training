@@ -1,0 +1,79 @@
+
+:imagesdir: ./images
+:icons: font
+
+:imagesoutdir: ../../../target/generated-docs/images
+
+//embeeed images
+:data-uri:
+
+// empty line
+:blank: pass:[ +]
+:arrow: icon:angle-double-down[]
+
+//CONFIGURATION PLEASE
+:external_system: http://127.0.0.1:8082 
+
+:toc: left
+:toclevels: 3
+
+image::shared/header.png[]
+
+
+== <#_Microservice_name_#>
+
+=== 1) Domain Description
+'''
+
+<#_Microservice_name_#> domain _is responsible for the #...# +
+The responsibilities include the following actions: +
+
+* #_<Responsability_1>_#;
+* #_<Responsability_2>_#;
+* #_<Responsability_3>_#;
+* #_<Responsability_4>_#;
+
+To make those actions possible, the <#_<Microservice_name>_#> domain offers the next operations: +
+
+[width="100%", frame="none", grid="none"]
+|=======
+| 1) #_<Action_1>_# {set:cellbgcolor:#FFF}   | 3) #_<Action_3>_#          | 5) #_<Action_5>_#
+| 2) #_<Action_2>_#                          | 4) #_<Action_4>_#          |
+|=======
+
+{blank}
+
+
+
+//PARAGRAPH APPLICABLE TO TELCO MICROSERVICES
+TIP: This microservice is compliant with #_<number of modules or domains>_# Business Process Framework (eTOM) modules: #_<link to eTOM modules>_#
+
+
+
+{blank}
+
+
+=== 2) Domain Application Programming Interface
+'''
+
+The #<_Microservice_name_># RESTful API and Data Transfer Objects, can be evaluated on https://github.com/asciidoctor[Product Support & Readiness Swagger Documentation].  
+
+
+//PARAGRAPH TO MICROSERVICES USING ESB
+The mapping between the #_<Entity_name1, Entity_name2, Entity_name3>_# entities and the outputs of our ESB interfaces, is on chapter <<EntityBinder, 5) Mapping Domain and Enterprise Service Bus.>>
+
+//SECTION TO RELATED MICROSERVICES
+The #_<Microservice_name>_# domain also depends on #<_Microservice_name_used_># to achieve its goals.
+
+To better understanding of #<_Microservice_name_used_>#, please check its technical documentation in detail.
+
+{blank}
+
+==== 2.1) Fault Handling
+The expected microservice messages are provided below:
+[[microservice_messages]]
+[cols="3,2,4,4", frame="topbot"]
+
+.Error codes related to #_<Microservice_name>_#
+|===
+^|*[black]#Error code

@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+		<artifactId>trainingmicroservicersxml</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../trainingmicroservicersxml</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<artifactId>trainingmicroservicersxml-data-ri</artifactId>
+
+	<name>Modules :: My first rs-xml microservice Data RI</name>
+	<description>My first rs-xml microservice Data RI</description>
+
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- P R O P E R T I E S ================================= -->
+	<!-- ====================================================================== -->
+
+	<properties>
+		<build.wsPackage>io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.data.ri.ws</build.wsPackage>
+		<build.wsdlDirectory>${project.build.resourcesDirectory}/wsdl</build.wsdlDirectory>
+		<flagservice.build.wsPackage>io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.data.ri.ws.flagservice.proxy</flagservice.build.wsPackage>
+		<flagservice.build.wsdlFile>${project.build.resourcesDirectory}/wsdl/flagservice.xml</flagservice.build.wsdlFile>
+	</properties>
+
+	<!-- ====================================================================== -->
+	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-generated-sources</id>
+						<phase>generate-sources</phase>
+					</execution>
+					<execution>
+						<id>add-annotation-processor-sources</id>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>gen-flagservice-proxy</id>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+						<configuration>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${flagservice.build.wsdlFile}/</wsdl>
+									<extraargs>
+										<extraarg>-p</extraarg>
+										<extraarg>${flagservice.build.wsPackage}</extraarg>
+									</extraargs>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.data-ws-xml.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+		<!-- Compile -->
+
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>ws-xml</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>ws-rs</artifactId>
+			<scope>compile</scope>
+		</dependency>	
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+			<artifactId>trainingmicroservicersxml-data-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Test -->
+
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>paxexam-base</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>
