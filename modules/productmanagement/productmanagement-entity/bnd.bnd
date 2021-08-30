@@ -1,0 +1,13 @@
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Export-Package: \
+	io.digitaljourney.platform.plugins.modules.modules.productmanagement.entity.*
+Import-Package: \
+	org.hibernate.proxy,\
+	javassist.util.proxy,\
+	*
+Meta-Persistence: \
+	META-INF/persistence.xml
+Change-Log: productmanagement

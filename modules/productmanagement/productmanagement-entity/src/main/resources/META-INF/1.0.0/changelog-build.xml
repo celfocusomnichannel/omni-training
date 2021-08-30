@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- SEQUENCES -->
+
+	<changeSet id="SEQ_SAMPLE_ID" author="admin" context="build">
+		<createSequence sequenceName="SEQ_SAMPLE_ID" startValue="1" incrementBy="1" />
+	</changeSet>
+
+	<!-- TABLES -->
+
+	<changeSet id="SAMPLE" author="admin" context="build">
+		<createTable tableName="SAMPLE">
+			<column name="ID" type="NUMBER(20, 0)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TITLE" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<!-- CONSTRAINTS -->
+
+	<changeSet id="PK_SAMPLE_ID" author="admin" context="build">
+		<addPrimaryKey constraintName="PK_SAMPLE_ID" tableName="SAMPLE" columnNames="ID" />
+	</changeSet>
+
+</databaseChangeLog>

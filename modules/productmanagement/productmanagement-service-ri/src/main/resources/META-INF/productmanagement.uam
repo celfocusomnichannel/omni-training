@@ -1,0 +1,6 @@
+"PRODUCTMANAGEMENT_PERMISSION_ALL" : create permission "productmanagement:*" "Training JPA Product Management Microservice full permission";
+"PRODUCTMANAGEMENT_PERMISSION_CREATE" : create permission "productmanagement:create" "Training JPA Product Management Microservice create permission";
+"PRODUCTMANAGEMENT_PERMISSION_READ" : create permission "productmanagement:read" "Training JPA Product Management Microservice read permission";
+"PRODUCTMANAGEMENT_PERMISSION_UPDATE" : create permission "productmanagement:update" "Training JPA Product Management Microservice update permission";
+"PRODUCTMANAGEMENT_PERMISSION_DELETE" : create permission "productmanagement:delete" "Training JPA Product Management Microservice delete permission";
+"PRODUCTMANAGEMENT_PERMISSION_EXECUTE" : create permission "productmanagement:execute" "Training JPA Product Management Microservice execute permission";
