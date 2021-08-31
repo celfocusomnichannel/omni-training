@@ -5,7 +5,7 @@
 
 	<feature name="productmanagement-api" description="ProductManagement API" version="${project.version}">
 		<feature>base-ws-rs</feature>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productmanagement-service-api/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-service-api/${project.version}</bundle>
 	</feature>
 
 	<feature name="productmanagement-modules"
@@ -13,9 +13,9 @@
 		<feature>core-rdb-jpa</feature>
 		<feature>rsprovider</feature>
 		<feature>productmanagement-api</feature>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productmanagement-data-ri/${project.version}</bundle>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productmanagement-entity/${project.version}</bundle>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productmanagement-service-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-data-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-entity/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-service-ri/${project.version}</bundle>
 	</feature>
 
 	<feature name="productmanagement" description="ProductManagement" version="${project.version}">

@@ -87,6 +87,7 @@
         <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
         <!-- Training -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
+        <platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</platform.plugins.modules.productmanagement.version>
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
@@ -94,13 +95,12 @@
         <!-- Dependency Management -->
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-        <io.digitaljourney.platform.plugins.modules.modules.productmanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.modules.productmanagement.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-entity.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-entity.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-api.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-ri.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-api.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-ri.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-karafarchive.version>${io.digitaljourney.platform.plugins.modules.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-entity.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-api.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-ri.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-api.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-ri.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productmanagement-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-karafarchive.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -122,34 +122,34 @@
             </dependency>
             <!-- # Modules -->
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-data-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-api.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-data-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-data-ri.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-entity</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-entity.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productmanagement-entity.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-service-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-api.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-service-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-service-ri.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productmanagement-service-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productmanagement-karafarchive</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productmanagement-karafarchive.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.management-karafarchive.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

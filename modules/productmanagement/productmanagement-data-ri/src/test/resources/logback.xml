@@ -16,6 +16,6 @@
 	</root>
 
 	<logger
-		name="io.digitaljourney.platform.plugins.modules.modules.productmanagement.data.ri"
+		name="io.digitaljourney.platform.plugins.modules.productmanagement.data.ri"
 		level="debug" />
 </configuration>
