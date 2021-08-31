@@ -7,18 +7,35 @@
 
 	<!-- SEQUENCES -->
 
-	<changeSet id="SEQ_SAMPLE_ID" author="admin" context="build">
-		<createSequence sequenceName="SEQ_SAMPLE_ID" startValue="1" incrementBy="1" />
+	<changeSet id="SEQUENCES" author="admin" context="build">
+		<createSequence sequenceName="PM_PRODUCT_ID_SEQ" startValue="1" incrementBy="1" />
+		<createSequence sequenceName="PM_CATEGORY_ID_SEQ" startValue="1" incrementBy="1" />
 	</changeSet>
 
 	<!-- TABLES -->
 
-	<changeSet id="SAMPLE" author="admin" context="build">
-		<createTable tableName="SAMPLE">
-			<column name="ID" type="NUMBER(20, 0)">
+	<changeSet id="TABLES" author="admin" context="build">
+		<!-- PRODUCT -->
+		<createTable tableName="PM_PRODUCT">
+			<column name="PRODUCTID" type="NUMBER(20, 0)">
 				<constraints nullable="false" />
 			</column>
-			<column name="TITLE" type="VARCHAR(255)">
+			<column name="CATEGORYID" type="NUMBER(20, 0)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PRODUCTNAME" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PRODUCTPRICE" type="DECIMAL(6,2)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<!-- CATEGORY -->
+		<createTable tableName="PM_CATEGORY">
+			<column name="CATEGORYID" type="NUMBER(20, 0)">
+				<constraints nullable="false" />
+			</column>
+			<column name="CATEGORYNAME" type="VARCHAR(255)">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
@@ -27,7 +44,20 @@
 	<!-- CONSTRAINTS -->
 
 	<changeSet id="PK_SAMPLE_ID" author="admin" context="build">
-		<addPrimaryKey constraintName="PK_SAMPLE_ID" tableName="SAMPLE" columnNames="ID" />
+		<!-- PRIMARY KEYS -->
+		<addPrimaryKey 
+			constraintName="PM_PRODUCT_PK" 
+			tableName="PM_PRODUCT"
+			columnNames="PRODUCTID" />
+		<addPrimaryKey 
+			constraintName="PM_CATEGORY_PK"
+			tableName="PM_CATEGORY"
+			columnNames="CATEGORYID" />
+		<!-- FOREIGN KEYS -->
+		<addForeignKeyConstraint
+			constraintName="PM_PRODUCT_CATEGORY_ID_FK"
+			referencedTableName="PM_CATEGORY" baseColumnNames="CATEGORYID"
+			baseTableName="PM_PRODUCT" referencedColumnNames="CATEGORYID" />
 	</changeSet>
 
 </databaseChangeLog>
