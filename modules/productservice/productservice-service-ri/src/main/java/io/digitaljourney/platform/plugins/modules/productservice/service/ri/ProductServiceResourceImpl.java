@@ -1,7 +1,9 @@
-package io.digitaljourney.platform.plugins.modules.modules.productservice.service.ri;
+package io.digitaljourney.platform.plugins.modules.productservice.service.ri;
 
 import java.util.List;
 
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -12,9 +14,9 @@ import org.osgi.service.metatype.annotations.Designate;
 
 import io.digitaljourney.platform.modules.ws.rs.api.annotation.RSProvider;
 import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
-import io.digitaljourney.platform.plugins.modules.modules.productservice.data.api.ProductDAO;
-import io.digitaljourney.platform.plugins.modules.modules.productservice.service.api.ProductServiceResource;
-import io.digitaljourney.platform.plugins.modules.modules.productservice.service.api.dto.MusicProductDTO;
+import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
+import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
+import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
 
 //@formatter:off
 @Component(
@@ -41,6 +43,8 @@ public class ProductServiceResourceImpl extends AbstractResource<ProductServiceC
 	}
 
 	@Override
+	@RequiresAuthentication
+	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
 	}
