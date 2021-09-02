@@ -1,20 +1,22 @@
 package io.digitaljourney.platform.plugins.modules.modules.productservice.service.ri;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+import java.util.List;
+
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
-import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.metatype.annotations.Designate;
 
-import io.digitaljourney.platform.plugins.modules.modules.productservice.service.api.ProductServiceResource;
+import io.digitaljourney.platform.modules.ws.rs.api.annotation.RSProvider;
 import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
-import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CustomRsProvider;
+import io.digitaljourney.platform.plugins.modules.modules.productservice.data.api.ProductDAO;
+import io.digitaljourney.platform.plugins.modules.modules.productservice.service.api.ProductServiceResource;
+import io.digitaljourney.platform.plugins.modules.modules.productservice.service.api.dto.MusicProductDTO;
 
-// @formatter:off
+//@formatter:off
 @Component(
 	configurationPid = ProductServiceResourceConfig.CPID,
 	configurationPolicy = ConfigurationPolicy.REQUIRE,
@@ -25,36 +27,21 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.Custo
 			cardinality = ReferenceCardinality.MANDATORY)
 })
 @Designate(ocd = ProductServiceResourceConfig.class)
-@CustomRsProvider(ProductServiceResourceProperties.ADDRESS)
-// @formatter:on
-public class ProductServiceResourceImpl extends AbstractResource<ProductServiceContext, ProductServiceResourceConfig> implements ProductServiceResource {
+@RSProvider(ProductServiceResourceProperties.ADDRESS)
+//@formatter:on
+public class ProductServiceResourceImpl extends AbstractResource<ProductServiceContext, ProductServiceResourceConfig>
+		implements ProductServiceResource {
 
-	/**
-	 * Method called whenever the component is activated.
-	 * 
-	 * @param ctx    Component context
-	 * @param config Component configuration
-	 */
+	@Reference
+	private volatile ProductDAO productDao;
+
 	@Activate
 	public void activate(ComponentContext ctx, ProductServiceResourceConfig config) {
 		prepare(ctx, config);
 	}
-	
-	/**
-	 * Method called whenever the component configuration is modified.
-	 * 
-	 * @param config Component configuration
-	 */
-	@Modified
-	public void modified(ProductServiceResourceConfig config) {
-		prepare(config);
-	}
-	
+
 	@Override
-	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
-	public String index() {
-		return "ProductService is running.";
+	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
+		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
 	}
-
-
 }
