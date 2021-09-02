@@ -59,7 +59,9 @@
                             <bundle>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-core/${platform.plugins.providers.xmlprovider.version}</bundle>
                         </installedBundles>
                         <bootFeatures combine.children="append">
-                            <!-- Add additional features here -->
+							<!-- Platform Modules -->
+                            <feature>core-oracle</feature>
+                            <!-- Platform Plugins Modules -->
                             <feature>uam</feature>
                             <feature>processcontinuity</feature>
                             <feature>rulesengine</feature>
@@ -70,6 +72,7 @@
                             <feature>journeyblueprint</feature>
                             <feature>events-rdb</feature>
                             <feature>journeyworkflowengine-gateway-rest-cxf</feature>
+                            <!-- Training Modules -->
                             <feature>productmanagement</feature>
                         </bootFeatures>
                         <installedFeatures combine.children="append">
