@@ -8,7 +8,7 @@
 	<!-- ====================================================================== -->
 
 	<parent>
-		<groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+		<groupId>io.digitaljourney.platform.plugins.modules</groupId>
 		<artifactId>productservice</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../productservice</relativePath>

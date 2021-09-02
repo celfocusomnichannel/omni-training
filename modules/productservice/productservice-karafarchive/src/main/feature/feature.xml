@@ -5,16 +5,16 @@
 
 	<feature name="productservice-api" description="ProductService API" version="${project.version}">
 		<feature>base-ws-rs</feature>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productservice-service-api/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productservice-service-api/${project.version}</bundle>
 	</feature>
 
 	<feature name="productservice-modules"
 		description="ProductService Modules" version="${project.version}">
 		<feature>rsprovider</feature>
 		<feature>productservice-api</feature>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productservice-data-ri/${project.version}</bundle>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productservice-entity/${project.version}</bundle>
-		<bundle>mvn:io.digitaljourney.platform.plugins.modules.modules/productservice-service-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productservice-data-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productservice-entity/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/productservice-service-ri/${project.version}</bundle>
 	</feature>
 
 	<feature name="productservice" description="ProductService" version="${project.version}">

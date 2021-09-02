@@ -4,4 +4,4 @@ Bundle-Name: ${bundle.name}
 Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
 Bundle-Category: ${bundle.category}
 Export-Package: \
-	io.digitaljourney.platform.plugins.modules.modules.productservice.data.api.*
+	io.digitaljourney.platform.plugins.modules.productservice.data.api.*

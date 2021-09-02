@@ -94,13 +94,13 @@
         <!-- Dependency Management -->
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-        <io.digitaljourney.platform.plugins.modules.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.modules.productservice.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-entity.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-entity.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-api.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-ri.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-api.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-ri.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.productservice-karafarchive.version>${io.digitaljourney.platform.plugins.modules.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.modules.productservice-karafarchive.version>
+        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -122,34 +122,34 @@
             </dependency>
             <!-- # Modules -->
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-data-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-api.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-data-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-data-ri.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-entity</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-entity.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-service-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-api.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-service-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-service-ri.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-karafarchive</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.productservice-karafarchive.version}</version>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
