@@ -52,6 +52,8 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
                             
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${platform.plugins.modules.productmanagement.version}/xml/features</repository>
+                            
+                            
                         </bootRepositories>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
@@ -59,7 +61,9 @@
                             <bundle>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-core/${platform.plugins.providers.xmlprovider.version}</bundle>
                         </installedBundles>
                         <bootFeatures combine.children="append">
-                            <!-- Add additional features here -->
+                            <!-- Platform Modules -->
+                            <feature>core-postgresql</feature>
+                            <!-- Platform Plugins Modules -->
                             <feature>uam</feature>
                             <feature>processcontinuity</feature>
                             <feature>rulesengine</feature>
@@ -70,6 +74,7 @@
                             <feature>journeyblueprint</feature>
                             <feature>events-rdb</feature>
                             <feature>journeyworkflowengine-gateway-rest-cxf</feature>
+                            <!-- Training Modules -->
                             <feature>productmanagement</feature>
                         </bootFeatures>
                         <installedFeatures combine.children="append">
