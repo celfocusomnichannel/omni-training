@@ -12,6 +12,7 @@ import io.digitaljourney.platform.modules.commons.annotation.DocumentationResour
 import io.digitaljourney.platform.modules.invocation.api.PlatformInvocationManager;
 import io.digitaljourney.platform.modules.security.api.PlatformSecurityManager;
 import io.digitaljourney.platform.modules.ws.rs.api.context.AbstractRSEndpointContext;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.exception.ProductCategoryNotFoundException;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.exception.ProductManagementException;
 
 // @formatter:off
@@ -49,5 +50,9 @@ public final class ProductManagementContext extends AbstractRSEndpointContext {
 
 	public ProductManagementException exception(Throwable cause) {
 		return ProductManagementException.of(this, cause);
+	}
+	
+	public ProductCategoryNotFoundException productCategoryNotFoundException(Integer categoryId) {
+		return ProductCategoryNotFoundException.of(this, categoryId);
 	}
 }

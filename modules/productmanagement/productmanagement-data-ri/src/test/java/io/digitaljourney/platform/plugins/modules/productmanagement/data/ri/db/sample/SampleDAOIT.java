@@ -64,7 +64,7 @@ public class SampleDAOIT extends BaseTestSupport {
     sample1 = sampleDAO.addSample(sample1);
 
     assertThat(sample1).isNotNull();
-    assertThat(sample1.getId()).isNotNull();
+    assertThat(sample1.getCategoryId()).isNotNull();
   }
 
   @Test
@@ -73,7 +73,7 @@ public class SampleDAOIT extends BaseTestSupport {
     sample1 = sampleDAO.addSample(sample1);
 
     assertThat(sample1).isNotNull();
-    sample1 = sampleDAO.getSample(sample1.getId());
+    sample1 = sampleDAO.getSample(sample1.getCategoryId());
     assertThat(sample1).isNotNull();
     assertThat(sample1.getTitle().equals(TITLE_1));
   }
@@ -96,8 +96,8 @@ public class SampleDAOIT extends BaseTestSupport {
     sample1 = sampleDAO.addSample(sample1);
 
     assertThat(sample1).isNotNull();
-    assertThat(sample1.getId()).isNotNull();
+    assertThat(sample1.getCategoryId()).isNotNull();
 
-    sampleDAO.deleteSample(sample1.getId());
+    sampleDAO.deleteSample(sample1.getCategoryId());
   }
 }

@@ -57,7 +57,8 @@
 		<addForeignKeyConstraint
 			constraintName="PM_PRODUCT_CATEGORY_ID_FK"
 			referencedTableName="PM_CATEGORY" baseColumnNames="CATEGORYID"
-			baseTableName="PM_PRODUCT" referencedColumnNames="CATEGORYID" />
+			baseTableName="PM_PRODUCT" referencedColumnNames="CATEGORYID"
+			onDelete="CASCADE" onUpdate="CASCADE" />
 	</changeSet>
 
 </databaseChangeLog>
