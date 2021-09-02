@@ -29,7 +29,7 @@ public class Product {
 	@Column(name = "PRODUCTNAME", nullable = false)
 	private String productName;
 	
-	@ManyToOne(cascade=CascadeType.MERGE, fetch = FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name="CATEGORYID", nullable = false)
 	private Category category;
 
