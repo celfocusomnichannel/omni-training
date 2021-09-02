@@ -70,6 +70,7 @@
         <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
         <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
         <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
         <!-- Providers -->
         <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
         <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
@@ -94,7 +95,6 @@
         <!-- Dependency Management -->
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>
