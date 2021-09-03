@@ -118,12 +118,12 @@
             <!-- # Trainingbase -->
             <dependency>
                 <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>telcobase-cms</artifactId>
+                <artifactId>trainingbase-cms</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>telcobase-karafarchive</artifactId>
+                <artifactId>trainingbase-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version}</version>
                 <type>kar</type>
             </dependency>
