@@ -14,7 +14,6 @@
     <!-- = P R O J E C T- M O D U L E S ======================================= -->
     <!-- ====================================================================== -->
     <modules>
-        <module>../../modules/trainingmicroservicersxml/trainingmicroservicersxml</module>
-        <module>../../modules/sampleservicexml/sampleservicexml</module>
+        <module>../../modules/flagmicroservicersxml/flagmicroservicersxml</module>
     </modules>
 </project>

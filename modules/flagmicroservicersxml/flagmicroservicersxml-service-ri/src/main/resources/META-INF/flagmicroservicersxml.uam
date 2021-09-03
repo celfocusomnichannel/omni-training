@@ -1,0 +1,6 @@
+"FLAGMICROSERVICERSXML_PERMISSION_ALL" : create permission "flagmicroservicersxml:*" "Flag SOAP Microservice Description full permission";
+"FLAGMICROSERVICERSXML_PERMISSION_CREATE" : create permission "flagmicroservicersxml:create" "Flag SOAP Microservice Description create permission";
+"FLAGMICROSERVICERSXML_PERMISSION_READ" : create permission "flagmicroservicersxml:read" "Flag SOAP Microservice Description read permission";
+"FLAGMICROSERVICERSXML_PERMISSION_UPDATE" : create permission "flagmicroservicersxml:update" "Flag SOAP Microservice Description update permission";
+"FLAGMICROSERVICERSXML_PERMISSION_DELETE" : create permission "flagmicroservicersxml:delete" "Flag SOAP Microservice Description delete permission";
+"FLAGMICROSERVICERSXML_PERMISSION_EXECUTE" : create permission "flagmicroservicersxml:execute" "Flag SOAP Microservice Description execute permission";

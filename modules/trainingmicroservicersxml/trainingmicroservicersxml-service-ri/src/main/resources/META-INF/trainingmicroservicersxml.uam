@@ -1,6 +1,0 @@
-"TRAININGMICROSERVICERSXML_PERMISSION_ALL" : create permission "trainingmicroservicersxml:*" "My first rs-xml microservice full permission";
-"TRAININGMICROSERVICERSXML_PERMISSION_CREATE" : create permission "trainingmicroservicersxml:create" "My first rs-xml microservice create permission";
-"TRAININGMICROSERVICERSXML_PERMISSION_READ" : create permission "trainingmicroservicersxml:read" "My first rs-xml microservice read permission";
-"TRAININGMICROSERVICERSXML_PERMISSION_UPDATE" : create permission "trainingmicroservicersxml:update" "My first rs-xml microservice update permission";
-"TRAININGMICROSERVICERSXML_PERMISSION_DELETE" : create permission "trainingmicroservicersxml:delete" "My first rs-xml microservice delete permission";
-"TRAININGMICROSERVICERSXML_PERMISSION_EXECUTE" : create permission "trainingmicroservicersxml:execute" "My first rs-xml microservice execute permission";

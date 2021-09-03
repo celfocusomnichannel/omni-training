@@ -94,20 +94,13 @@
         <!-- Dependency Management -->
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-        <io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-entity.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-entity.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-api.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-ri.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-api.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-ri.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-karafarchive.version>${io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-karafarchive.version>
-        <io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-entity.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-entity.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-api.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-ri.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-api.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-api.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-ri.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-ri.version>
-        <lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-karafarchive.version>${io.digitaljourney.platform.plugins.modules.modules.sampleservicexml.version}</lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-karafarchive.version>
+        <io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -129,64 +122,34 @@
             </dependency>
             <!-- # Modules -->
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-data-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-api.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-data-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-data-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-data-ri.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-data-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-entity</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-entity.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-entity</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-service-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-api.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-service-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-service-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-service-ri.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-service-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>trainingmicroservicersxml-karafarchive</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-karafarchive.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-data-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-data-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-ri.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-entity</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-entity.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-service-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-service-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-ri.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-karafarchive</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-karafarchive.version}</version>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
