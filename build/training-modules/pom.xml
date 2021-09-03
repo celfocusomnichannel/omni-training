@@ -15,6 +15,5 @@
     <!-- ====================================================================== -->
     <modules>
         <module>../../modules/trainingmicroservicersxml/trainingmicroservicersxml</module>
-        <module>../../modules/sampleservicexml/sampleservicexml</module>
     </modules>
 </project>
