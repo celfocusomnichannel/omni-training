@@ -158,36 +158,6 @@
                 <artifactId>trainingmicroservicersxml-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.modules.trainingmicroservicersxml-karafarchive.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-data-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-data-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-data-ri.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-entity</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-entity.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-service-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-service-ri</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-service-ri.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.modules.modules</groupId>
-                <artifactId>sampleservicexml-karafarchive</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.modules.modules.sampleservicexml-karafarchive.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- ====================================================================== -->
