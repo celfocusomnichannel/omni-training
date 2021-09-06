@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 import net.karneim.pojobuilder.GeneratePojoBuilder;
 
 @GeneratePojoBuilder
-@ApiModel("Product")
+@ApiModel("ProductDTO")
 public class ProductDTO {
 
 	@ApiModelProperty(hidden = true)
