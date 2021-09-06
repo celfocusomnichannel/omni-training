@@ -16,6 +16,7 @@ import io.digitaljourney.platform.modules.ws.rs.api.annotation.RSProvider;
 import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
 import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
+import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.BookProductDTO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
 
 //@formatter:off
@@ -47,5 +48,12 @@ public class ProductServiceResourceImpl extends AbstractResource<ProductServiceC
 	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
+	}
+
+	@Override
+	@RequiresAuthentication
+	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
+	public List<BookProductDTO> getWriterBooks(String writerName, String limit) {
+		return ProductServiceResourceMapper.INSTANCE.toBookProductDTO(productDao.getWriterBooks(writerName, limit));
 	}
 }
