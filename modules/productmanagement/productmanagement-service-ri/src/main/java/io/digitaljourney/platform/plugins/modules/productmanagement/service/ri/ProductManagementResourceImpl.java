@@ -63,6 +63,12 @@ public class ProductManagementResourceImpl extends AbstractResource<ProductManag
 	public CategoryDTO getCategory(Integer id) {
 		return ProductManagementResourceMapper.INSTANCE.toCategory(categoryDAO.getCategory(id));
 	}
+	
+	@Override
+	@RequiresPermissions(ProductManagementResourceProperties.PERMISSION_READ)
+	public List<CategoryDTO> getCategories() {
+		return ProductManagementResourceMapper.INSTANCE.toCategories(categoryDAO.getCategories());
+	}
 
 	@Override
 	@RequiresPermissions(ProductManagementResourceProperties.PERMISSION_UPDATE)

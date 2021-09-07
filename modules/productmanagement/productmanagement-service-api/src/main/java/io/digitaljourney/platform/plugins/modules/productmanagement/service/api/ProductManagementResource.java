@@ -61,6 +61,11 @@ public interface ProductManagementResource {
 	@ApiOperation(value = "Looks up a category by id", response = CategoryDTO.class, tags = ProductManagementProperties.CATEGORY_TAG)
 	CategoryDTO getCategory(@ApiParam(value = "The category id", required = true) @PathParam("id") Integer id);
 
+	@GET
+	@Path("/category")
+	@ApiOperation(value = "Looks up every category", response = CategoryDTO.class, responseContainer = "List", tags = ProductManagementProperties.CATEGORY_TAG)
+	List<CategoryDTO> getCategories();
+	
 	@PUT
 	@Path("/category/{id}")
 	@ApiOperation(value = "Updates a category", response = CategoryDTO.class, tags = ProductManagementProperties.CATEGORY_TAG)

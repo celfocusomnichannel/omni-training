@@ -21,6 +21,8 @@ public interface ProductManagementResourceMapper {
 	@InheritInverseConfiguration
 	Category toCategory(CategoryDTO category);
 
+	List<CategoryDTO> toCategories(List<Category> categories);
+	
 	ProductDTO toProduct(Product product);
 	
 	@InheritInverseConfiguration
@@ -29,5 +31,6 @@ public interface ProductManagementResourceMapper {
 	List<ProductDTO> toProducts(List<Product> products);
 	
 	SaveCategoryDTO toSaveCategory(Category category);
+
 	
 }

@@ -173,6 +173,25 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 		}
 		return result.data();
 	}
+	
+	@Override
+	public List<CategoryDTO> getCategories() {
+		WSData<List<CategoryDTO>> result = super.invoke((WebClient client) -> {
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("/category/");
+			// allow making changes to the client
+			executeClientHandlers(clientPath);
+			Collection<? extends CategoryDTO> responseCall = clientPath.getCollection(CategoryDTO.class);
+			List<CategoryDTO> responseCollection = null;
+			if (responseCall != null) {
+				responseCollection = new ArrayList<>(responseCall);
+			}
+			return WSData.of(responseCollection).build();
+		});
+		if (!result.success() || result.data() == null) {
+			throw resultException(result);
+		}
+		return result.data();
+	}
 
 	@Override
 	public CategoryDTO updateCategory(Integer id, CategoryDTO category) {
@@ -282,4 +301,5 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 		}
 		return result.data();
 	}
+	
 }
