@@ -1,9 +1,4 @@
-package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.rdb.category;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Function;
+package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.category;
 
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
@@ -22,7 +17,6 @@ import io.digitaljourney.platform.modules.rdb.jpa.api.dao.AbstractJPADAO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.data.api.CategoryDAO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.RDBContext;
 import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Category;
-import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Category_;
 
 // @formatter:off
 @Component(
