@@ -1,4 +1,4 @@
-package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.rdb.category;
+package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.category;
 
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.Icon;

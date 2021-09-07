@@ -1,5 +1,7 @@
 package io.digitaljourney.platform.plugins.modules.productmanagement.service.api;
 
+import java.util.List;
+
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -80,6 +82,11 @@ public interface ProductManagementResource {
 	@ApiOperation(value = "Looks up a product by id", response = ProductDTO.class, tags = ProductManagementProperties.PRODUCT_TAG)
 	ProductDTO getProduct(@ApiParam(value = "The product id", required = true) @PathParam("id") Integer id);
 
+	@GET
+	@Path("/product")
+	@ApiOperation(value = "Looks up every product", response = ProductDTO.class, responseContainer = "List", tags = ProductManagementProperties.PRODUCT_TAG)
+	List<ProductDTO> getProducts();
+	
 	@PUT
 	@Path("/product/{id}")
 	@ApiOperation(value = "Updates a product", response = ProductDTO.class, tags = ProductManagementProperties.PRODUCT_TAG)

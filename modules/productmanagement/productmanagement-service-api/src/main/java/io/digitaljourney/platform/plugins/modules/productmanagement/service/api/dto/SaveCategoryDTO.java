@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 import net.karneim.pojobuilder.GeneratePojoBuilder;
 
 @GeneratePojoBuilder
-@ApiModel("Category")
+@ApiModel("SaveCategoryDTO")
 public class SaveCategoryDTO {
 
 	@ApiModelProperty(position = 1, required = true)

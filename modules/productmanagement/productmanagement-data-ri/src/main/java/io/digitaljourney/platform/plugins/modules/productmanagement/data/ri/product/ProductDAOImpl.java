@@ -1,7 +1,6 @@
-package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.rdb.product;
+package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.product;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
@@ -19,8 +18,6 @@ import io.digitaljourney.platform.modules.rdb.jpa.api.JPAProperties;
 import io.digitaljourney.platform.modules.rdb.jpa.api.dao.AbstractJPADAO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.data.api.ProductDAO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.RDBContext;
-import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Category;
-import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Category_;
 import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Product;
 
 // @formatter:off
@@ -66,6 +63,12 @@ public final class ProductDAOImpl extends AbstractJPADAO<ProductDAOConfig> imple
 		info("Entered getProduct");
 		return findOne(Product.class, id);
 	}
+	
+	@Override
+	public List<Product> getProducts() {
+		info("Entered getProducts");
+		return findAll(Product.class);
+	}
 
 	@Override
 	public Product updateProduct(Integer id, Product product) {
@@ -83,4 +86,5 @@ public final class ProductDAOImpl extends AbstractJPADAO<ProductDAOConfig> imple
 		deleteOne(Product.class, id);
 		return product;
 	}
+
 }

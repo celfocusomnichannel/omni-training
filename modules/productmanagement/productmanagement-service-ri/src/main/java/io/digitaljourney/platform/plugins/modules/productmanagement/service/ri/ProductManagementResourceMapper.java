@@ -1,5 +1,7 @@
 package io.digitaljourney.platform.plugins.modules.productmanagement.service.ri;
 
+import java.util.List;
+
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -23,6 +25,8 @@ public interface ProductManagementResourceMapper {
 	
 	@InheritInverseConfiguration
 	Product toProduct(ProductDTO product);
+	
+	List<ProductDTO> toProducts(List<Product> products);
 	
 	SaveCategoryDTO toSaveCategory(Category category);
 	
