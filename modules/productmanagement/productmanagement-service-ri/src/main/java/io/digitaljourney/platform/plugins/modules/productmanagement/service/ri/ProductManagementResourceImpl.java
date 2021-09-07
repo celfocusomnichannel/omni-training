@@ -1,5 +1,7 @@
 package io.digitaljourney.platform.plugins.modules.productmanagement.service.ri;
 
+import java.util.List;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
@@ -92,6 +94,13 @@ public class ProductManagementResourceImpl extends AbstractResource<ProductManag
 	@RequiresPermissions(ProductManagementResourceProperties.PERMISSION_READ)
 	public ProductDTO getProduct(Integer id) {
 		return ProductManagementResourceMapper.INSTANCE.toProduct(productDAO.getProduct(id));
+	}
+	
+
+	@Override
+	@RequiresPermissions(ProductManagementResourceProperties.PERMISSION_READ)
+	public List<ProductDTO> getProducts() {
+		return ProductManagementResourceMapper.INSTANCE.toProducts(productDAO.getProducts());
 	}
 	
 	@Override
