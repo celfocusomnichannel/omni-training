@@ -1,0 +1,6 @@
+"PRODUCTSERVICE_PERMISSION_ALL" : create permission "productservice:*" "Training Product Microservice full permission";
+"PRODUCTSERVICE_PERMISSION_CREATE" : create permission "productservice:create" "Training Product Microservice create permission";
+"PRODUCTSERVICE_PERMISSION_READ" : create permission "productservice:read" "Training Product Microservice read permission";
+"PRODUCTSERVICE_PERMISSION_UPDATE" : create permission "productservice:update" "Training Product Microservice update permission";
+"PRODUCTSERVICE_PERMISSION_DELETE" : create permission "productservice:delete" "Training Product Microservice delete permission";
+"PRODUCTSERVICE_PERMISSION_EXECUTE" : create permission "productservice:execute" "Training Product Microservice execute permission";

@@ -1,0 +1,92 @@
+:docdir: ../appendices
+:icons: font
+:author: Digital Journey Product Development Team
+:imagesdir: ./images
+:imagesoutdir: ./images
+//embedded images
+:data-uri:
+// empty line
+:blank: pass:[ +]
+// Toc
+:toc: macro
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+// Variables
+:revnumber: 1.0
+:arrow: icon:angle-double-down[]
+:ms_name: Training Product Microservice
+:source-highlighter: highlightjs
+
+image::shared/header.png[]
+
+= {ms_name} - User Manual
+v{revnumber}, {docdate}
+
+<<<
+
+.Change Log
+[%header,cols=3*]
+|===
+| Version
+| Date
+| Changes
+
+| 1.0
+| January/2019
+| Initial Version
+|===
+
+toc::[]
+
+<<<
+
+== Introduction
+'''
+
+The purpose of this document is to describe how to use the {ms_name} micro-service.
+
+It will cover the following topics:
+
+* Context - What is this micro-service supposed to do
+* Functionalities - What functionalities does it support
+* Configurations - What configurations files does it need
+* Extensions Points - What extensions points does this micro-service offer
+* API - The description of every API method and the input and output of each one
+
+==	Context
+'''
+{ms_name} is the Micro-service responsible for the process of granting authorized users the right to use a service,
+while preventing access to non-authorized users.
+
+==	Functionalities
+'''
+
+The {ms_name} micro-service provides the features below:
+
+
+==	Configurations
+'''
+
+
+==	Extension Points
+'''
+UAM allows the addition of new https://shiro.apache.org/realm.html[shiro realms] and authenticators.
+Currently, UAM includes four realms: a realm for basic username/password authentication, a realm for token based authentication,
+a realm for authentication using Kerberos and a realm for SAML authentication.
+At this moment, UAM provides one authenticator to support LDAP authentication.
+
+==	References
+'''
+===	APIs Docs
+'''
+For the complete specification of the {ms_name} API, please check the {ms_name} API Swagger documentation.
+
+===	External Docs
+'''
+==== URIQL Expressions
+'''
+URIQL is a platform building block backed up by *CXF Search*, a Search API with the help of query language specific parsers.
+Information regarding CXF Search can be found in following url:
+
+http://cxf.apache.org/docs/jax-rs-search.html#JAX-RSSearch-JAX-RSSearch
