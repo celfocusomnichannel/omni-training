@@ -1,0 +1,71 @@
+
+:imagesdir: ./images
+:icons: font
+
+:imagesoutdir: ../../../target/generated-docs/images
+
+//embeeed images
+:data-uri:
+
+// empty line
+:blank: pass:[ +]
+:arrow: icon:angle-double-down[]
+
+//CONFIGURATION PLEASE
+:external_system: http://127.0.0.1:8082 
+
+:toc: left
+:toclevels: 3
+
+image::shared/header.png[]
+
+
+== <#_Microservice_name_#>
+
+=== 1) Domain Architecture
+
+//SECTION TO MICROSERVICES USING ESB
+To perform the previous operations, the Omnichannel interacts with external systems by an ESB (Enterprise Service Bus). +
+The diagram below resumes these interactions.
+
+.<#_<Microservice_name>_#> Systems
+[caption="Figure 1: "]
+//BUID ditaa diagram
+
+This domain doesn't have any internal relation with other domains or databases.
+
+//SECTION TO JPA MICROSERVICES
+The <#_<Microservice_name>_#> domain uses a set of internal tables, to perform its duties. The schemas involved are: +
+
+* #_<link1 to schema definition>_#
+** #_<description of schema1 responsability>_#
+* #_<link2 to schema definition>_#
+** #_<description of schema2 responsability>_#
+
+
+#_<Brief description of schemas interactions and comunication>_#
+
+==== 1.1) #_<Schema_name>_# Database Schema
+The #_<schema_name>_# schema is #...#.
+
+To know more about this schema and its responsibilities, please check the next diagram and following description.
+
+.#Class, object or other type# diagram of #_<schema_name>_# schema
+[caption="Figure 2: "]
+//BUID plantuml diagram
+[plantuml, example, png]
+....
+@startuml
+!pragma graphviz_dot jdot
+
+
+@enduml
+....
+
+
+
+//DESCRIBE EACH TABEL USED ON STAR SCHEMA
+.#_<table name>_# table
+[cols="h,7*<", frame="topbot"]
+|===
+8+>|*[gray]#table_name

@@ -1,0 +1,6 @@
+"ORDERMANAGEMENT_PERMISSION_ALL" : create permission "ordermanagement:*" "Training JWE Order Management App full permission";
+"ORDERMANAGEMENT_PERMISSION_CREATE" : create permission "ordermanagement:create" "Training JWE Order Management App create permission";
+"ORDERMANAGEMENT_PERMISSION_READ" : create permission "ordermanagement:read" "Training JWE Order Management App read permission";
+"ORDERMANAGEMENT_PERMISSION_UPDATE" : create permission "ordermanagement:update" "Training JWE Order Management App update permission";
+"ORDERMANAGEMENT_PERMISSION_DELETE" : create permission "ordermanagement:delete" "Training JWE Order Management App delete permission";
+"ORDERMANAGEMENT_PERMISSION_EXECUTE" : create permission "ordermanagement:execute" "Training JWE Order Management App execute permission";

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="platform-training-ordermanagement-modules-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+	<!-- Added necessary modules repositories here -->
+	<!-- Example for UAM, variable is defined in pom 
+		<repository>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/xml/features</repository>
+	-->
+	<feature name="ordermanagement-api" description="OrderManagement API" version="${project.version}" install="manual">
+		<feature>base-ws-rs</feature>
+		<!-- 
+			//FIXME Insert your microservice feature hete
+			<feature><microservice_name>-api</feature> 
+		-->
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-api/${project.version}</bundle>
+	</feature>
+
+	<feature name="ordermanagement-common-modules" description="OrderManagement Common Modules" version="${project.version}" install="manual">
+		<feature>standard-cxf-jaxrs-swagger</feature>
+		<feature>standard-groovy</feature>
+		<feature>standard-mapstruct</feature>
+		<feature>rsprovider</feature>
+		<feature>ordermanagement-api</feature>
+
+		<!-- Facade configurations -->
+		<config name="platform.plugins.apps.ordermanagement.facade"></config>
+		
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-common/${project.version}</bundle>
+	</feature>
+	
+	<feature name="ordermanagement-agents-core" description="OrderManagement Core Agent" version="${project.version}" install="manual">
+		<feature>ordermanagement-common-modules</feature>
+		
+		<config name="platform.plugins.apps.ordermanagement.agent.core"><![CDATA[#
+		]]></config>
+		
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-agents-core/${project.version}</bundle>
+	</feature>
+
+	<feature name="ordermanagement-cxf-modules" description="OrderManagement CXF Modules" version="${project.version}" install="manual">
+		<feature>ordermanagement-common-modules</feature>
+		<feature>ordermanagement-agents-core</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-cxf/${project.version}</bundle>
+	</feature>
+
+	<feature name="ordermanagement-sling-data" description="OrderManagement Sling Data" version="${project.version}" install="manual">
+		<feature>sling</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-cms/${project.version}</bundle>
+	</feature>
+
+	<feature name="ordermanagement-mvc-modules" description="OrderManagement MVC Modules" version="${project.version}"  install="manual">
+		<feature>ordermanagement-common-modules</feature>
+		<feature>cms-mvc</feature>
+		<feature>ordermanagement-agents-core</feature>
+
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-app/${project.version}</bundle>
+		<feature>ordermanagement-sling-data</feature>
+	</feature>
+	
+	<feature name="ordermanagement" description="OrderManagement" version="${project.version}">
+		<feature>ordermanagement-mvc-modules</feature>
+	</feature>
+</features>

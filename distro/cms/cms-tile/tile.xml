@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- ====================================================================== -->
     <!-- = B U I L D- D E F I N I T I O N ===================================== -->
@@ -36,6 +36,7 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/kar/archive</dependency>
                             <!--  Training -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -72,6 +73,7 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/xml/features</repository>
                             <!-- Training -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/xml/features</repository>
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>
@@ -87,6 +89,7 @@
                             <feature>journeyworkflowengine-gateway-aspect-mvc</feature>
                             <!-- Training -->
                             <feature>trainingbase</feature>
+                            <feature>ordermanagement</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->

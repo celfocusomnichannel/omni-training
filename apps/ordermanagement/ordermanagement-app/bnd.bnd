@@ -1,0 +1,45 @@
+-plugin.annotationProperties: ${bundle.plugin.annotationProperties}
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Import-Package:\
+	io.digitaljourney.platform.modules.commons,\
+	io.digitaljourney.platform.modules.commons.exception,\
+	io.digitaljourney.platform.modules.commons.domain,\
+	io.digitaljourney.platform.modules.commons.function,\
+	io.digitaljourney.platform.modules.async.api,\
+	io.digitaljourney.platform.modules.async.api.context,\
+	io.digitaljourney.platform.modules.invocation.api,\
+	io.digitaljourney.platform.modules.invocation.api.context,\
+	io.digitaljourney.platform.modules.cache.api,\
+	io.digitaljourney.platform.modules.cache.api.context,\
+	io.digitaljourney.platform.modules.cache.api.support,\
+	io.digitaljourney.platform.modules.security.api,\
+	io.digitaljourney.platform.modules.security.api.context,\
+	io.digitaljourney.platform.modules.security.api.session,\
+	io.digitaljourney.platform.modules.jcr.api,\
+	io.digitaljourney.platform.modules.jcr.api.context,\
+	io.digitaljourney.platform.modules.jcr.api.dao,\
+	io.digitaljourney.platform.modules.jcr.api.exception,\
+	io.digitaljourney.platform.modules.jcr.sling.api.context,\
+	io.digitaljourney.platform.modules.jcr.sling.api.exception,\
+	io.digitaljourney.platform.modules.mvc.api.aspectj,\
+	io.digitaljourney.platform.modules.mvc.api.controller,\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect;version="[3.0.7,4.0)",\
+	javax.jcr,\
+	javax.jcr.query,\
+	org.slf4j,\
+	org.apache.shiro.mgt,\
+	org.springframework.context,\
+	org.springframework.validation.beanvalidation,\
+	org.springframework.http.converter.json,\
+	org.springframework.web.servlet.view.json,\
+	io.digitaljourney.platform.modules.ws.rs.api.jackson,\
+	org.apache.cxf.jaxrs.swagger,\
+	org.hibernate.validator.constraints;version="[5.4,7.0)", \
+	javax.validation;version="[1.1,2.1)", \
+	javax.validation.constraints;version="[1.1,2.1)", \
+	*
+Change-Log: uam
+Change-Log-Script: /META-INF/ordermanagement.uam

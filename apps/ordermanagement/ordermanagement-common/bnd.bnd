@@ -1,0 +1,9 @@
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Export-Package: \
+	io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.*
+Change-Log: uam
+Change-Log-Script: META-INF/ordermanagement.uam
+Configurations-Import-Script: META-INF/configurations.json
