@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+		<artifactId>appkar</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../appkar</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<artifactId>appkar-app</artifactId>
+
+	<name>Apps :: Kar App Description :: App</name>
+	<description>Kar App Description App</description>
+
+	<!-- ====================================================================== -->
+	<!-- B U I L D D E F I N I T I O N -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-annotation-processor-sources</id>
+						<phase>generate-sources</phase>
+					</execution>
+					<execution>
+						<id>add-generated-webapp</id>
+						<phase>generate-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.app-generic.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+		<!-- RS Provider -->
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
+			<artifactId>rsprovider-core</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- MVC -->
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>mvc</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Services -->
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+			<artifactId>appkar-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+			<artifactId>appkar-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Insert some suitable/correlated microservice reference -->
+		<!--<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId><microservice_name>-service-api</artifactId>
+			<scope>compile</scope>
+		</dependency>-->
+		<dependency>
+			<groupId>net.karneim</groupId>
+			<artifactId>pojobuilder</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- RS Provider -->
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.providers</groupId>
+			<artifactId>rsprovider-core</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Test -->
+		<!-- PaxExam -->
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>paxexam-base</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Rest Assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Mockito -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

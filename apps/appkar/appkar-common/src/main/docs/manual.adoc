@@ -1,0 +1,71 @@
+:docdir: ../appendices
+:icons: font
+:author: Digital Journey Product Development Team
+:imagesdir: ./images
+:imagesoutdir: ../../../target/generated-docs/images
+//embedded images
+:data-uri:
+// empty line
+:blank: pass:[ +]
+// Toc
+:toc: macro
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 4
+:source-highlighter: highlightjs
+// Variables
+:revnumber: 1.0
+:arrow: icon:angle-double-down[]
+:ms_name: Kar App Description
+:xrefstyle: short
+
+image::shared/header.png[]
+
+= {ms_name} - Manual
+v{revnumber}, {docdate}
+
+<<<
+
+IMPORTANT: This documentation is not complete and does not represent the quality of the product.
+
+.Change Log
+[%header,cols=3*]
+|===
+| Version
+| Date
+| Changes
+
+| 1.0
+| January/2019
+| Initial Version
+|===
+
+toc::[]
+
+<<<
+
+== Introduction
+
+The purpose of this document is to describe the {ms_name} App.
+
+NOTE: The {ms_name} App refers to the module: `*io.digitaljourney.platform.plugins.apps:appkar*`.
+
+=== Extended Description
+'''
+The {ms_name} App offers the following functionality:
+
+* First item
+* Second item
+* Third item
+
+{blank}
+
+== Functionality
+'''
+The {ms_name} App is used to...
+
+{blank}
+
+
+
+

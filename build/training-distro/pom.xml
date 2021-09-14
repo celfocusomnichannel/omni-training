@@ -108,6 +108,14 @@
         <lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>
+        <io.digitaljourney.platform.plugins.apps.appkar.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.appkar.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-app.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-app.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-cms.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-karafarchive.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-agents-core.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-agents-core.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-api.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-api.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-common.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-common.version>
+        <lib.io.digitaljourney.platform.plugins.apps.appkar-cxf.version>${io.digitaljourney.platform.plugins.apps.appkar.version}</lib.io.digitaljourney.platform.plugins.apps.appkar-cxf.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -157,6 +165,9 @@
                 <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>flagmicroservicersxml-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version}</version>
+            </dependency>    
+            <dependency>   
+            	<groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-data-api</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version}</version>
             </dependency>
@@ -184,6 +195,42 @@
                 <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-app</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-cms</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-cms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-karafarchive.version}</version>
+                <type>kar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-agents-core</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-agents-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-common</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>appkar-cxf</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.appkar-cxf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
