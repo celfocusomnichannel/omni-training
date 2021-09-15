@@ -43,8 +43,8 @@ public class ProductServiceResourceImpl extends AbstractResource<ProductServiceC
 	}
 
 	@Override
-	@RequiresAuthentication
-	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
+	//@RequiresAuthentication
+	//@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
 	}

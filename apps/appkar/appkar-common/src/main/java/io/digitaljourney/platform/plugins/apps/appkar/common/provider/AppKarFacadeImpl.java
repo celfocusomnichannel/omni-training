@@ -42,6 +42,7 @@ public class AppKarFacadeImpl extends AbstractSecurityComponent<AppKarFacadeCont
 
 	@Override
 	public List<MusicProductResponseDTO> getArtistMusics(String artistName, String limit) {
-		return getCoreAgent().getArtistMusics(artistName, limit);
+		List<MusicProductResponseDTO> music = getCoreAgent().getArtistMusics(artistName, limit);
+		return music;
 	}
 }

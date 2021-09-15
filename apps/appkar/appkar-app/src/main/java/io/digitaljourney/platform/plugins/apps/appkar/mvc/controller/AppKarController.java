@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import io.digitaljourney.platform.plugins.apps.appkar.AppProperties;
 import io.digitaljourney.platform.plugins.apps.appkar.api.AppKarResource;
@@ -19,13 +20,13 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CmsRs
 
 //@formatter:off
 @Controller
-@RequestMapping(AppProperties.ADDRESS)
+@RequestMapping(AppProperties.ADDRESS + "/app")
+@CmsRsProvider(value = AppProperties.ADDRESS + "/app")
 @Component(
 	property = {
 		"digitaljourney.service.name=AppKar"
 	}
 )
-@CmsRsProvider(value = AppProperties.ADDRESS + "/app")
 //@formatter:on
 public class AppKarController extends AbstractAppController implements AppKarResource {
 
@@ -34,13 +35,13 @@ public class AppKarController extends AbstractAppController implements AppKarRes
 
 	@Override
 	@GetMapping(path = "/{isoCode}") 
-	public FlagResponseDTO getFlag(@PathVariable String isoCode) {
+	public @ResponseBody FlagResponseDTO getFlag(@PathVariable String isoCode) {
 		return facade.getFlag(isoCode);
 	}
 
 	@Override
 	@GetMapping(path = "/search")
-	public List<MusicProductResponseDTO> getArtistMusics(@RequestParam String artistName,@RequestParam String limit) {
+	public @ResponseBody List<MusicProductResponseDTO> getArtistMusics(@RequestParam String artistName,@RequestParam String limit) {
 		return facade.getArtistMusics(artistName, limit);
 	}
 
