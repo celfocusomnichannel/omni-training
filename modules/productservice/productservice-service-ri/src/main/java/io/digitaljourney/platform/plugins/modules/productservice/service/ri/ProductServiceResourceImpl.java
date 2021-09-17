@@ -12,12 +12,12 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.metatype.annotations.Designate;
 
-import io.digitaljourney.platform.modules.ws.rs.api.annotation.RSProvider;
 import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
 import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.BookProductDTO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
+import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CustomRsProvider;
 
 //@formatter:off
 @Component(
@@ -30,7 +30,7 @@ import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto
 			cardinality = ReferenceCardinality.MANDATORY)
 })
 @Designate(ocd = ProductServiceResourceConfig.class)
-@RSProvider(ProductServiceResourceProperties.ADDRESS)
+@CustomRsProvider (ProductServiceResourceProperties.ADDRESS)
 //@formatter:on
 public class ProductServiceResourceImpl extends AbstractResource<ProductServiceContext, ProductServiceResourceConfig>
 		implements ProductServiceResource {
