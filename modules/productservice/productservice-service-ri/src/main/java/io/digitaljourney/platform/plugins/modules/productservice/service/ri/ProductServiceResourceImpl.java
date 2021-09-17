@@ -17,6 +17,7 @@ import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
 import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
+import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CustomRsProvider;
 
 //@formatter:off
 @Component(
@@ -27,9 +28,9 @@ import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto
 			name = ProductServiceResourceProperties.REF_CONTEXT,
 			service = ProductServiceContext.class,
 			cardinality = ReferenceCardinality.MANDATORY)
-})
+}) 
 @Designate(ocd = ProductServiceResourceConfig.class)
-@RSProvider(ProductServiceResourceProperties.ADDRESS)
+@CustomRsProvider(ProductServiceResourceProperties.ADDRESS)
 //@formatter:on
 public class ProductServiceResourceImpl extends AbstractResource<ProductServiceContext, ProductServiceResourceConfig>
 		implements ProductServiceResource {
@@ -43,8 +44,8 @@ public class ProductServiceResourceImpl extends AbstractResource<ProductServiceC
 	}
 
 	@Override
-	//@RequiresAuthentication
-	//@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
+	@RequiresAuthentication
+	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
 	}
