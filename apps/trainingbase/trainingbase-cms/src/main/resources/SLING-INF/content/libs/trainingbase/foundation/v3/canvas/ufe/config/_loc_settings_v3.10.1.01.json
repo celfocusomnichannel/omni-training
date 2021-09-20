@@ -1,872 +1,834 @@
 {
-	"useInteractionSharedJourneys": false,
-	"navigation": "TABS",
-	"mobileUFEThreshold": {
-		"value": false,
-		"minDesktopWidth": 600
-	},
-	"threesixtyConfigs":
-	{
-		"unique": false,
-		"url": "/content/digitaljourney/foundation/v3/threesixties/omni-journey-threesixty/modules/",
-		"allowMultipleNewInteractionsWithSameCustomer": false,
-		"singleSearchResultAutomaticContext": false,
-		"contentVersion": "v3",
-		"openOnStart": false,
-		"collapsedOnStart": false,
-		"collapsePanel": "horizontal",
-		"collapsedPanelSize": "70px",
-		"panelSize": "320px",
-		"closeIcon": "icon-close",
-		"interactionsLimit": 5,
-		"searchItemSplitter": true,
-		"emptySearchItemValue": "No value",
-		"searchItemPresentation": [
-			["primaryName"],
-			["number", "secondaryName"]
-		],
-		"dispatchSearchOnChange": true
-	},
-	"headerGenericExtensions":
-	{
-		"InlineManager":
-		{
-			"friendlyName": "Inline Manager",
-			"url": "/content/digitaljourney/foundation/v3/extensions/inlinemanager/inline-manager.umd.min.js",
-			"libraryname": "inlinemanager",
-			"entitlements": "INLINE_MANAGER:SHOW",
-			"openOnStart": false,
-			"buttonVisibleWhenOpen": true
-		}
-	},
-	"notificationConfigs":
-	{
-		"useSnackbarUINotificationsOnly": false,
-		"snackbarUiAnimationLocation":
-		{
-			"vertical": "bottom",
-			"horizontal": "right"
-		},
-		"filterButtonType": "Icon",
-		"dateType": "date-time",
-		"useWSConnections": true,
-		"useAggregator": true,
-		"snackbarLimit": 3
-	},
-	"ufeSessionTimeout": true,
-	"sessionExpirationTime": "30:00",
-	"sessionExpirationWarning": "05:00",
-	"sessionExpirationCriticalWarning": "01:00",
-	"refreshSessionCoolDown": "01:00",
-	"logoutSamlConfig": "http://www.google.pt",
-	"defaultType": "light",
-	"defaultDirection": "ltr",
-	"useMenuOrdering": false,
-	"useMenuSearchOnChange": false,
-	"menuLayout": "MENU_LAYOUT_GRID",
-	"showUserMenuByDefault": false,
-	"saveTimeout": 5000,
-	"globalSearchPatterns":
-	{
-		"ProcessesNameMatchMinLength": 3,
-		"ProcessesActionMatchMinLength": 1
-	},
-	"menuFavourites":
-	{
-		"selectedIcon": "icon-wishlist-full",
-		"unselectedIcon": "icon-wishlist-full"
-	},
-	"circularProgress":
-	{
-		"warning":
-		{
-			"path": "theme.palette.common.yellow",
-			"trail":
-			{
-				"color": "theme.palette.common.black",
-				"opacity": 0.3
-			}
-		},
-		"critical":
-		{
-			"path": "theme.palette.error.main",
-			"trail":
-			{
-				"color": "theme.palette.common.black",
-				"opacity": 0.3
-			}
-		},
-		"default":
-		{
-			"path": "theme.palette.common.white",
-			"trail":
-			{
-				"color": "theme.palette.common.white",
-				"opacity": 0.5
-			}
-		}
-	},
-	"journeys": [
-	{
-		"id": 1,
-		"title": "Dashboard Customer",
-		"version": "1.0",
-		"type": "context_unique",
-		"contentVersion": "v3",
-		"icon": "icon-dashboard_big",
-		"listIcon": "icon-dashboard_small",
-		"i18NLabel": "dashboard_customer",
-		"notificationsAutoTimeoutInms": 3000,
-		"journeyUrl": "/content/digitaljourney/foundation/v3/journeys/omni-journey-dashboard/modules/",
-		"useBackoffice": false,
-		"ignoreUserPrefs": false,
-		"editable":
-		{
-			"draggable": true,
-			"resizable": false,
-			"removable": true
-		},
-		"isHomePage": "true",
-		"subHeaderContent":
-		{
-			"components": ["dashboardWidgets"],
-			"style": "primary"
-		},
-		"layoutSettings":
-		{
-			"breakpoints":
-			{
-				"lg": 1300,
-				"md": 1100,
-				"sm": 900,
-				"xs": 700,
-				"xxs": 400
-			},
-			"cols":
-			{
-				"lg": 8,
-				"md": 6,
-				"sm": 4,
-				"xs": 2,
-				"xxs": 1
-			},
-			"rowHeight": 180
-		},
-		"widgets": [
-		{
-			"id": 4,
-			"x": 0,
-			"y": 2,
-			"w": 1,
-			"h": 1
-		}]
-	},
-	{
-		"id": 2,
-		"title": "Api Sample",
-		"version": "1.0",
-		"i18NLabel": "sample",
-		"contentVersion": "v3",
-		"entitlement": "OPEN_SAMPLE",
-		"shouldBeNotifiedBeforeUnload": true,
-		"createJourneyDirty": true,
-		"icon": "icon-appmanual_big",
-		"listIcon": "icon-appmanual_small",
-		"journeyUrl": "/content/digitaljourney/ufe/v3/journeys/api-sample-journey/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"globalSearchSpecs": [
-		{
-			"id": 1,
-			"filterPattern": "^9[1,2,3,6][0-9]{7}$",
-			"actionJourney": "charge_prepaid",
-			"i18NsearchDescription": "vt_tc_gs_charges",
-			"icon": "icon-mobile"
-		}]
-	},
-	{
-		"id": 3,
-		"title": "Journey Designer",
-		"version": "1.0",
-		"icon": "icon-journeydesigner_big",
-		"listIcon": "icon-journeydesigner_small",
-		"i18NLabel": "journey_designer",
-		"journeyUrl": "/content/digitaljourney/journeydesigner/v2/journeys/omni-journey-journeydesigner/modules/",
-		"useBackoffice": true,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"lock_timeout": 300000,
-		"notification_timeout": 3000,
-		"shouldBeNotifiedBeforeUnload": true,
-		"journeyListRecordsLimit": 10,
-		"journeyVersionFreeForm": false,
-		"groovyEditorConfig":
-		{
-			"constants": ["request", "response", "instance", "variables"]
-		}
-	},
-	{
-		"id": 4,
-		"title": "Ui Demo",
-		"version": "1.0",
-		"type": "context_unique",
-		"contentVersion": "v3",
-		"icon": "icon-uilibrary_big",
-		"listIcon": "icon-uilibrary_small",
-		"i18NLabel": "ui_lib",
-		"journeyUrl": "/content/digitaljourney/foundation/v3/journeys/ui-demo-journey/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 5,
-		"title": "UAM",
-		"version": "1.0",
-		"i18NLabel": "uam_label",
-		"type": "context_unique",
-		"icon": "icon-uam_big",
-		"listIcon": "icon-uam_small",
-		"notificationsAutoTimeoutInms": 3000,
-		"numberOfRecordsPerTablePage": 19,
-		"shouldShowEntitlements": true,
-		"uamUserJourneyId": 6,
-		"uamRolesJourneyId": 7,
-		"uamEntitlementJourneyId": 14,
-		"journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 6,
-		"title": "UAM USER",
-		"version": "1.0",
-		"i18NLabel": "uam_user",
-		"icon": "icon-uam_big",
-		"listIcon": "icon-uam_small",
-		"notificationsAutoTimeoutInms": 3000,
-		"numberOfRecordsPerTablePage": 10,
-		"journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam-user/modules/",
-		"useBackoffice": false,
-		"hideDomain": false,
-		"requiredFields":
-		{
-			"firstName": true,
-			"lastName": false,
-			"email": false,
-			"status": false
-		},
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"globalSearchSpecs": [
-		{
-			"id": 1,
-			"filterPattern": "^[0-9]*$",
-			"actionJourney": "id",
-			"i18NsearchDescription": "uam_user_id_view_detail",
-			"icon": "icon-balancetransaction"
-		},
-		{
-			"id": 2,
-			"filterPattern": "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$",
-			"actionJourney": "email",
-			"i18NsearchDescription": "uam_user_email_view_detail",
-			"icon": "icon-balancetransaction"
-		},
-		{
-			"id": 3,
-			"filterPattern": "^^[a-zA-Z0-9_\\-+_@&$#%\\s]*$",
-			"actionJourney": "name",
-			"i18NsearchDescription": "uam_user_name_view_detail",
-			"icon": "icon-balancetransaction"
-		}]
-	},
-	{
-		"id": 7,
-		"title": "UAM ROLES",
-		"version": "1.0",
-		"i18NLabel": "uam_roles",
-		"icon": "icon-uam_big",
-		"listIcon": "icon-uam_small",
-		"notificationsAutoTimeoutInms": 3000,
-		"numberOfRecordsPerTablePage": 10,
-		"journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam-roles/modules/",
-		"useBackoffice": false,
-		"requiredFields":
-		{
-			"description": false
-		},
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"globalSearchSpecs": [
-		{
-			"id": 1,
-			"filterPattern": "^[0-9]*$",
-			"actionJourney": "id",
-			"i18NsearchDescription": "uam_roles_id_view_detail",
-			"icon": "icon-balancetransaction"
-		},
-		{
-			"id": 2,
-			"filterPattern": "^[a-zA-Z0-9_\\-+_@&$#%\\s]*$",
-			"actionJourney": "name",
-			"i18NsearchDescription": "uam_roles_name_view_detail",
-			"icon": "icon-balancetransaction"
-		}]
-	},
-	{
-		"id": 8,
-		"title": "Karaf",
-		"version": "1.0",
-		"i18NLabel": "karaf",
-		"type": "context_unique",
-		"icon": "icon-appserver_big",
-		"listIcon": "icon-appserver_small",
-		"journeyUrl": "/system/console/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 9,
-		"title": "Sling",
-		"version": "1.0",
-		"i18NLabel": "sling",
-		"type": "context_unique",
-		"icon": "icon-contentmgmt_big",
-		"listIcon": "icon-contentmgmt_small",
-		"journeyUrl": "/bin/browser.html/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 10,
-		"title": "Log Viewer",
-		"version": "1.0",
-		"type": "context_unique",
-		"contentVersion": "v1",
-		"icon": "icon-logviewer_big",
-		"listIcon": "icon-logviewer_small",
-		"i18NLabel": "logviewer",
-		"journeyUrl": "/content/digitaljourney/logviewer/v1/journeys/omni-journey-logviewer/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 11,
-		"title": "Cache Manager",
-		"version": "1.0",
-		"type": "context_unique",
-		"icon": "icon-cachemgr_big",
-		"listIcon": "icon-cachemgr_small",
-		"i18NLabel": "cache_manager",
-		"journeyUrl": "/content/digitaljourney/cachemanagerapp/journeys/omni-journey-cache-manager/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 12,
-		"title": "Application Manual",
-		"version": "1.0",
-		"contentVersion": "v3",
-		"type": "context_unique",
-		"icon": "icon-appmanual_big",
-		"listIcon": "icon-appmanual_small",
-		"i18NLabel": "application_manual",
-		"journeyUrl": "/content/digitaljourney/foundation/v3/journeys/application-manual/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		}
-	},
-	{
-		"id": 13,
-		"title": "Backoffice",
-		"version": "2.0",
-		"i18NLabel": "backoffice",
-		"contentVersion": "v2",
-		"icon": "icon-configeditor_big",
-		"listIcon": "icon-configeditor_small",
-		"journeyUrl": "/content/digitaljourney/backoffice/v2/journeys/omni-journey-backoffice/modules/",
-		"useBackoffice": true,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"globalSearchSpecs": [],
-		"entitlements": "BACKOFFICE:EDIT"
-	},
-	{
-		"id": 14,
-		"title": "UAM Entitlements",
-		"version": "1.0",
-		"i18NLabel": "uam_label",
-		"icon": "icon-uam_big",
-		"listIcon": "icon-uam_small",
-		"notificationsAutoTimeoutInms": 3000,
-		"numberOfRecordsPerTablePage": 10,
-		"journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-entitlements/modules/",
-		"useBackoffice": false,
-		"requiredFields":
-		{
-			"description": false
-		},
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"globalSearchSpecs": []
-	},
-	{
-		"id": 15,
-		"title": "Glances Library",
-		"version": "1.0",
-		"type": "context_unique",
-		"icon": "view_module",
-		"i18NLabel": "glances_library",
-		"appUrl": "/bin/mvc.do/glances/v2",
-		"journeyUrl": "/content/digitaljourney/glances/v2/journeys/omni-journey-backoffice-library/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"widgetsJourneyId": 16,
-		"dashboardsJourneyId": 17
-	},
-	{
-		"id": 16,
-		"title": "Glances Widget",
-		"version": "1.0",
-		"type": "context_unique",
-		"icon": "timeline",
-		"i18NLabel": "glances_widget",
-		"appUrl": "/bin/mvc.do/glances/v2",
-		"journeyUrl": "/content/digitaljourney/glances/v1/journeys/omni-journey-backoffice-widget/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"libraryJourneyId": 15
-	},
-	{
-		"id": 17,
-		"title": "Glances Dashboard",
-		"version": "1.0",
-		"type": "context_unique",
-		"icon": "widgets",
-		"i18NLabel": "glances_dashboard",
-		"appUrl": "/bin/mvc.do/glances/v2",
-		"journeyUrl": "/content/digitaljourney/glances/v1/journeys/omni-journey-backoffice-dashboard/modules/",
-		"useBackoffice": false,
-		"subHeaderContent":
-		{
-			"style": "secondary"
-		},
-		"libraryJourneyId": 15
-	}],
-	"categories": [
-	{
-		"id": 1,
-		"name": "Business",
-		"i18NLabel": "fes_business",
-		"entitlement": "OPEN_BUSINESS",
-		"processesOrder": [
-		{
-			"order": 1,
-			"processId": 1
-		},
-		{
-			"order": 2,
-			"processId": 3
-		}]
-	},
-	{
-		"id": 2,
-		"name": "Development",
-		"i18NLabel": "development",
-		"entitlement": "OPEN_PRODUCTS",
-		"processesOrder": [
-		{
-			"order": 1,
-			"processId": 2
-		},
-		{
-			"order": 2,
-			"processId": 4
-		},
-		{
-			"order": 3,
-			"processId": 12
-		}]
-	},
-	{
-		"id": 3,
-		"name": "Administrative Tools",
-		"i18NLabel": "admin_cat",
-		"entitlement": "OPEN_ADMIN",
-		"processesOrder": [
-		{
-			"order": 1,
-			"processId": 8
-		},
-		{
-			"order": 2,
-			"processId": 9
-		},
-		{
-			"order": 3,
-			"processId": 10
-		},
-		{
-			"order": 4,
-			"processId": 5
-		},
-		{
-			"order": 5,
-			"processId": 11
-		},
-		{
-			"order": 6,
-			"processId": 13
-		}]
-	},
-	{
-		"id": 4,
-		"name": "Telco Journeys",
-		"i18NLabel": "telco_journeys",
-		"entitlement": "_OPEN_PRODUCTS",
-		"processesOrder": [
-		{
-			"order": 1,
-			"processId": 15
-		},
-		{
-			"order": 2,
-			"processId": 16
-		},
-		{
-			"order": 3,
-			"processId": 17
-		}]
-	}],
-	"entitlements":
-	{
-		"ufeNoSessionTimeout": "UFE_NO_SESSION_TIMEOUT",
-		"header":
-		{
-			"genericExtensionPoint": "UFE_GENERIC_EXTENSION:SHOW",
-			"threesixty": "UFE_360:SHOW",
-			"threesixtyTimer": "UFE_360_TIMER:SHOW",
-			"threesixtyOpenWithoutContext": "UFE_360_OPEN_WITHOUT_CONTEXT:SHOW",
-			"globalSearch": "UFE_GLOBAL_SEARCH:SHOW",
-			"cti": "UFE_CTI",
-			"inline": "UFE_INLINE",
-			"userMenu":
-			{
-				"privateMode": "UFE_PRIVATE_MODE:SHOW",
-				"changeStatus": "UFE_CHANGE_STATUS:SHOW",
-				"userSettings": "UFE_USER_SETTINGS:SHOW"
-			},
-			"userSettingsOverlay":
-			{
-				"generalTab": "SETTINGS_GENERAL_TAB",
-				"userInfo": "SETTINGS_USER_INFO",
-				"editUserInfo": "SETTINGS_EDIT_USER_INFO",
-				"direction": "UFE_USER_SETTINGS_DIRECTION:SHOW",
-				"themeType": "UFE_USER_SETTINGS_THEME_TYPE:SHOW",
-				"changeLanguage": "SETTINGS_CHANGE_LANGUAGE",
-				"changePasswordTab": "SETTINGS_CHANGE_PASSWORD_TAB",
-				"activeSessionsTab": "SETTINGS_ACTIVE_SESSIONS_TAB",
-				"resetProfileTab": "SETTINGS_RESET_PROFILE_TAB"
-			}
-		},
-		"subHeader":
-		{
-			"menu": "UFE_MENU:SHOW",
-			"menuFavourites": "UFE_MENU_FAVOURITES:SHOW",
-			"taskSwitcher": "UFE_TASK_SWITCHER:SHOW",
-			"dashboardWidgets":
-			{
-				"self": "UFE_DASHBOARD_WIDGETS:SHOW",
-				"editMode": "UFE_DASHBOARD_WIDGETS_EDIT_MODE:SHOW",
-				"addWidget": "UFE_DASHBOARD_WIDGETS_ADD_WIDGET:SHOW"
-			},
-			"journeyMenu":
-			{
-				"journeyList": "UFE_MENU_JOURNEY_LIST:SHOW"
-			},
-			"tabs":
-			{
-				"breadcrumbs": "UFE_BREADCRUMBS"
-			}
-		},
-		"notifications":
-		{
-			"contextual": "UFE_CONTEXTUAL_NOTIFICATIONS:SHOW",
-			"nonContextual": "UFE_NON_CONTEXTUAL_NOTIFICATIONS:SHOW",
-			"notificationCenter": "UFE_NOTIFICATIONS_CENTER:SHOW"
-		},
-		"footer": "UFE_FOOTER:SHOW"
-	},
-	"widgets": [
-	{
-		"id": 1,
-		"name": "UFE_WORKQUEUE",
-		"type": "umd",
-		"identifier": "Workqueue",
-		"info":
-		{
-			"i18NTitle": "UFE_WORKQUEUE_TITLE",
-			"i18NDescription": "UFE_WORKQUEUE_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 0,
-			"w": 6,
-			"h": 3
-		},
-		"category": "Business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-workqueue/workqueue.min.js",
-		"thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
-		"entitlements": "OPEN_DASHBOARD"
-	},
-	{
-		"id": 2,
-		"name": "UFE_NEWSFEED_LIST",
-		"type": "umd",
-		"identifier": "NewsfeedList",
-		"info":
-		{
-			"i18NTitle": "UFE_NEWSFEED_LIST_TITLE",
-			"i18NDescription": "UFE_NEWSFEED_LIST_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 6,
-			"y": 0,
-			"w": 2,
-			"h": 4
-		},
-		"category": "Business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-newsfeedapp-list/newsfeedList.js",
-		"thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
-		"entitlements": "OPEN_DASHBOARD"
-	},
-	{
-		"id": 3,
-		"name": "UFE_NEWSFEED_SLIDESHOW",
-		"type": "umd",
-		"identifier": "NewsfeedSlideshow",
-		"info":
-		{
-			"i18NTitle": "UFE_NEWSFEED_SLIDESHOW_TITLE",
-			"i18NDescription": "UFE_NEWSFEED_SLIDESHOW_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 3,
-			"w": 4,
-			"h": 2
-		},
-		"category": "Business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-newsfeedapp-slideshow/newsfeedSlideshow.js",
-		"thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
-		"entitlements": "OPEN_DASHBOARD"
-	},
-	{
-		"id": 4,
-		"name": "UFE_TILE_KARAF",
-		"type": "umd",
-		"identifier": "Tile",
-		"info":
-		{
-			"i18NTitle": "UFE_TILE_KARAF_TILE",
-			"i18NDescription": "UFE_TILE_KARAF_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 4,
-			"y": 3,
-			"w": 1,
-			"h": 1
-		},
-		"category": "Business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-tile/tile.js",
-		"thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
-		"entitlements": "OPEN_DASHBOARD",
-		"initialProps":
-		{
-			"journeyi18n": "tile_karaf",
-			"journeyId": 8,
-			"imageURL": "../../../../v3/widgets/omni-widget-tile/assets/images/deposit.svg"
-		}
-	},
-	{
-		"id": 5,
-		"name": "UFE_WIDGET_SAMPLE",
-		"type": "umd",
-		"identifier": "Sample",
-		"info":
-		{
-			"i18NTitle": "UFE_WIDGET_SAMPLE",
-			"i18NDescription": "UFE_WIDGET_SAMPLE_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 5,
-			"w": 2,
-			"h": 2
-		},
-		"category": "add_widget_screen_business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-sample/sample.js",
-		"thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-sample/sampleWidgetThumbnail.png",
-		"entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
-	},
-	{
-		"id": 6,
-		"name": "UFE_WIDGET_HIGHCHARTS",
-		"type": "umd",
-		"identifier": "Highcharts",
-		"info":
-		{
-			"i18NTitle": "UFE_WIDGET_HIGHCHARTS",
-			"i18NDescription": "UFE_WIDGET_HIGHCHARTS_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 5,
-			"w": 2,
-			"h": 2
-		},
-		"category": "add_widget_screen_business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-highchart/highcharts.js",
-		"thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-highchart/highchartsWidgetThumbnail.png",
-		"entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
-	},
-	{
-		"id": 7,
-		"name": "UFE_WIDGET_CONTEXT",
-		"type": "umd",
-		"identifier": "Context",
-		"info":
-		{
-			"i18NTitle": "UFE_WIDGET_CONTEXT",
-			"i18NDescription": "UFE_WIDGET_CONTEXT_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 5,
-			"w": 2,
-			"h": 2
-		},
-		"category": "add_widget_screen_business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-context/context.js",
-		"thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-context/contextWidgetThumbnail.png",
-		"entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
-	},
-	{
-		"id": 8,
-		"name": "UFE_WIDGET_EDIT_CONTEXT",
-		"type": "umd",
-		"identifier": "Editcontext",
-		"info":
-		{
-			"i18NTitle": "UFE_WIDGET_EDIT_CONTEXT",
-			"i18NDescription": "UFE_WIDGET_EDIT_CONTEXT_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 5,
-			"w": 2,
-			"h": 2
-		},
-		"category": "add_widget_screen_business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-editcontext/editcontext.js",
-		"thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-editcontext/editContextWidgetThumbnail.png",
-		"entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
-	},
-	{
-		"id": 9,
-		"name": "UFE_WIDGET_DEPENDENCY_TEST",
-		"type": "umd",
-		"identifier": "Dependency",
-		"info":
-		{
-			"i18NTitle": "UFE_WIDGET_DEPENDENCY_TEST",
-			"i18NDescription": "UFE_WIDGET_DEPENDENCY_TEST_DESCRIPTION"
-		},
-		"version": "1.0",
-		"defaultSize":
-		{
-			"x": 0,
-			"y": 5,
-			"w": 2,
-			"h": 2
-		},
-		"category": "add_widget_screen_business",
-		"url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-dependency/dependency.js",
-		"thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-dependency/dependencyWidgetThumbnail.png",
-		"entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH",
-		"shouldWidgetWait": "true",
-		"awaitTime": 10000
-	}],
-	"loginCustomFields": [],
-	"userInfoFields":
-	{
-		"user_detail_main_label": "${firstName} ${lastName}",
-		"user_detail_main_position_label": "${username}",
-		"user_detail_secondary_label": "${email}"
-	},
-	"authenticationURL": "",
-	"entitlementsURL": "/bin/mvc.do/foundation/v4/eam/entitlements/user",
-	"customAuthentication": "",
-	"floatingWidgets":
-	{
-		"Calculator":
-		{
-			"src": "/content/digitaljourney/foundation/v3/floating-components/omni-floating-widget-calculator/floating-widget-calculator.umd.min.js"
-		}
-	}
+  "useInteractionSharedJourneys": false,
+  "navigation": "TABS",
+  "mobileUFEThreshold": {
+    "value": false,
+    "minDesktopWidth": 600
+  },
+  "threesixtyConfigs": {
+    "unique": false,
+    "url": "/content/digitaljourney/foundation/v3/threesixties/omni-journey-threesixty/modules/",
+    "allowMultipleNewInteractionsWithSameCustomer": false,
+    "singleSearchResultAutomaticContext": false,
+    "contentVersion": "v3",
+    "openOnStart": false,
+    "collapsedOnStart": false,
+    "collapsePanel": "horizontal",
+    "collapsedPanelSize": "70px",
+    "panelSize": "320px",
+    "closeIcon": "icon-close",
+    "interactionsLimit": 5,
+    "searchItemSplitter": true,
+    "emptySearchItemValue": "No value",
+    "searchItemPresentation": [["primaryName"], ["number", "secondaryName"]],
+    "dispatchSearchOnChange": true
+  },
+  "headerGenericExtensions": {
+    "InlineManager": {
+      "friendlyName": "Inline Manager",
+      "url": "/content/digitaljourney/foundation/v3/extensions/inlinemanager/inline-manager.umd.min.js",
+      "libraryname": "inlinemanager",
+      "entitlements": "INLINE_MANAGER:SHOW",
+      "openOnStart": false,
+      "buttonVisibleWhenOpen": true
+    }
+  },
+  "notificationConfigs": {
+    "useSnackbarUINotificationsOnly": false,
+    "snackbarUiAnimationLocation": {
+      "vertical": "bottom",
+      "horizontal": "right"
+    },
+    "filterButtonType": "Icon",
+    "dateType": "date-time",
+    "useWSConnections": true,
+    "useAggregator": true,
+    "snackbarLimit": 3
+  },
+  "ufeSessionTimeout": true,
+  "sessionExpirationTime": "30:00",
+  "sessionExpirationWarning": "05:00",
+  "sessionExpirationCriticalWarning": "01:00",
+  "refreshSessionCoolDown": "01:00",
+  "logoutSamlConfig": "http://www.google.pt",
+  "defaultType": "light",
+  "defaultDirection": "ltr",
+  "useMenuOrdering": false,
+  "useMenuSearchOnChange": false,
+  "menuLayout": "MENU_LAYOUT_GRID",
+  "showUserMenuByDefault": false,
+  "saveTimeout": 5000,
+  "globalSearchPatterns": {
+    "ProcessesNameMatchMinLength": 3,
+    "ProcessesActionMatchMinLength": 1
+  },
+  "menuFavourites": {
+    "selectedIcon": "icon-wishlist-full",
+    "unselectedIcon": "icon-wishlist-full"
+  },
+  "circularProgress": {
+    "warning": {
+      "path": "theme.palette.common.yellow",
+      "trail": {
+        "color": "theme.palette.common.black",
+        "opacity": 0.3
+      }
+    },
+    "critical": {
+      "path": "theme.palette.error.main",
+      "trail": {
+        "color": "theme.palette.common.black",
+        "opacity": 0.3
+      }
+    },
+    "default": {
+      "path": "theme.palette.common.white",
+      "trail": {
+        "color": "theme.palette.common.white",
+        "opacity": 0.5
+      }
+    }
+  },
+  "journeys": [
+    {
+      "id": 1,
+      "title": "Dashboard Customer",
+      "version": "1.0",
+      "type": "context_unique",
+      "contentVersion": "v3",
+      "icon": "icon-dashboard_big",
+      "listIcon": "icon-dashboard_small",
+      "i18NLabel": "dashboard_customer",
+      "notificationsAutoTimeoutInms": 3000,
+      "journeyUrl": "/content/digitaljourney/foundation/v3/journeys/omni-journey-dashboard/modules/",
+      "useBackoffice": false,
+      "ignoreUserPrefs": false,
+      "editable": {
+        "draggable": true,
+        "resizable": false,
+        "removable": true
+      },
+      "isHomePage": "true",
+      "subHeaderContent": {
+        "components": ["dashboardWidgets"],
+        "style": "primary"
+      },
+      "layoutSettings": {
+        "breakpoints": {
+          "lg": 1300,
+          "md": 1100,
+          "sm": 900,
+          "xs": 700,
+          "xxs": 400
+        },
+        "cols": {
+          "lg": 8,
+          "md": 6,
+          "sm": 4,
+          "xs": 2,
+          "xxs": 1
+        },
+        "rowHeight": 180
+      },
+      "widgets": [
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "w": 1,
+          "h": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Api Sample",
+      "version": "1.0",
+      "i18NLabel": "sample",
+      "contentVersion": "v3",
+      "entitlement": "OPEN_SAMPLE",
+      "shouldBeNotifiedBeforeUnload": true,
+      "createJourneyDirty": true,
+      "icon": "icon-appmanual_big",
+      "listIcon": "icon-appmanual_small",
+      "journeyUrl": "/content/digitaljourney/ufe/v3/journeys/api-sample-journey/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "globalSearchSpecs": [
+        {
+          "id": 1,
+          "filterPattern": "^9[1,2,3,6][0-9]{7}$",
+          "actionJourney": "charge_prepaid",
+          "i18NsearchDescription": "vt_tc_gs_charges",
+          "icon": "icon-mobile"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Journey Designer",
+      "version": "1.0",
+      "icon": "icon-journeydesigner_big",
+      "listIcon": "icon-journeydesigner_small",
+      "i18NLabel": "journey_designer",
+      "journeyUrl": "/content/digitaljourney/journeydesigner/v2/journeys/omni-journey-journeydesigner/modules/",
+      "useBackoffice": true,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "lock_timeout": 300000,
+      "notification_timeout": 3000,
+      "shouldBeNotifiedBeforeUnload": true,
+      "journeyListRecordsLimit": 10,
+      "journeyVersionFreeForm": false,
+      "groovyEditorConfig": {
+        "constants": ["request", "response", "instance", "variables"]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Ui Demo",
+      "version": "1.0",
+      "type": "context_unique",
+      "contentVersion": "v3",
+      "icon": "icon-uilibrary_big",
+      "listIcon": "icon-uilibrary_small",
+      "i18NLabel": "ui_lib",
+      "journeyUrl": "/content/digitaljourney/foundation/v3/journeys/ui-demo-journey/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 5,
+      "title": "UAM",
+      "version": "1.0",
+      "i18NLabel": "uam_label",
+      "type": "context_unique",
+      "icon": "icon-uam_big",
+      "listIcon": "icon-uam_small",
+      "notificationsAutoTimeoutInms": 3000,
+      "numberOfRecordsPerTablePage": 19,
+      "shouldShowEntitlements": true,
+      "uamUserJourneyId": 6,
+      "uamRolesJourneyId": 7,
+      "uamEntitlementJourneyId": 14,
+      "journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 6,
+      "title": "UAM USER",
+      "version": "1.0",
+      "i18NLabel": "uam_user",
+      "icon": "icon-uam_big",
+      "listIcon": "icon-uam_small",
+      "notificationsAutoTimeoutInms": 3000,
+      "numberOfRecordsPerTablePage": 10,
+      "journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam-user/modules/",
+      "useBackoffice": false,
+      "hideDomain": false,
+      "requiredFields": {
+        "firstName": true,
+        "lastName": false,
+        "email": false,
+        "status": false
+      },
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "globalSearchSpecs": [
+        {
+          "id": 1,
+          "filterPattern": "^[0-9]*$",
+          "actionJourney": "id",
+          "i18NsearchDescription": "uam_user_id_view_detail",
+          "icon": "icon-balancetransaction"
+        },
+        {
+          "id": 2,
+          "filterPattern": "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$",
+          "actionJourney": "email",
+          "i18NsearchDescription": "uam_user_email_view_detail",
+          "icon": "icon-balancetransaction"
+        },
+        {
+          "id": 3,
+          "filterPattern": "^^[a-zA-Z0-9_\\-+_@&$#%\\s]*$",
+          "actionJourney": "name",
+          "i18NsearchDescription": "uam_user_name_view_detail",
+          "icon": "icon-balancetransaction"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "UAM ROLES",
+      "version": "1.0",
+      "i18NLabel": "uam_roles",
+      "icon": "icon-uam_big",
+      "listIcon": "icon-uam_small",
+      "notificationsAutoTimeoutInms": 3000,
+      "numberOfRecordsPerTablePage": 10,
+      "journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-uam-roles/modules/",
+      "useBackoffice": false,
+      "requiredFields": {
+        "description": false
+      },
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "globalSearchSpecs": [
+        {
+          "id": 1,
+          "filterPattern": "^[0-9]*$",
+          "actionJourney": "id",
+          "i18NsearchDescription": "uam_roles_id_view_detail",
+          "icon": "icon-balancetransaction"
+        },
+        {
+          "id": 2,
+          "filterPattern": "^[a-zA-Z0-9_\\-+_@&$#%\\s]*$",
+          "actionJourney": "name",
+          "i18NsearchDescription": "uam_roles_name_view_detail",
+          "icon": "icon-balancetransaction"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Karaf",
+      "version": "1.0",
+      "i18NLabel": "karaf",
+      "type": "context_unique",
+      "icon": "icon-appserver_big",
+      "listIcon": "icon-appserver_small",
+      "journeyUrl": "/system/console/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Sling",
+      "version": "1.0",
+      "i18NLabel": "sling",
+      "type": "context_unique",
+      "icon": "icon-contentmgmt_big",
+      "listIcon": "icon-contentmgmt_small",
+      "journeyUrl": "/bin/browser.html/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Log Viewer",
+      "version": "1.0",
+      "type": "context_unique",
+      "contentVersion": "v1",
+      "icon": "icon-logviewer_big",
+      "listIcon": "icon-logviewer_small",
+      "i18NLabel": "logviewer",
+      "journeyUrl": "/content/digitaljourney/logviewer/v1/journeys/omni-journey-logviewer/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Cache Manager",
+      "version": "1.0",
+      "type": "context_unique",
+      "icon": "icon-cachemgr_big",
+      "listIcon": "icon-cachemgr_small",
+      "i18NLabel": "cache_manager",
+      "journeyUrl": "/content/digitaljourney/cachemanagerapp/journeys/omni-journey-cache-manager/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Application Manual",
+      "version": "1.0",
+      "contentVersion": "v3",
+      "type": "context_unique",
+      "icon": "icon-appmanual_big",
+      "listIcon": "icon-appmanual_small",
+      "i18NLabel": "application_manual",
+      "journeyUrl": "/content/digitaljourney/foundation/v3/journeys/application-manual/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Backoffice",
+      "version": "2.0",
+      "i18NLabel": "backoffice",
+      "contentVersion": "v2",
+      "icon": "icon-configeditor_big",
+      "listIcon": "icon-configeditor_small",
+      "journeyUrl": "/content/digitaljourney/backoffice/v2/journeys/omni-journey-backoffice/modules/",
+      "useBackoffice": true,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "globalSearchSpecs": [],
+      "entitlements": "BACKOFFICE:EDIT"
+    },
+    {
+      "id": 14,
+      "title": "UAM Entitlements",
+      "version": "1.0",
+      "i18NLabel": "uam_label",
+      "icon": "icon-uam_big",
+      "listIcon": "icon-uam_small",
+      "notificationsAutoTimeoutInms": 3000,
+      "numberOfRecordsPerTablePage": 10,
+      "journeyUrl": "/content/digitaljourney/operationconsole/v3/journeys/omni-journey-entitlements/modules/",
+      "useBackoffice": false,
+      "requiredFields": {
+        "description": false
+      },
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "globalSearchSpecs": []
+    },
+    {
+      "id": 15,
+      "title": "Glances Library",
+      "version": "1.0",
+      "type": "context_unique",
+      "icon": "view_module",
+      "i18NLabel": "glances_library",
+      "appUrl": "/bin/mvc.do/glances/v2",
+      "journeyUrl": "/content/digitaljourney/glances/v2/journeys/omni-journey-backoffice-library/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "widgetsJourneyId": 16,
+      "dashboardsJourneyId": 17
+    },
+    {
+      "id": 16,
+      "title": "Glances Widget",
+      "version": "1.0",
+      "type": "context_unique",
+      "icon": "timeline",
+      "i18NLabel": "glances_widget",
+      "appUrl": "/bin/mvc.do/glances/v2",
+      "journeyUrl": "/content/digitaljourney/glances/v1/journeys/omni-journey-backoffice-widget/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "libraryJourneyId": 15
+    },
+    {
+      "id": 17,
+      "title": "Glances Dashboard",
+      "version": "1.0",
+      "type": "context_unique",
+      "icon": "widgets",
+      "i18NLabel": "glances_dashboard",
+      "appUrl": "/bin/mvc.do/glances/v2",
+      "journeyUrl": "/content/digitaljourney/glances/v1/journeys/omni-journey-backoffice-dashboard/modules/",
+      "useBackoffice": false,
+      "subHeaderContent": {
+        "style": "secondary"
+      },
+      "libraryJourneyId": 15
+    },
+    {
+      "id": 20,
+      "title": "Order Management",
+      "version": "1.0",
+      "icon": "icon-appmanual_big",
+      "i18NLabel": "order_management_label",
+      "journeyUrl": "http://content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/"
+    },
+    {
+      "id": 21,
+      "title": "Local Sandbox (Development)",
+      "version": "1.0",
+      "icon": "icon-appmanual_big",
+      "i18NLabel": "local_sandbox_label",
+      "journeyUrl": "http://localhost:3000"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Business",
+      "i18NLabel": "fes_business",
+      "entitlement": "OPEN_BUSINESS",
+      "processesOrder": [
+        {
+          "order": 1,
+          "processId": 1
+        },
+        {
+          "order": 2,
+          "processId": 3
+        },
+        {
+          "order": 3,
+          "processId": 20
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Development",
+      "i18NLabel": "development",
+      "entitlement": "OPEN_PRODUCTS",
+      "processesOrder": [
+        {
+          "order": 1,
+          "processId": 2
+        },
+        {
+          "order": 2,
+          "processId": 4
+        },
+        {
+          "order": 3,
+          "processId": 12
+        },
+        {
+          "order": 4,
+          "processId": 21
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Administrative Tools",
+      "i18NLabel": "admin_cat",
+      "entitlement": "OPEN_ADMIN",
+      "processesOrder": [
+        {
+          "order": 1,
+          "processId": 8
+        },
+        {
+          "order": 2,
+          "processId": 9
+        },
+        {
+          "order": 3,
+          "processId": 10
+        },
+        {
+          "order": 4,
+          "processId": 5
+        },
+        {
+          "order": 5,
+          "processId": 11
+        },
+        {
+          "order": 6,
+          "processId": 13
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Telco Journeys",
+      "i18NLabel": "telco_journeys",
+      "entitlement": "_OPEN_PRODUCTS",
+      "processesOrder": [
+        {
+          "order": 1,
+          "processId": 15
+        },
+        {
+          "order": 2,
+          "processId": 16
+        },
+        {
+          "order": 3,
+          "processId": 17
+        }
+      ]
+    }
+  ],
+  "entitlements": {
+    "ufeNoSessionTimeout": "UFE_NO_SESSION_TIMEOUT",
+    "header": {
+      "genericExtensionPoint": "UFE_GENERIC_EXTENSION:SHOW",
+      "threesixty": "UFE_360:SHOW",
+      "threesixtyTimer": "UFE_360_TIMER:SHOW",
+      "threesixtyOpenWithoutContext": "UFE_360_OPEN_WITHOUT_CONTEXT:SHOW",
+      "globalSearch": "UFE_GLOBAL_SEARCH:SHOW",
+      "cti": "UFE_CTI",
+      "inline": "UFE_INLINE",
+      "userMenu": {
+        "privateMode": "UFE_PRIVATE_MODE:SHOW",
+        "changeStatus": "UFE_CHANGE_STATUS:SHOW",
+        "userSettings": "UFE_USER_SETTINGS:SHOW"
+      },
+      "userSettingsOverlay": {
+        "generalTab": "SETTINGS_GENERAL_TAB",
+        "userInfo": "SETTINGS_USER_INFO",
+        "editUserInfo": "SETTINGS_EDIT_USER_INFO",
+        "direction": "UFE_USER_SETTINGS_DIRECTION:SHOW",
+        "themeType": "UFE_USER_SETTINGS_THEME_TYPE:SHOW",
+        "changeLanguage": "SETTINGS_CHANGE_LANGUAGE",
+        "changePasswordTab": "SETTINGS_CHANGE_PASSWORD_TAB",
+        "activeSessionsTab": "SETTINGS_ACTIVE_SESSIONS_TAB",
+        "resetProfileTab": "SETTINGS_RESET_PROFILE_TAB"
+      }
+    },
+    "subHeader": {
+      "menu": "UFE_MENU:SHOW",
+      "menuFavourites": "UFE_MENU_FAVOURITES:SHOW",
+      "taskSwitcher": "UFE_TASK_SWITCHER:SHOW",
+      "dashboardWidgets": {
+        "self": "UFE_DASHBOARD_WIDGETS:SHOW",
+        "editMode": "UFE_DASHBOARD_WIDGETS_EDIT_MODE:SHOW",
+        "addWidget": "UFE_DASHBOARD_WIDGETS_ADD_WIDGET:SHOW"
+      },
+      "journeyMenu": {
+        "journeyList": "UFE_MENU_JOURNEY_LIST:SHOW"
+      },
+      "tabs": {
+        "breadcrumbs": "UFE_BREADCRUMBS"
+      }
+    },
+    "notifications": {
+      "contextual": "UFE_CONTEXTUAL_NOTIFICATIONS:SHOW",
+      "nonContextual": "UFE_NON_CONTEXTUAL_NOTIFICATIONS:SHOW",
+      "notificationCenter": "UFE_NOTIFICATIONS_CENTER:SHOW"
+    },
+    "footer": "UFE_FOOTER:SHOW"
+  },
+  "widgets": [
+    {
+      "id": 1,
+      "name": "UFE_WORKQUEUE",
+      "type": "umd",
+      "identifier": "Workqueue",
+      "info": {
+        "i18NTitle": "UFE_WORKQUEUE_TITLE",
+        "i18NDescription": "UFE_WORKQUEUE_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 3
+      },
+      "category": "Business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-workqueue/workqueue.min.js",
+      "thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
+      "entitlements": "OPEN_DASHBOARD"
+    },
+    {
+      "id": 2,
+      "name": "UFE_NEWSFEED_LIST",
+      "type": "umd",
+      "identifier": "NewsfeedList",
+      "info": {
+        "i18NTitle": "UFE_NEWSFEED_LIST_TITLE",
+        "i18NDescription": "UFE_NEWSFEED_LIST_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 6,
+        "y": 0,
+        "w": 2,
+        "h": 4
+      },
+      "category": "Business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-newsfeedapp-list/newsfeedList.js",
+      "thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
+      "entitlements": "OPEN_DASHBOARD"
+    },
+    {
+      "id": 3,
+      "name": "UFE_NEWSFEED_SLIDESHOW",
+      "type": "umd",
+      "identifier": "NewsfeedSlideshow",
+      "info": {
+        "i18NTitle": "UFE_NEWSFEED_SLIDESHOW_TITLE",
+        "i18NDescription": "UFE_NEWSFEED_SLIDESHOW_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 3,
+        "w": 4,
+        "h": 2
+      },
+      "category": "Business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-newsfeedapp-slideshow/newsfeedSlideshow.js",
+      "thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
+      "entitlements": "OPEN_DASHBOARD"
+    },
+    {
+      "id": 4,
+      "name": "UFE_TILE_KARAF",
+      "type": "umd",
+      "identifier": "Tile",
+      "info": {
+        "i18NTitle": "UFE_TILE_KARAF_TILE",
+        "i18NDescription": "UFE_TILE_KARAF_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 4,
+        "y": 3,
+        "w": 1,
+        "h": 1
+      },
+      "category": "Business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-tile/tile.js",
+      "thumbnailUrl": "RELATIVE_PATH_TO_WIDGET_THUMBNAIL_IMAGE",
+      "entitlements": "OPEN_DASHBOARD",
+      "initialProps": {
+        "journeyi18n": "tile_karaf",
+        "journeyId": 8,
+        "imageURL": "../../../../v3/widgets/omni-widget-tile/assets/images/deposit.svg"
+      }
+    },
+    {
+      "id": 5,
+      "name": "UFE_WIDGET_SAMPLE",
+      "type": "umd",
+      "identifier": "Sample",
+      "info": {
+        "i18NTitle": "UFE_WIDGET_SAMPLE",
+        "i18NDescription": "UFE_WIDGET_SAMPLE_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 5,
+        "w": 2,
+        "h": 2
+      },
+      "category": "add_widget_screen_business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-sample/sample.js",
+      "thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-sample/sampleWidgetThumbnail.png",
+      "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
+    },
+    {
+      "id": 6,
+      "name": "UFE_WIDGET_HIGHCHARTS",
+      "type": "umd",
+      "identifier": "Highcharts",
+      "info": {
+        "i18NTitle": "UFE_WIDGET_HIGHCHARTS",
+        "i18NDescription": "UFE_WIDGET_HIGHCHARTS_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 5,
+        "w": 2,
+        "h": 2
+      },
+      "category": "add_widget_screen_business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-highchart/highcharts.js",
+      "thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-highchart/highchartsWidgetThumbnail.png",
+      "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
+    },
+    {
+      "id": 7,
+      "name": "UFE_WIDGET_CONTEXT",
+      "type": "umd",
+      "identifier": "Context",
+      "info": {
+        "i18NTitle": "UFE_WIDGET_CONTEXT",
+        "i18NDescription": "UFE_WIDGET_CONTEXT_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 5,
+        "w": 2,
+        "h": 2
+      },
+      "category": "add_widget_screen_business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-context/context.js",
+      "thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-context/contextWidgetThumbnail.png",
+      "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
+    },
+    {
+      "id": 8,
+      "name": "UFE_WIDGET_EDIT_CONTEXT",
+      "type": "umd",
+      "identifier": "Editcontext",
+      "info": {
+        "i18NTitle": "UFE_WIDGET_EDIT_CONTEXT",
+        "i18NDescription": "UFE_WIDGET_EDIT_CONTEXT_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 5,
+        "w": 2,
+        "h": 2
+      },
+      "category": "add_widget_screen_business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-editcontext/editcontext.js",
+      "thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-editcontext/editContextWidgetThumbnail.png",
+      "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH"
+    },
+    {
+      "id": 9,
+      "name": "UFE_WIDGET_DEPENDENCY_TEST",
+      "type": "umd",
+      "identifier": "Dependency",
+      "info": {
+        "i18NTitle": "UFE_WIDGET_DEPENDENCY_TEST",
+        "i18NDescription": "UFE_WIDGET_DEPENDENCY_TEST_DESCRIPTION"
+      },
+      "version": "1.0",
+      "defaultSize": {
+        "x": 0,
+        "y": 5,
+        "w": 2,
+        "h": 2
+      },
+      "category": "add_widget_screen_business",
+      "url": "/content/digitaljourney/foundation/v3/widgets/omni-widget-dependency/dependency.js",
+      "thumbnailUrl": "/content/digitaljourney/foundation/v3/widgets/omni-widget-dependency/dependencyWidgetThumbnail.png",
+      "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH",
+      "shouldWidgetWait": "true",
+      "awaitTime": 10000
+    }
+  ],
+  "loginCustomFields": [],
+  "userInfoFields": {
+    "user_detail_main_label": "${firstName} ${lastName}",
+    "user_detail_main_position_label": "${username}",
+    "user_detail_secondary_label": "${email}"
+  },
+  "authenticationURL": "",
+  "entitlementsURL": "/bin/mvc.do/foundation/v4/eam/entitlements/user",
+  "customAuthentication": "",
+  "floatingWidgets": {
+    "Calculator": {
+      "src": "/content/digitaljourney/foundation/v3/floating-components/omni-floating-widget-calculator/floating-widget-calculator.umd.min.js"
+    }
+  }
 }
