@@ -1,6 +1,0 @@
-"APPKAR_PERMISSION_ALL" : create permission "appkar:*" "Kar App Description full permission";
-"APPKAR_PERMISSION_CREATE" : create permission "appkar:create" "Kar App Description create permission";
-"APPKAR_PERMISSION_READ" : create permission "appkar:read" "Kar App Description read permission";
-"APPKAR_PERMISSION_UPDATE" : create permission "appkar:update" "Kar App Description update permission";
-"APPKAR_PERMISSION_DELETE" : create permission "appkar:delete" "Kar App Description delete permission";
-"APPKAR_PERMISSION_EXECUTE" : create permission "appkar:execute" "Kar App Description execute permission";

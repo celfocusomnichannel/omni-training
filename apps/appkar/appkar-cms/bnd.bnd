@@ -1,7 +1,0 @@
-Bundle-SymbolicName: ${bundle.symbolicName}
-Bundle-Name: ${bundle.name}
-Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
-Bundle-Category: ${bundle.category}
-Sling-Initial-Content: \
-	SLING-INF/content/libs/appkar;overwrite:=true;ignoreImportProviders:=json;path:=/libs/appkar,\
-	SLING-INF/content/libs/appkar-data;overwrite:=true;path:=/libs/appkar-data

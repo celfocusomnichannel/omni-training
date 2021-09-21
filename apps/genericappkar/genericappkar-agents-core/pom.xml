@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+		<artifactId>genericappkar</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../genericappkar</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<artifactId>genericappkar-agents-core</artifactId>
+	
+	<name>Apps :: Generic Kar App Description :: Core Agent</name>
+	<description>Generic Kar App Description Core Agent</description>
+
+	<!-- ====================================================================== -->
+	<!-- B U I L D D E F I N I T I O N -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-annotation-processor-sources</id>
+						<phase>generate-sources</phase>
+					</execution>
+					<execution>
+						<id>add-generated-webapp</id>
+						<phase>generate-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.service-api.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+		<!-- Services -->
+		<dependency>	
+			<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+			<artifactId>genericappkar-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>	
+			<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+			<artifactId>genericappkar-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Utils -->
+		<dependency>
+			<groupId>net.karneim</groupId>
+			<artifactId>pojobuilder</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Micro service API -->
+		<!-- dependency>
+			Insert some suitable/correlated microservice reference
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId>my-microservice-service-api</artifactId>
+			<scope>compile</scope>
+		</dependency -->
+	</dependencies>
+
+</project>
