@@ -1,0 +1,6 @@
+"CATEGORYMANAGEMENTAPP_PERMISSION_ALL" : create permission "categorymanagementapp:*" "App to manage categories full permission";
+"CATEGORYMANAGEMENTAPP_PERMISSION_CREATE" : create permission "categorymanagementapp:create" "App to manage categories create permission";
+"CATEGORYMANAGEMENTAPP_PERMISSION_READ" : create permission "categorymanagementapp:read" "App to manage categories read permission";
+"CATEGORYMANAGEMENTAPP_PERMISSION_UPDATE" : create permission "categorymanagementapp:update" "App to manage categories update permission";
+"CATEGORYMANAGEMENTAPP_PERMISSION_DELETE" : create permission "categorymanagementapp:delete" "App to manage categories delete permission";
+"CATEGORYMANAGEMENTAPP_PERMISSION_EXECUTE" : create permission "categorymanagementapp:execute" "App to manage categories execute permission";

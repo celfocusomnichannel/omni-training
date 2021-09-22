@@ -25,6 +25,8 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/kar/archive</dependency>
+                            <!-- Training -->
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/kar/archive</dependency>
                             <!-- Apps -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/foundation-karafarchive/${platform.plugins.apps.foundation.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/ufe-karafarchive/${platform.plugins.apps.ufe.version}/kar/archive</dependency>
@@ -36,6 +38,7 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/kar/archive</dependency>
                             <!--  Training -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/categorymanagementapp-karafarchive/${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -71,7 +74,9 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/cachemanagerapp-karafarchive/${platform.plugins.apps.cachemanagerapp.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/xml/features</repository>
                             <!-- Training -->
+							<repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>                            
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/categorymanagementapp-karafarchive/${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}/xml/features</repository>
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>
@@ -87,6 +92,7 @@
                             <feature>journeyworkflowengine-gateway-aspect-mvc</feature>
                             <!-- Training -->
                             <feature>trainingbase</feature>
+                            <feature>categorymanagementapp</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->

@@ -14,5 +14,6 @@
     <!-- ====================================================================== -->
     <modules>
         <module>../../apps/trainingbase/trainingbase</module>
+        <module>../../apps/categorymanagementapp/categorymanagementapp</module>
     </modules>
 </project>
