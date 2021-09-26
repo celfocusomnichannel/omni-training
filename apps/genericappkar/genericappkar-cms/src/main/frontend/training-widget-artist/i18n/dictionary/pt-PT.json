@@ -1,0 +1,8 @@
+{
+    "search_music_artist": "Search any music Artist*",
+    "enter_music_artist": "Enter your query*",
+    "result_count": "Limit*",
+    "artist_not_found": "No Artist found for this query*",
+    "loading": "Loading...*",
+    "search": "Search*"
+}
