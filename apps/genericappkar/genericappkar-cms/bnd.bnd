@@ -3,5 +3,5 @@ Bundle-Name: ${bundle.name}
 Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
 Bundle-Category: ${bundle.category}
 Sling-Initial-Content: \
-	SLING-INF/content/libs/genericappkar;overwrite:=true;ignoreImportProviders:=json;path:=/libs/genericappkar,\
-	SLING-INF/content/libs/genericappkar-data;overwrite:=true;path:=/libs/genericappkar-data
+	SLING-INF/content/libs/training/genericappkar;overwrite:=true;ignoreImportProviders:=json;path:=/libs/training/genericappkar,\
+	SLING-INF/content/libs/training/genericappkar-data;overwrite:=true;path:=/libs/training/genericappkar-data

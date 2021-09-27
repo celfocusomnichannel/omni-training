@@ -1,4 +1,4 @@
-export const getArtistInfo = function (HttpClient, artistName, limit = 2) {
+export const getArtistSongs = function (HttpClient, artistName, limit = 2) {
   let config = {
     method: "get",
     url:

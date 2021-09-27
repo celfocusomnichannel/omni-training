@@ -1,13 +1,16 @@
 import React from "react";
 import { withRootHoc } from "omni-widget";
-import { getArtistInfo } from "./services/dataService";
+import { getArtistSongs } from "./services/dataService";
 import { useSelector } from "react-redux";
-import ArtistInfo from "./components/ArtistInfo";
+
+import { withStyles } from "@ui-lib/core/styles";
+import { styles } from "./widgetStyle";
+
 import Typography from "@ui-lib/core/Typography";
 import TextField from "@ui-lib/core/TextField";
 import Button from "@ui-lib/core/Button";
-import { withStyles } from "@ui-lib/core/styles";
-import { styles } from "./widgetStyle";
+
+import ArtistInfo from "./components/ArtistInfo";
 
 function Widget({ classes }) {
   const { I18nProvider, HttpClient } = useSelector((store) => {
@@ -17,22 +20,23 @@ function Widget({ classes }) {
     };
   });
 
-  const [artists, setArtists] = React.useState([]);
   const [artistName, setArtistName] = React.useState("Taylor Swift");
   const [limit, setLimit] = React.useState(20);
+  const [songs, setSongs] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
   const searchArtist = React.useCallback(() => {
     setLoading(true);
-    getArtistInfo(HttpClient, artistName, limit)
-      .then((artistsList = []) => {
-        setArtists(artistsList);
+    getArtistSongs(HttpClient, artistName, limit)
+      .then((songsList = []) => {
+        setSongs(songsList);
         setLoading(false);
       })
       .catch(() => {
         setLoading(false);
       });
   }, [artistName, limit, HttpClient]);
+
   React.useEffect(() => {
     searchArtist();
   }, []);
@@ -67,9 +71,9 @@ function Widget({ classes }) {
         </Button>
       </div>
 
-      {!loading && artists && artists.length > 0 ? (
+      {!loading && songs && songs.length > 0 ? (
         <div className={classes.artistInfoContainer}>
-          {artists.map((artistInfo) => {
+          {songs.map((artistInfo) => {
             return (
               <a
                 href={artistInfo.trackViewUrl}
