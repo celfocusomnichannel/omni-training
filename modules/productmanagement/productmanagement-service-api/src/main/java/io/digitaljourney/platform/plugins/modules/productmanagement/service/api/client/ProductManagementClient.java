@@ -168,7 +168,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 			CategoryDTO responseCall = clientPath.get(CategoryDTO.class);
 			return WSData.of(responseCall).build();
 		});
-		if (!result.success() || result.data() == null) {
+		if (!result.success()) {
 			throw resultException(result);
 		}
 		return result.data();
@@ -228,7 +228,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 			ProductDTO responseCall = clientPath.get(ProductDTO.class);
 			return WSData.of(responseCall).build();
 		});
-		if (!result.success() || result.data() == null) {
+		if (!result.success()) {
 			throw resultException(result);
 		}
 		return result.data();

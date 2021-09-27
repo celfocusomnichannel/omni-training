@@ -47,6 +47,6 @@ public final class AppProperties extends JourneyMVCProperties {
 
 	public static final String ORDERMANAGEMENT000 = "ORDERMANAGEMENT000";
 	
-	public static final String JOURNEY_NAME = "CUSTOM_JOURNEY";
+	public static final String JOURNEY_NAME = "PRODUCT_CHECKOUT";
 	public static final int JOURNEY_VERSION = 1;
 }

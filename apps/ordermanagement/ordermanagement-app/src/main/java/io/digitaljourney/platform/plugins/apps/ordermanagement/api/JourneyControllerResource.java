@@ -1,5 +1,8 @@
 package io.digitaljourney.platform.plugins.apps.ordermanagement.api;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,11 +14,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
-import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
-
 import io.digitaljourney.platform.modules.commons.type.HttpStatusCode;
 import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiKeyAuthDefinition;
 import io.swagger.annotations.ApiKeyAuthDefinition.ApiKeyLocation;
@@ -58,6 +63,16 @@ import io.swagger.annotations.Tag;
 		@ApiResponse(code = HttpStatusCode.UNAUTHORIZED_CODE, message = RSProperties.SWAGGER_UNAUTHORIZED_MESSAGE),
 		@ApiResponse(code = HttpStatusCode.FORBIDDEN_CODE, message = RSProperties.SWAGGER_FORBIDDEN_MESSAGE) })
 public interface JourneyControllerResource {
+	
+	@GET
+	@Path("/init")
+	@ApiOperation(value = "Initializes blueprint import")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public void init();
 
 	@POST
 	@Path("/")
@@ -68,7 +83,7 @@ public interface JourneyControllerResource {
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
 	public CustomJourneyDTO create();
-
+	
 	@GET
 	@Path("/{instanceId}")
 	@ApiOperation(value = "Reads a process", notes = "Reads an existing process instance", response = CustomJourneyDTO.class)
@@ -80,26 +95,85 @@ public interface JourneyControllerResource {
 	public CustomJourneyDTO read(
 			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
 	
-	@PUT
-	@Path("/{instanceId}/custom")
-	@ApiOperation(value = "Change custom field", notes = "Changes custom field of an existing process instance", response = CustomJourneyDTO.class)
+	@GET
+	@Path("/{instanceId}/products")
+	@ApiOperation(value = "Get product list", response = CustomJourneyDTO.class)
 	@ApiResponses(value = {
-			@ApiResponse(code = 200, response = CustomJourneyDTO.class, message = "OK"),
-			@ApiResponse(code = 404, message = "Not Found"),
+			@ApiResponse(code = 200, response = ProductDTO.class, responseContainer = "Array", message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
-	public CustomJourneyDTO changeField(
-			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId,
-			@ApiParam(value = "New custom field value", required = true, example = "sample1") String value);
+	public List<ProductDTO> getProducts(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	
+	@GET
+	@Path("/{instanceId}/category")
+	@ApiOperation(value = "Get category", response = CustomJourneyDTO.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, response = CategoryDTO.class, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public CategoryDTO getCategory(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	
+	@GET
+	@Path("/{instanceId}/delivery-options")
+	@ApiOperation(value = "Get delivery option list", response = CustomJourneyDTO.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public List<HashMap<String, Object>> getDeliveryOptions(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
 	
 	@PUT
-	@Path("/{instanceId}/finish")
-	@ApiOperation(value = "Finish process", notes = "Finishes the process", response = CustomJourneyDTO.class)
+	@Path("/{instanceId}/products/{productId}")
+	@ApiOperation(value = "Select product", response = CustomJourneyDTO.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, response = CustomJourneyDTO.class, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public CustomJourneyDTO selectProduct(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId,
+			@ApiParam(value = "The unique identifier of the product", required = true, example = "1") @PathParam("productId") Integer productId
+			);
+	
+	@POST
+	@Path("/{instanceId}/order-create")
+	@ApiOperation(value = "Creates a order request", response = CustomJourneyDTO.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, response = CustomJourneyDTO.class, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public CustomJourneyDTO createOrder(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId
+			);
+	
+	@POST
+	@Path("/{instanceId}/customer-info")
+	@ApiOperation(value = "Updates the customer information", response = CustomJourneyDTO.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, response = CustomJourneyDTO.class, message = "OK"),
 			@ApiResponse(code = 404, message = "Not Found"),
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
-	public CustomJourneyDTO finish(
-			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	public CustomJourneyDTO updateCustomerInfo(@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId,
+			@ApiParam(value = "The customer information", required = true) CustomerInfoDTO customerInfo);
+
+	@POST
+	@Path("/{instanceId}/order-submit")
+	@ApiOperation(value = "Submits a order request", response = CustomJourneyDTO.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, response = CustomJourneyDTO.class, message = "OK"),
+			@ApiResponse(code = 404, message = "Not Found"),		
+			@ApiResponse(code = 500, message = "Internal Server Error")
+	})
+	public CustomJourneyDTO submitOrder(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId
+			);
+	
 }

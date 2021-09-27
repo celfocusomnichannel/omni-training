@@ -10,6 +10,7 @@
 			//FIXME Insert your microservice feature hete
 			<feature><microservice_name>-api</feature> 
 		-->
+		<feature>productmanagement-api</feature>
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-api/${project.version}</bundle>
 	</feature>
 
@@ -48,7 +49,7 @@
 
 	<feature name="ordermanagement-mvc-modules" description="OrderManagement MVC Modules" version="${project.version}"  install="manual">
 		<feature>ordermanagement-common-modules</feature>
-		<feature>cms-mvc</feature>
+		<feature>journeyworkflowengine-gateway-aspect-mvc</feature>
 		<feature>ordermanagement-agents-core</feature>
 
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-app/${project.version}</bundle>

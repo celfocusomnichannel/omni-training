@@ -27,6 +27,8 @@ import java.lang.annotation.Annotation;
 
 import io.digitaljourney.platform.modules.commons.AbstractConfigurableComponent;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.agent.OrderManagementCoreAgent;
+import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.JourneyBlueprintResource;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.ProductManagementResource;
 
 public abstract class AbstractOrderManagementCoreAgent<A extends Annotation> extends AbstractConfigurableComponent<A> implements OrderManagementCoreAgent {
 
@@ -37,6 +39,10 @@ public abstract class AbstractOrderManagementCoreAgent<A extends Annotation> ext
 	 * @return <microservice_name>Resource
 	 */
 	//protected abstract <microservice_name>Resource getResource();	
+	
+	protected abstract ProductManagementResource getProductManagementResource();
+	
+	protected abstract JourneyBlueprintResource getJourneyBlueprintResource();
 
 	/**
 	 * Gets the associated username.
