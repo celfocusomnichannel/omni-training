@@ -831,7 +831,7 @@
 				"h": 2
 			},
 			"category": "add_widget_screen_business",
-			"url": "/content/training/genericappkar/widgets/omni-training-widget-artist/TrainingWidgetArtist.js",
+			"url": "/content/training/genericappkar/v1/widgets/omni-training-widget-artist/TrainingWidgetArtist.js",
 			"entitlements": "OPEN_DASHBOARD"
 		}
 	],
