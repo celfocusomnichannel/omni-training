@@ -196,26 +196,6 @@
                 <artifactId>categorymanagementapp-cxf</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cxf.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>sampleappkar-agents-core</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.apps.sampleappkar-agents-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>sampleappkar-api</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.apps.sampleappkar-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>sampleappkar-common</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.apps.sampleappkar-common.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
-                <artifactId>sampleappkar-cxf</artifactId>
-                <version>${lib.io.digitaljourney.platform.plugins.apps.sampleappkar-cxf.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- ====================================================================== -->

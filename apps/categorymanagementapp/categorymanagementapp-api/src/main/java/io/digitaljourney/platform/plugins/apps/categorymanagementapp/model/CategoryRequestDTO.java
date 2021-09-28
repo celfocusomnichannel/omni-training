@@ -1,6 +1,8 @@
 package io.digitaljourney.platform.plugins.apps.categorymanagementapp.model;
 
-public class CategoryRequestDTO {
+import org.osgi.dto.DTO;
+
+public class CategoryRequestDTO extends DTO{
 	public Integer categoryId;
 	public String categoryName;
 }

@@ -3,5 +3,5 @@ Bundle-Name: ${bundle.name}
 Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
 Bundle-Category: ${bundle.category}
 Sling-Initial-Content: \
-	SLING-INF/content/libs/categorymanagementapp;overwrite:=true;ignoreImportProviders:=json;path:=/libs/categorymanagementapp,\
-	SLING-INF/content/libs/categorymanagementapp-data;overwrite:=true;path:=/libs/categorymanagementapp-data
+	SLING-INF/content/libs/training/categorymanagementapp;overwrite:=true;ignoreImportProviders:=json;path:=/libs/training/categorymanagementapp,\
+	SLING-INF/content/libs/training/categorymanagementapp-data;overwrite:=true;path:=/libs/training/categorymanagementapp-data
