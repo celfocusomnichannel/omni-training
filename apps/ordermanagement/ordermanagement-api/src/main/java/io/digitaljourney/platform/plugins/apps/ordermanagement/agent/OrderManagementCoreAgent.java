@@ -23,7 +23,13 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.agent;
 
+import java.util.List;
+
 import org.osgi.annotation.versioning.ProviderType;
+
+import io.digitaljourney.platform.plugins.modules.configurationmanager.service.api.dto.ConfigurationSearchResultDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 
 @ProviderType
 public interface OrderManagementCoreAgent {
@@ -46,4 +52,15 @@ public interface OrderManagementCoreAgent {
 	 * @return The given message
 	 */
 	public String secureEcho(String channel, String msg);
+
+	public List<ProductDTO> getProducts();
+	
+	public void createBlueprint(String journeyName, int journeyVersion, String path);
+
+	public ProductDTO getProduct(Integer productId);
+
+	public CategoryDTO getCategory(Integer categoryId);
+
+	public ConfigurationSearchResultDTO getCategoryFromConfiguration();
+
 }

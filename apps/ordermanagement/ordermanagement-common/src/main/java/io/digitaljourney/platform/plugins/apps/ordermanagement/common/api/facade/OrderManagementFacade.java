@@ -23,6 +23,12 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facade;
 
+import java.util.HashMap;
+import java.util.List;
+
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
+
 public interface OrderManagementFacade {
 
 	/**
@@ -41,4 +47,23 @@ public interface OrderManagementFacade {
 	 * @return The given message
 	 */
 	public String secureEcho(String channel, String msg);
+	
+	public void init(String journeyName, int journeyVersion, String path);
+	
+	/**
+	 * Retrieves a list of products
+	 * @return The list of products
+	 */
+	public List<ProductDTO> getProductList();
+
+	public List<HashMap<String, Object>> getDeliveryOptions();
+
+	public ProductDTO getProduct(Integer productId);
+
+	public CategoryDTO getCategory();
+
+	public boolean deliveryOptionExists(String deliveryOption);
+
+
+
 }

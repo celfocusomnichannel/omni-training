@@ -74,6 +74,8 @@
                             <!-- Training -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/xml/features</repository>
+                            
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${platform.plugins.modules.productmanagement.version}/xml/features</repository>
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>

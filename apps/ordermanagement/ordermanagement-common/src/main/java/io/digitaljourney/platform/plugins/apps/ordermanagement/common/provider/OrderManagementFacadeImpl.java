@@ -23,6 +23,11 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.common.provider;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
@@ -36,6 +41,8 @@ import io.digitaljourney.platform.modules.security.api.AbstractSecurityComponent
 import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.agent.OrderManagementCoreAgent;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facade.OrderManagementFacade;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 
 //@formatter:off
 @Component(
@@ -50,13 +57,14 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
     @Reference(cardinality = ReferenceCardinality.OPTIONAL, policyOption = ReferencePolicyOption.GREEDY, policy = ReferencePolicy.DYNAMIC)
     private volatile OrderManagementCoreAgent coreAgent;
     
+    private List<HashMap<String, Object>> deliveryOptions = createDeliveryOptions();
     
     @Override
     public String echo(String msg) {
     	return getCoreAgent().echo(msg);
     }
-    
-    @RequiresPermissions(AppProperties.PERMISSION_READ)
+
+	@RequiresPermissions(AppProperties.PERMISSION_READ)
     @Override
     public String secureEcho(String channel, String msg) {
     	return getCoreAgent().secureEcho(channel, msg);
@@ -68,4 +76,69 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
         }
         return coreAgent;
     }
+    
+	@Override
+	public void init(String journeyName, int journeyVersion, String path) {
+		getCoreAgent().createBlueprint(journeyName, journeyVersion, path);
+	}
+
+	@Override
+	public List<ProductDTO> getProductList() {
+		Integer categoryId = getCategoryId();
+		
+		 return getCoreAgent().getProducts()
+				.stream()
+				.filter(product -> categoryId == product.getCategory().getCategoryId())
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public List<HashMap<String, Object>> getDeliveryOptions() {
+		// Mocked delivery options
+		return deliveryOptions;
+	}
+
+	@Override
+	public ProductDTO getProduct(Integer productId) {
+		return getCoreAgent().getProduct(productId);
+	}
+	
+	@Override
+	public CategoryDTO getCategory() {
+		Integer categoryId = getCategoryId();
+		return getCoreAgent().getCategory(categoryId);
+	}
+
+	@Override
+	public boolean deliveryOptionExists(String deliveryOption) {
+		return deliveryOptions.stream()
+						.map(hashmap -> hashmap.get("name"))
+						.anyMatch(name -> deliveryOption.equals(name));
+	}
+	
+    /**
+     * 
+     * @return Mocked hash map of delivery options
+     */
+    private List<HashMap<String, Object>> createDeliveryOptions() {
+    	List<HashMap<String, Object>>  deliveryOptions = new ArrayList<HashMap<String, Object>>();
+    	
+    	HashMap<String, Object> homeOption = new HashMap<String, Object>();
+    	homeOption.put("id", 1);
+    	homeOption.put("name", "home");
+    	
+    	HashMap<String, Object> storeOption = new HashMap<String, Object>();
+    	storeOption.put("id", 2);
+    	storeOption.put("name", "store");
+
+    	
+    	deliveryOptions.add(homeOption);
+    	deliveryOptions.add(storeOption);
+    	return deliveryOptions;
+	}
+    
+    private Integer getCategoryId() {
+    	return Integer.parseInt(getCoreAgent().getCategoryFromConfiguration().result.stream().findFirst().get().value);
+    }
+
 }
