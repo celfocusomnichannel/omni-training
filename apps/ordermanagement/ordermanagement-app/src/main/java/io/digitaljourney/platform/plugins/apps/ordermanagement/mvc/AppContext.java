@@ -1,34 +1,13 @@
-/*-
- * #%L
- * Apps :: Training JWE Order Management App App
- * %%
- * Copyright (C) 2016 - 2021 Digital Journey
- * %%
- * All rights reserved. This software is protected under several
- * Laws in various countries. All content, layout, design of this document are the
- * intellectual property of Digital Journey, Novabase Business Solutions S.A. 
- * and its licensors. The disclosure,copying, adaptation, citation, transcription, 
- * translation, modification, decompilation, reverse engineering, derivatives, 
- * integration, development and/or any other form of total or partial use of the 
- * content of this document and/or accessible through or via the contents, by any 
- * possible means without the respective authorization or licensing by the owner of 
- * the intellectual property rights is prohibited, the offenders being subject to civil 
- * and/or criminal prosecution and liability. The user or licensee of all or part of this 
- * document by any means may only use the document under the terms and conditions agreed
- * upon with the owner of the intellectual property rights, and for the purposes
- * justifying the granting of the license or authorization, without which the
- * unauthorized use may subject the offenders to civil or criminal prosecution
- * under applicable Laws.
- * #L%
- */
-package io.digitaljourney.platform.plugins.apps.ordermanagement;
+package io.digitaljourney.platform.plugins.apps.ordermanagement.mvc;
 
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.metatype.annotations.Designate;
 
 import io.digitaljourney.platform.modules.async.api.PlatformAsyncManager;
 import io.digitaljourney.platform.modules.cache.api.PlatformCacheManager;
@@ -36,22 +15,27 @@ import io.digitaljourney.platform.modules.commons.annotation.DocumentationResour
 import io.digitaljourney.platform.modules.invocation.api.PlatformInvocationManager;
 import io.digitaljourney.platform.modules.security.api.PlatformSecurityManager;
 import io.digitaljourney.platform.modules.security.api.SystemSecurityManager;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.exception.OrderManagementException;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.JourneyWorkflowEngineResource;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.context.AbstractJourneyContext;
 
 // @formatter:off
+/**
+ * Sample Kar App Description App implementation of an {@link AbstractMVCContext MVC Context}.
+ * 
+ */
 @Component(
 	service = { Object.class, AppContext.class },
 	reference = {
 		@Reference(
 			name = AppProperties.REF_PLATFORM_SECURITY_MANAGER,
 			service = PlatformSecurityManager.class,
-			policy = ReferencePolicy.DYNAMIC,
-			cardinality = ReferenceCardinality.OPTIONAL),
+            		policy = ReferencePolicy.DYNAMIC,
+            		cardinality = ReferenceCardinality.OPTIONAL),
 		@Reference(
-			name = AppProperties.REF_SYSTEM_SECURITY_MANAGER,
-			service = SystemSecurityManager.class,
+	    	name = AppProperties.REF_SYSTEM_SECURITY_MANAGER,
+	    	service = SystemSecurityManager.class,			
 			cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
 			name = AppProperties.REF_PLATFORM_INVOCATION_MANAGER,
@@ -66,22 +50,60 @@ import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.
 			service = PlatformCacheManager.class,
 			cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
-			name = AppProperties.REF_JOURNEY_ENGINE,
-			service = JourneyWorkflowEngineResource.class,
-			cardinality = ReferenceCardinality.MANDATORY)
-	})
+				name = AppProperties.REF_JOURNEY_ENGINE,
+				service = JourneyWorkflowEngineResource.class,
+				cardinality = ReferenceCardinality.MANDATORY)
+})
 @DocumentationResource(AppProperties.DOCS_ADDRESS)
+@Designate(ocd = AppConfiguration.class)
 // @formatter:on
 public class AppContext extends AbstractJourneyContext {
+	
+	private AppConfiguration config;
+
+	/**
+	 * Method called whenever the component is activated.
+	 *
+	 * @param ctx Component context
+	 * @param cfg 
+	 */
 	@Activate
-	public void activate(ComponentContext ctx) {
+	public void activate(ComponentContext ctx, AppConfiguration cfg) {
 		prepare(ctx);
+		setConfig(cfg);
+	}
+	
+	@Modified
+	protected void modified(AppConfiguration cfg) {
+		setConfig(cfg);
+	}	
+	
+	public AppConfiguration getConfig() {
+		return config;
 	}
 
+	public void setConfig(AppConfiguration config) {
+		this.config = config;
+	}
+	
+	/**
+	 * Creates a new Sample Kar App Description Exception (500 - Internal Server Error) with the
+	 * given error message.
+	 *
+	 * @param message Error message
+	 * @return Created exception
+	 */
 	public OrderManagementException exception(String message) {
 		return OrderManagementException.of(this, message);
 	}
 
+	/**
+	 * Creates a new Sample Kar App Description Exception (500 - Internal Server Error) with the
+	 * given error cause.
+	 *
+	 * @param cause Error cause
+	 * @return Created exception
+	 */
 	public OrderManagementException exception(Throwable cause) {
 		return OrderManagementException.of(this, cause);
 	}

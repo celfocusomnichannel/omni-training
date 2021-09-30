@@ -138,6 +138,11 @@
 			<artifactId>pojobuilder</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId>journeyworkflowengine-gateway-aspect</artifactId>
+			<scope>compile</scope>
+		</dependency>
 		<!-- dependency>
 			Insert some suitable/correlated microservice reference
 			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
@@ -168,12 +173,6 @@
 		<dependency>
 			<groupId>io.digitaljourney.platform.modules</groupId>
 			<artifactId>paxexam-base</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- Rest Assured -->		
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- JUnit -->		

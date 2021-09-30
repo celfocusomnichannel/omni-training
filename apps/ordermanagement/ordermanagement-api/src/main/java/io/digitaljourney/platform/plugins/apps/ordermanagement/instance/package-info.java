@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Apps :: Cache Manager App :: App
+ * Apps :: Training JWE Order Management App :: API
  * %%
- * Copyright (C) 2016 - 2020 Digital Journey
+ * Copyright (C) 2016 - 2021 Digital Journey
  * %%
  * All rights reserved. This software is protected under several
  * Laws in various countries. All content, layout, design of this document are the
@@ -21,14 +21,7 @@
  * under applicable Laws.
  * #L%
  */
-package io.digitaljourney.platform.plugins.apps.ordermanagement.cxf.mapper;
+@Version("1.0.0")
+package io.digitaljourney.platform.plugins.apps.ordermanagement.instance;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
-
-@Mapper
-public interface OrderManagementMapper {
-
-	public static final OrderManagementMapper INSTANCE = Mappers.getMapper(OrderManagementMapper.class);
-
-}
+import org.osgi.annotation.versioning.Version;

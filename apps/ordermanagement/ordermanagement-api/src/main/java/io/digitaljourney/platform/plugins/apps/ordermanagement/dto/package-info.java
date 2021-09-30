@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Apps :: Training JWE Order Management App App
+ * Apps :: Training JWE Order Management App :: API
  * %%
  * Copyright (C) 2016 - 2021 Digital Journey
  * %%
@@ -21,16 +21,7 @@
  * under applicable Laws.
  * #L%
  */
-package io.digitaljourney.platform.plugins.apps.ordermanagement.agent.repository;
+@Version("1.0.0")
+package io.digitaljourney.platform.plugins.apps.ordermanagement.dto;
 
-import org.osgi.service.metatype.annotations.AttributeDefinition;
-import org.osgi.service.metatype.annotations.Icon;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
-
-@ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/agent/repository", icon = @Icon(resource = "OSGI-INF/icon/agent.png", size = 32))
-public @interface RepositoryAgentConfig {
-	static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.agent.repository";
-
-	@AttributeDefinition(name = "%provider_target.name", description = "%provider_target.description", required  = true)
-	String provider_target();
-}
+import org.osgi.annotation.versioning.Version;

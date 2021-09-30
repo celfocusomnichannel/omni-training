@@ -20,19 +20,11 @@
 		<feature>standard-mapstruct</feature>
 		<feature>rsprovider</feature>
 		<feature>ordermanagement-api</feature>
-
-		<!-- Facade configurations -->
-		<config name="platform.plugins.apps.ordermanagement.facade"></config>
-		
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-common/${project.version}</bundle>
 	</feature>
 	
 	<feature name="ordermanagement-agents-core" description="OrderManagement Core Agent" version="${project.version}" install="manual">
 		<feature>ordermanagement-common-modules</feature>
-		
-		<config name="platform.plugins.apps.ordermanagement.agent.core"><![CDATA[#
-		]]></config>
-		
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-agents-core/${project.version}</bundle>
 	</feature>
 

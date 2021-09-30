@@ -23,12 +23,12 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement;
 
-import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyMVCProperties;
 
 /**
  * OrderManagement properties	
  */
-public final class AppProperties extends RSProperties {
+public final class AppProperties extends JourneyMVCProperties {
 	
 	private AppProperties() {}
 
@@ -36,6 +36,8 @@ public final class AppProperties extends RSProperties {
 	public static final String CURRENT_VERSION = "1";
 	public static final String APP_VERSION = "/v" + CURRENT_VERSION;
 	public static final String ADDRESS = "/" + APP_NAME + APP_VERSION;
+	
+	public static final String SUBSERVICE_NAME = SUBSERVICE_PREFIX + APP_NAME;
 	
 	public static final String DOCS_ADDRESS = CMS_RESOURCE_PATTERN + ADDRESS + DOCS_PATH;
 
@@ -50,6 +52,7 @@ public final class AppProperties extends RSProperties {
 
 	/** General Exception error code */
 	public static final String ORDERMANAGEMENT000 = "ORDERMANAGEMENT000";
-
 	
+	public static final String JOURNEY_NAME = "PRODUCT_CHECKOUT";
+	public static final int JOURNEY_VERSION = 1;
 }

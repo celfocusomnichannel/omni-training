@@ -1,4 +1,4 @@
-package io.digitaljourney.platform.plugins.apps.ordermanagement.mapper;
+package io.digitaljourney.platform.plugins.apps.ordermanagement.common.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -7,8 +7,8 @@ import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourney
 import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
 
 @Mapper
-public interface JourneyControllerMapper {
-	public static final JourneyControllerMapper INSTANCE = Mappers.getMapper(JourneyControllerMapper.class);
+public interface OrderManagementMapper {
+	public static final OrderManagementMapper INSTANCE = Mappers.getMapper(OrderManagementMapper.class);
 
 	CustomJourneyDTO toProcess(CustomJourneyInstance instance);
 }

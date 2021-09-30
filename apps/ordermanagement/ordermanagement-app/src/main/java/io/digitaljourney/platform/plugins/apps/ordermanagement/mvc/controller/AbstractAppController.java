@@ -21,12 +21,27 @@
  * under applicable Laws.
  * #L%
  */
-package io.digitaljourney.platform.plugins.apps.ordermanagement.agent.core;
+package io.digitaljourney.platform.plugins.apps.ordermanagement.mvc.controller;
 
-import org.osgi.service.metatype.annotations.Icon;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+import org.eclipse.gemini.blueprint.extensions.annotation.ServiceReference;
 
-@ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/agent/core", icon = @Icon(resource = "OSGI-INF/icon/agent.png", size = 32))
-public @interface CoreAgentConfig {
-	static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.agent.core";
+import io.digitaljourney.platform.plugins.apps.ordermanagement.mvc.AppContext;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.JourneyWorkflowEngineResource;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.controller.AbstractJourneyController;
+
+public abstract class AbstractAppController extends AbstractJourneyController<AppContext> {
+
+	@ServiceReference
+	private AppContext ctx;
+
+	@Override
+	protected AppContext getCtx() {
+		return this.ctx;
+	}
+
+	@Override
+	public JourneyWorkflowEngineResource getJourneyEngine() {
+		return journeyEngine();
+	}
+
 }
