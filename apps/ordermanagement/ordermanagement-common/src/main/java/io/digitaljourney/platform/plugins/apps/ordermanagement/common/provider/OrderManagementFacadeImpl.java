@@ -23,6 +23,11 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.common.provider;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,7 +89,13 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
 	@RequiresPermissions(AppProperties.PERMISSION_CREATE)
 	@Override
 	public void init(String journeyName, int journeyVersion) {
-		getCoreAgent().createBlueprint(journeyName, journeyVersion, "/journey-blueprint/blueprint.json");
+		String content = null;
+
+		try (InputStream is = OrderManagementFacadeImpl.class.getResourceAsStream("/journey-blueprint/blueprint.json")) {
+			content = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines().collect(Collectors.joining(""));
+		} catch (IOException e) {
+		}
+		getCoreAgent().createBlueprint(journeyName, journeyVersion, content);
 	}
 
 	@RequiresPermissions(AppProperties.PERMISSION_CREATE)

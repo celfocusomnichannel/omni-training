@@ -55,7 +55,7 @@ public interface OrderManagementCoreAgent {
 
 	public List<ProductDTO> getProducts();
 	
-	public void createBlueprint(String journeyName, int journeyVersion, String path);
+	public void createBlueprint(String journeyName, int journeyVersion, String blueprintContent);
 
 	public ProductDTO getProduct(Integer productId);
 

@@ -23,14 +23,8 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.agents.core.impl;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -145,20 +139,15 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	}
 	
 	@Override
-	public void createBlueprint(String journeyName, int journeyVersion, String path) {
-		String content = null;
+	public void createBlueprint(String journeyName, int journeyVersion, String blueprintContent) {
 
-		try (InputStream is = OrderManagementCoreAgentImpl.class.getResourceAsStream(path)) {
-			content = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines().collect(Collectors.joining(""));
-		} catch (IOException e) {
-		}
 		String expression = "isActive==true;journeyName==" + journeyName;
 //		List<BlueprintHeaderDTO> bts = AuthenticationUtils.systemCall(getConfig().systemUserName(), getConfig().systemPassword(), () -> journeyBlueprintResource.searchBlueprint(expression, null, null));
 		List<BlueprintHeaderDTO> bts = journeyBlueprintResource.searchBlueprint(expression, null, null);
 
 		if(bts == null || bts.isEmpty()){
 			CreateBlueprintDTO createBlueprintDTO = new CreateBlueprintDTOBuilder()
-					.withContent(content)
+					.withContent(blueprintContent)
 					.withHeader(new CreateBlueprintHeaderDTOBuilder()
 							.withDescription(AppProperties.APP_NAME + "-blueprint")
 							.withJourneyFriendlyName(journeyName)
