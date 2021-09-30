@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.cache.annotation.CacheResult;
+
+import io.digitaljourney.platform.modules.cache.api.Cache;
 import io.digitaljourney.platform.plugins.apps.genericappkar.AppProperties;
 import io.digitaljourney.platform.plugins.apps.genericappkar.api.GenericAppKarResource;
 import io.digitaljourney.platform.plugins.apps.genericappkar.common.api.facade.GenericAppKarFacade;
@@ -35,6 +38,7 @@ public class GenericAppKarController extends AbstractAppController implements Ge
 
 	@Override
 	@GetMapping(path = "/{isoCode}") 
+	@CacheResult(cacheName = AppProperties.GENERICAPPKAR_CACHE)
 	public @ResponseBody FlagResponseDTO getFlag(@PathVariable String isoCode) {
 		return facade.getFlag(isoCode);
 	}
@@ -42,6 +46,16 @@ public class GenericAppKarController extends AbstractAppController implements Ge
 	@Override
 	@GetMapping(path = "/search")
 	public @ResponseBody List<MusicProductResponseDTO> getArtistMusics(@RequestParam String artistName,@RequestParam String limit) {
-		return facade.getArtistMusics(artistName, limit);
+		Cache c = getCtx().getCacheManager().getCache(AppProperties.GENERICAPPKAR_CACHE);
+		List<MusicProductResponseDTO> dto = null;
+		String[] key = {artistName, limit};
+		if(c!=null) {
+			dto = c.get(key, getClass().getClassLoader());
+		}
+		if(dto==null) {
+			dto = facade.getArtistMusics(artistName, limit);
+			c.put(key, dto);
+		}
+		return dto;
 	}
 }

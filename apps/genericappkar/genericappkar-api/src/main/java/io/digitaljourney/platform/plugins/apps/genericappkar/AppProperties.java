@@ -27,6 +27,7 @@ public final class AppProperties extends RSProperties {
 
 	/** General Exception error code */
 	public static final String GENERICAPPKAR000 = "GENERICAPPKAR000";
-
 	
+	/** Cache **/
+	public static final String GENERICAPPKAR_CACHE = "genericappkarcache";
 }
