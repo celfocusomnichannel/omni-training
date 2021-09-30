@@ -3,6 +3,7 @@ package io.digitaljourney.platform.plugins.apps.ordermanagement.mvc;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
@@ -22,33 +23,35 @@ import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.
 
 // @formatter:off
 /**
- * Sample Kar App Description App implementation of an {@link AbstractMVCContext MVC Context}.
- * 
+ * Sample App Description implementation of an {@link AbstractJourneyContext}.
+ *
  */
 @Component(
-	service = { Object.class, AppContext.class },
+	service = { AppContext.class },
+			configurationPid = AppConfiguration.CPID,
+			configurationPolicy = ConfigurationPolicy.OPTIONAL,
 	reference = {
 		@Reference(
-			name = AppProperties.REF_PLATFORM_SECURITY_MANAGER,
-			service = PlatformSecurityManager.class,
-            		policy = ReferencePolicy.DYNAMIC,
-            		cardinality = ReferenceCardinality.OPTIONAL),
+				name = AppProperties.REF_PLATFORM_SECURITY_MANAGER,
+				service = PlatformSecurityManager.class,
+				policy = ReferencePolicy.DYNAMIC,
+				cardinality = ReferenceCardinality.OPTIONAL),
 		@Reference(
-	    	name = AppProperties.REF_SYSTEM_SECURITY_MANAGER,
-	    	service = SystemSecurityManager.class,			
-			cardinality = ReferenceCardinality.MANDATORY),
+				name = AppProperties.REF_SYSTEM_SECURITY_MANAGER,
+				service = SystemSecurityManager.class,
+				cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
-			name = AppProperties.REF_PLATFORM_INVOCATION_MANAGER,
-			service = PlatformInvocationManager.class,
-			cardinality = ReferenceCardinality.MANDATORY),
+				name = AppProperties.REF_PLATFORM_INVOCATION_MANAGER,
+				service = PlatformInvocationManager.class,
+				cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
-			name = AppProperties.REF_ASYNC_MANAGER,
-			service = PlatformAsyncManager.class,
-			cardinality = ReferenceCardinality.MANDATORY),
+				name = AppProperties.REF_ASYNC_MANAGER,
+				service = PlatformAsyncManager.class,
+				cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
-			name = AppProperties.REF_CACHE_MANAGER,
-			service = PlatformCacheManager.class,
-			cardinality = ReferenceCardinality.MANDATORY),
+				name = AppProperties.REF_CACHE_MANAGER,
+				service = PlatformCacheManager.class,
+				cardinality = ReferenceCardinality.MANDATORY),
 		@Reference(
 				name = AppProperties.REF_JOURNEY_ENGINE,
 				service = JourneyWorkflowEngineResource.class,
@@ -58,26 +61,26 @@ import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.
 @Designate(ocd = AppConfiguration.class)
 // @formatter:on
 public class AppContext extends AbstractJourneyContext {
-	
+
 	private AppConfiguration config;
 
 	/**
 	 * Method called whenever the component is activated.
 	 *
 	 * @param ctx Component context
-	 * @param cfg 
+	 * @param cfg
 	 */
 	@Activate
 	public void activate(ComponentContext ctx, AppConfiguration cfg) {
 		prepare(ctx);
 		setConfig(cfg);
 	}
-	
+
 	@Modified
 	protected void modified(AppConfiguration cfg) {
 		setConfig(cfg);
-	}	
-	
+	}
+
 	public AppConfiguration getConfig() {
 		return config;
 	}
@@ -85,7 +88,7 @@ public class AppContext extends AbstractJourneyContext {
 	public void setConfig(AppConfiguration config) {
 		this.config = config;
 	}
-	
+
 	/**
 	 * Creates a new Sample Kar App Description Exception (500 - Internal Server Error) with the
 	 * given error message.
