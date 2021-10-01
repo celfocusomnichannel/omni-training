@@ -38,6 +38,7 @@ Import-Package:\
 	org.apache.shiro.mgt,\
 	org.springframework.context,\
 	org.springframework.validation.beanvalidation,\
+	org.springframework.http,\
 	org.springframework.http.converter.json,\
 	org.springframework.web.servlet.view.json,\
 	io.digitaljourney.platform.modules.ws.rs.api.jackson,\
@@ -46,5 +47,3 @@ Import-Package:\
 	javax.validation;version="[1.1,2.1)", \
 	javax.validation.constraints;version="[1.1,2.1)", \
 	*
-Change-Log: uam
-Change-Log-Script: /META-INF/ordermanagement.uam

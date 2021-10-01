@@ -4,12 +4,12 @@
 		"targetVersion": "1",
 		"roles": [],
 		"category": "APPS",
-		"section": "Order Management",
+		"section": "OrderManagement",
 		"source": "digitaljourney",
 		"instance": "core"
 	},
 	"configs": [{
-			"target": "omni-training.ordermanagement.category",
+			"target": "io.digitaljourney.platform.plugins.apps.ordermanagement.category",
 			"info": "Category Id",
 			"roles": [],
 			"type": "NUMBER",

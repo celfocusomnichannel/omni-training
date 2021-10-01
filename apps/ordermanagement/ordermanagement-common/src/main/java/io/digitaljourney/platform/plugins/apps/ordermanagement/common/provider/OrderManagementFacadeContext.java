@@ -88,7 +88,6 @@ public class OrderManagementFacadeContext extends AbstractSecurityContext {
 	public void setConfig(OrderManagementFacadeConfig config) {
 		this.config = config;
 	}
-	
 
 	/**
 	 * Creates a new Logviewer Exception (500 - Internal Server Error) with the

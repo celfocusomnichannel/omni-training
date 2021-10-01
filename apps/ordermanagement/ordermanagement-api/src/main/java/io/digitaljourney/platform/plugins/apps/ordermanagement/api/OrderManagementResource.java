@@ -30,9 +30,9 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
 import io.swagger.annotations.BasicAuthDefinition;
+import io.swagger.annotations.Info;
 import io.swagger.annotations.SecurityDefinition;
 import io.swagger.annotations.SwaggerDefinition;
-import io.swagger.annotations.Tag;
 
 //@formatter:off
 @ProviderType
@@ -40,32 +40,50 @@ import io.swagger.annotations.Tag;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @SwaggerDefinition(
-		securityDefinition = @SecurityDefinition(
+		securityDefinition = @SecurityDefinition (
 				basicAuthDefinitions = {
 						@BasicAuthDefinition(key = RSProperties.SWAGGER_BASIC_AUTH)
 				},
 				apiKeyAuthDefinitions = {
-						@ApiKeyAuthDefinition(key = RSProperties.SWAGGER_BEARER_AUTH, name = RSProperties.HTTP_HEADER_API_KEY, in = ApiKeyLocation.HEADER)
-				}),
+						@ApiKeyAuthDefinition (
+								key = RSProperties.SWAGGER_BEARER_AUTH,
+								name = RSProperties.HTTP_HEADER_API_KEY,
+								in = ApiKeyLocation.HEADER
+						)
+				}
+		),
 		schemes = {
 				SwaggerDefinition.Scheme.HTTP,
 				SwaggerDefinition.Scheme.HTTPS,
 				SwaggerDefinition.Scheme.DEFAULT
 		},
-		tags = { @Tag(name = "Journey", description = "Journey API") })
+		info = @Info(
+				title = "Training JWE Order Management App",
+				description = "The Training JWE Order Management App API provides a way to interface with correlated services and entities",
+				version = AppProperties.CURRENT_VERSION
+		),
+		basePath = "bin/mvc.do/"+ AppProperties.APP_NAME + AppProperties.APP_VERSION
+)
 @Api(
-		value = "Custom Journey",
+		value = "OrderManagement",
 		authorizations = {
 				@Authorization(value = RSProperties.SWAGGER_BASIC_AUTH),
 				@Authorization(value = RSProperties.SWAGGER_BEARER_AUTH)
 		},
-		tags = { "Journey" })
-@ApiResponses(value = {
-		@ApiResponse(code = HttpStatusCode.UNAUTHORIZED_CODE, message = RSProperties.SWAGGER_UNAUTHORIZED_MESSAGE),
-		@ApiResponse(code = HttpStatusCode.FORBIDDEN_CODE, message = RSProperties.SWAGGER_FORBIDDEN_MESSAGE) })
+		tags = {
+				AppProperties.ORDERMANAGEMENT_TAG
+		}
+)
+@ApiResponses(
+		value = {
+				@ApiResponse(code = HttpStatusCode.UNAUTHORIZED_CODE, message = RSProperties.SWAGGER_UNAUTHORIZED_MESSAGE),
+				@ApiResponse(code = HttpStatusCode.FORBIDDEN_CODE, message = RSProperties.SWAGGER_FORBIDDEN_MESSAGE),
+				@ApiResponse(code = HttpStatusCode.INTERNAL_SERVER_ERROR_CODE, message = AppProperties.ORDERMANAGEMENT000)
+		}
+)
 //@formatter:on
 public interface OrderManagementResource {
-	
+
 	/**
 	 * Initializes blueprint import
 	 */
@@ -193,5 +211,5 @@ public interface OrderManagementResource {
 	})
 	public CustomJourneyDTO submitOrder(
 			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
-	
+
 }

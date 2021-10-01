@@ -66,21 +66,21 @@ import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.
 @Designate(ocd = OrderManagementFacadeConfig.class)
 //@formatter:on
 public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderManagementFacadeContext, OrderManagementFacadeConfig>
-    implements OrderManagementFacade {
+	implements OrderManagementFacade {
 
 	/** Core Agent instance */
-	@Reference(cardinality = ReferenceCardinality.OPTIONAL, policyOption = ReferencePolicyOption.GREEDY, policy = ReferencePolicy.DYNAMIC)
-	private volatile OrderManagementCoreAgent coreAgent;
-
+    @Reference(cardinality = ReferenceCardinality.OPTIONAL, policyOption = ReferencePolicyOption.GREEDY, policy = ReferencePolicy.DYNAMIC)
+    private volatile OrderManagementCoreAgent coreAgent;
+    
 	private List<HashMap<String, Object>> deliveryOptions = createDeliveryOptions();
 
-	private OrderManagementCoreAgent getCoreAgent() {
-		if (coreAgent == null) {
-			coreAgent = getService(OrderManagementCoreAgent.class);
-		}
-		return coreAgent;
-	}
-	
+    private OrderManagementCoreAgent getCoreAgent() {
+        if (coreAgent == null) {
+            coreAgent = getService(OrderManagementCoreAgent.class);
+        }
+        return coreAgent;
+    }
+    
 	private CustomJourneyDTO process(JourneyProcess<CustomJourneyInstance> jp) {
 		CustomJourneyInstance instance = JourneySession.getInstance(jp);
 		return OrderManagementMapper.INSTANCE.toProcess(instance);

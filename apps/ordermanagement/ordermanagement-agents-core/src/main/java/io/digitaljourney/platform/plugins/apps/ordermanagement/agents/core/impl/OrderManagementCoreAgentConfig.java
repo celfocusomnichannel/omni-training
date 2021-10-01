@@ -31,7 +31,7 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 @ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/agent/core", icon = @Icon(resource = "OSGI-INF/icon/agent.png", size = 32))
 public @interface OrderManagementCoreAgentConfig {
 	/** Component Persistent Identifier */
-	static final String CPID = "platform.plugins.apps.ordermanagement.agent.core";
+	static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.agent.core";
 
 	/**
 	 * Gets the name of the user used to access core resources.
