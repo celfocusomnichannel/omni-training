@@ -1,0 +1,26 @@
+{
+    "name": "omni-journey-categorymanagement",
+    "version": "1.0.0",
+    "description": "Category Management App Frontend",
+    "homepage": "<%= homepage %>",
+    "parent": "categorymanagementapp",
+    "main": "index.js",
+    "scripts": {
+        "start": "craco start",
+        "build": "sh startbuild.sh",
+        "test": "craco test",
+        "eject": "react-scripts eject"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "core-js": "^3.4.1",
+        "regenerator-runtime": "^0.13.3",
+        "@craco/craco": "5.5.0",
+        "react-scripts": "3.2.0"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+}

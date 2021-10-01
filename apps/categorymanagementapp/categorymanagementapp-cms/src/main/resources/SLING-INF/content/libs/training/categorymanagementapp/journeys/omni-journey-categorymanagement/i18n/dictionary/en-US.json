@@ -1,0 +1,17 @@
+{
+ "category_management_table_id" : "Id",
+ "category_management_table_category" : "Category",
+ "category_management_button_add" : "Add",
+ "category_management_button_edit" : "Edit",
+ "category_management_button_delete" : "Delete",
+ "category_management_dialog_add_title" : "Add Category",
+ "category_management_dialog_add_input" : "Category Name",
+ "category_management_dialog_add_button" : "Add",
+ "category_management_dialog_edit_title" : "Edit Category",
+ "category_management_dialog_edit_input" : "Category Name",
+ "category_management_dialog_edit_button" : "Update",
+ "category_management_dialog_delete_title" : "Delete Category",
+ "category_management_dialog_delete_text1" : "Are you sure you want to delete the ",
+ "category_management_dialog_delete_text2" : " category?",
+ "category_management_dialog_delete_button" : "Confirm"
+}

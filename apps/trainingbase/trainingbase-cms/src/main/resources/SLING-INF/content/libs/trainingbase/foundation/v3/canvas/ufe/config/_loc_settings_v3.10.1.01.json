@@ -491,6 +491,17 @@
 			"style": "secondary"
 		},
 		"libraryJourneyId": 15
+	},
+	{
+	    "id": 18,
+        "title": "Category Management",
+        "version": "1.0",
+        "icon": "icon-notes-edition",
+        "i18NLabel": "category_management_app",
+        "journeyUrl": "http://localhost:3000?logging=1",
+        "subHeaderContent": {
+            "style": "secondary"
+        }
 	}],
 	"categories": [
 	{
@@ -556,6 +567,10 @@
 		{
 			"order": 6,
 			"processId": 13
+		},
+		{
+			"order": 7,
+			"processId": 18
 		}]
 	},
 	{
