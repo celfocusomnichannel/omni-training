@@ -138,6 +138,11 @@
 			<artifactId>pojobuilder</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId>journeyworkflowengine-gateway-aspect</artifactId>
+			<scope>compile</scope>
+		</dependency>
 		<!-- dependency>
 			Insert some suitable/correlated microservice reference
 			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
@@ -164,19 +169,7 @@
 			<scope>compile</scope>
 		</dependency>
 		<!-- ============ TEST ============ -->
-		<!-- PaxExam -->
-		<dependency>
-			<groupId>io.digitaljourney.platform.modules</groupId>
-			<artifactId>paxexam-base</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- Rest Assured -->		
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- JUnit -->		
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -188,6 +181,19 @@
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-model -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>3.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-	
+
 </project>

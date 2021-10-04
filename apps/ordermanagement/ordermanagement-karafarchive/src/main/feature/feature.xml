@@ -20,19 +20,11 @@
 		<feature>standard-mapstruct</feature>
 		<feature>rsprovider</feature>
 		<feature>ordermanagement-api</feature>
-
-		<!-- Facade configurations -->
-		<config name="platform.plugins.apps.ordermanagement.facade"></config>
-		
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-common/${project.version}</bundle>
 	</feature>
 	
 	<feature name="ordermanagement-agents-core" description="OrderManagement Core Agent" version="${project.version}" install="manual">
 		<feature>ordermanagement-common-modules</feature>
-		
-		<config name="platform.plugins.apps.ordermanagement.agent.core"><![CDATA[#
-		]]></config>
-		
 		<bundle>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-agents-core/${project.version}</bundle>
 	</feature>
 
@@ -49,6 +41,7 @@
 
 	<feature name="ordermanagement-mvc-modules" description="OrderManagement MVC Modules" version="${project.version}"  install="manual">
 		<feature>ordermanagement-common-modules</feature>
+		<feature>cms-mvc</feature>
 		<feature>journeyworkflowengine-gateway-aspect-mvc</feature>
 		<feature>ordermanagement-agents-core</feature>
 

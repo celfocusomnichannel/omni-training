@@ -39,6 +39,7 @@ import io.digitaljourney.platform.modules.invocation.api.PlatformInvocationManag
 import io.digitaljourney.platform.modules.security.api.PlatformSecurityManager;
 import io.digitaljourney.platform.modules.security.api.context.AbstractSecurityContext;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.exception.OrderManagementException;
 
 // @formatter:off
 @Component(
@@ -86,5 +87,27 @@ public class OrderManagementFacadeContext extends AbstractSecurityContext {
 
 	public void setConfig(OrderManagementFacadeConfig config) {
 		this.config = config;
+	}
+
+	/**
+	 * Creates a new Logviewer Exception (500 - Internal Server Error) with the
+	 * given error message.
+	 *
+	 * @param message Error message
+	 * @return Created exception
+	 */
+	public OrderManagementException exception(String message) {
+		return OrderManagementException.of(this, message);
+	}
+
+	/**
+	 * Creates a new Logviewer Exception (500 - Internal Server Error) with the
+	 * given error cause.
+	 *
+	 * @param cause Error cause
+	 * @return Created exception
+	 */
+	public OrderManagementException exception(Throwable cause) {
+		return OrderManagementException.of(this, cause);
 	}
 }

@@ -28,11 +28,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.maven.model.Model;
+import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
+import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.junit.Test;
-
-import shaded.org.apache.maven.model.Model;
-import shaded.org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import shaded.org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 
 /**
  * Training JWE Order Management App version test.

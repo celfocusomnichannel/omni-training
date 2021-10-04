@@ -23,25 +23,17 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.agents.core.impl;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
-//import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.metatype.annotations.Designate;
 
 import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
-//import io.digitaljourney.platform.modules.security.api.AuthenticationUtils;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.agent.OrderManagementCoreAgent;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.agent.core.AbstractOrderManagementCoreAgent;
 import io.digitaljourney.platform.plugins.modules.configurationmanager.service.api.ConfigurationManagerResource;
@@ -54,12 +46,9 @@ import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.d
 import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.dto.CreateBlueprintDTO;
 import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.dto.CreateBlueprintDTOBuilder;
 import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.dto.CreateBlueprintHeaderDTOBuilder;
-//FIXME Import here your correlated microservice
-//import io.digitaljourney.platform.plugins.modules.<microservice_name>.service.api.<microservice_name>Resource;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.ProductManagementResource;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
-
 
 //@formatter:off
 @Component(
@@ -71,11 +60,6 @@ import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.
 //@formatter:on
 public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAgent<OrderManagementCoreAgentConfig> implements OrderManagementCoreAgent {
 
-	//FIXME Insert here your correlated microservice i.e resource
-	/** The resource. */
-	//@Reference
-	//private volatile <microservice_name>Resource resource;
-	
 	@Reference
 	private volatile ProductManagementResource productManagementResource;
 	
@@ -84,7 +68,7 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	
 	@Reference
 	private volatile ConfigurationManagerResource configurationManagerResource;
-	
+
 	/**
 	 * Method called whenever the component is activated.
 	 *
@@ -103,25 +87,6 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	@Modified
 	public void modified(OrderManagementCoreAgentConfig config) {
 		prepare(config);
-	}
-	
-//	@Override
-//	protected <microservice_name>Resource getResource() {
-//		return resource;
-//	}
-	
-	@Override
-	public String echo(String msg) {
-		//FIXME Usually you sould use the microservice i.e resource (getResource()) to invoke some method
-		//For example: return AuthenticationUtils.systemCall(getUsername(), getPassword(), () -> getResource().echo(msg));
-		return msg;
-	}
-	
-	@Override
-	public String secureEcho(String channel, String msg) {
-		//FIXME Usually you sould use the microservice i.e resource (getResource()) to invoke some method
-		//For example: return AuthenticationUtils.systemCall(getUsername(), getPassword(), () -> getResource().secureEcho(channel, msg));
-		return "Message sent by " + channel + " channel. Message: " + msg + ".";
 	}
 
 	@Override
@@ -145,20 +110,15 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	}
 	
 	@Override
-	public void createBlueprint(String journeyName, int journeyVersion, String path) {
-		String content = null;
+	public void createBlueprint(String journeyName, int journeyVersion, String blueprintContent) {
 
-		try (InputStream is = OrderManagementCoreAgentImpl.class.getResourceAsStream(path)) {
-			content = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines().collect(Collectors.joining(""));
-		} catch (IOException e) {
-		}
 		String expression = "isActive==true;journeyName==" + journeyName;
 //		List<BlueprintHeaderDTO> bts = AuthenticationUtils.systemCall(getConfig().systemUserName(), getConfig().systemPassword(), () -> journeyBlueprintResource.searchBlueprint(expression, null, null));
 		List<BlueprintHeaderDTO> bts = journeyBlueprintResource.searchBlueprint(expression, null, null);
 
 		if(bts == null || bts.isEmpty()){
 			CreateBlueprintDTO createBlueprintDTO = new CreateBlueprintDTOBuilder()
-					.withContent(content)
+					.withContent(blueprintContent)
 					.withHeader(new CreateBlueprintHeaderDTOBuilder()
 							.withDescription(AppProperties.APP_NAME + "-blueprint")
 							.withJourneyFriendlyName(journeyName)
@@ -207,7 +167,7 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	@Override
 	public ConfigurationSearchResultDTO getCategoryFromConfiguration() {
 		ConfigurationSearchFilterDTO filter = new ConfigurationSearchFilterDTO();
-		filter.target = "omni-training.ordermanagement.category";
+		filter.target = "io.digitaljourney.platform.plugins.apps.ordermanagement.category";
 		//FIX:ME by default 0 and 150 but this needs to be fixed in order to receive this values or made this defaults as configurations
 		filter.offset = 0;
 		filter.limit = 150;

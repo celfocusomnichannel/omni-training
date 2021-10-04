@@ -26,44 +26,37 @@ package io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facad
 import java.util.HashMap;
 import java.util.List;
 
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyProcess;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 
 public interface OrderManagementFacade {
 
-	/**
-	 * Print the given message.
-	 *
-	 * @param msg the message
-	 * @return The given message
-	 */
-	public String echo(String msg);
+	public void init(String journeyName, int journeyVersion);
 	
-	/**
-	 * Print the given message and channel over security context.
-	 *
-	 * @param channel 	the channel message
-	 * @param msg 		the message
-	 * @return The given message
-	 */
-	public String secureEcho(String channel, String msg);
+	public CustomJourneyDTO create(JourneyProcess<CustomJourneyInstance> jp);
 	
-	public void init(String journeyName, int journeyVersion, String path);
+	public CustomJourneyDTO read(JourneyProcess<CustomJourneyInstance> jp);
 	
-	/**
-	 * Retrieves a list of products
-	 * @return The list of products
-	 */
 	public List<ProductDTO> getProductList();
+	
+	public CategoryDTO getCategory();
 
 	public List<HashMap<String, Object>> getDeliveryOptions();
+	
+	public CustomJourneyDTO selectProduct(JourneyProcess<CustomJourneyInstance> jp, Integer productId);
+	
+	public CustomJourneyDTO createOrder(JourneyProcess<CustomJourneyInstance> jp);
+	
+	public CustomJourneyDTO updateCustomerInfo(JourneyProcess<CustomJourneyInstance> jp, CustomerInfoDTO customerInfo);
+	
+	public CustomJourneyDTO submitOrder(JourneyProcess<CustomJourneyInstance> jp);
 
 	public ProductDTO getProduct(Integer productId);
 
-	public CategoryDTO getCategory();
-
 	public boolean deliveryOptionExists(String deliveryOption);
-
-
 
 }

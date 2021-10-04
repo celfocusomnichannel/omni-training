@@ -34,28 +34,9 @@ import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.
 @ProviderType
 public interface OrderManagementCoreAgent {
 	
-	//FIXME In this interface you should map the micro-service api methods (usually it will be similar of service-api interface on micro-service)
-	
-	/**
-	 * Print the given message.
-	 *
-	 * @param msg the message
-	 * @return The given message
-	 */
-	public String echo(String msg);
-	
-	/**
-	 * Print the given message and channel over security context.
-	 *
-	 * @param channel 	the channel message
-	 * @param msg 		the message
-	 * @return The given message
-	 */
-	public String secureEcho(String channel, String msg);
-
 	public List<ProductDTO> getProducts();
 	
-	public void createBlueprint(String journeyName, int journeyVersion, String path);
+	public void createBlueprint(String journeyName, int journeyVersion, String blueprintContent);
 
 	public ProductDTO getProduct(Integer productId);
 

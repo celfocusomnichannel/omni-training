@@ -23,12 +23,12 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement;
 
-import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyMVCProperties;
 
 /**
  * OrderManagement properties	
  */
-public final class AppProperties extends RSProperties {
+public final class AppProperties extends JourneyMVCProperties {
 	
 	private AppProperties() {}
 
@@ -50,6 +50,8 @@ public final class AppProperties extends RSProperties {
 
 	/** General Exception error code */
 	public static final String ORDERMANAGEMENT000 = "ORDERMANAGEMENT000";
-
 	
+	public static final String JOURNEY_NAME = "PRODUCT_CHECKOUT";
+	public static final int JOURNEY_VERSION = 1;
+
 }

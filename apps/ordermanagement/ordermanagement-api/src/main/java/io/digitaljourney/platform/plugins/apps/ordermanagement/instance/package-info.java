@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Apps :: Training JWE Order Management App :: Core Agent
+ * Apps :: Training JWE Order Management App :: API
  * %%
  * Copyright (C) 2016 - 2021 Digital Journey
  * %%
@@ -21,31 +21,7 @@
  * under applicable Laws.
  * #L%
  */
-package io.digitaljourney.platform.plugins.apps.ordermanagement.agents.core.impl;
+@Version("1.0.0")
+package io.digitaljourney.platform.plugins.apps.ordermanagement.instance;
 
-import org.osgi.service.metatype.annotations.AttributeDefinition;
-import org.osgi.service.metatype.annotations.AttributeType;
-import org.osgi.service.metatype.annotations.Icon;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
-
-@ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/agent/core", icon = @Icon(resource = "OSGI-INF/icon/agent.png", size = 32))
-public @interface OrderManagementCoreAgentConfig {
-	/** Component Persistent Identifier */
-	static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.agent.core";
-
-	/**
-	 * Gets the name of the user used to access core resources.
-	 *
-	 * @return System user name
-	 */
-	@AttributeDefinition(name = "%systemUserName.name", description = "%systemUserName.description")
-	String systemUserName();
-
-	/**
-	 * Gets the password of the user to access core resources.
-	 *
-	 * @return System user password
-	 */
-	@AttributeDefinition(name = "%systemPassword.name", type = AttributeType.PASSWORD, description = "%systemPassword.description")
-	String systemPassword();
-}
+import org.osgi.annotation.versioning.Version;

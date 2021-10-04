@@ -23,6 +23,9 @@
  */
 package io.digitaljourney.platform.plugins.apps.ordermanagement.cxf.resource;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -38,6 +41,15 @@ import io.digitaljourney.platform.plugins.apps.ordermanagement.api.OrderManageme
 import io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facade.OrderManagementFacade;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.cxf.OrderManagementConfiguration;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.cxf.OrderManagementContext;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.trigger.ActionMode;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyProcess;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyMethod;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyReference;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CustomRsProvider;
 
 //@formatter:off
@@ -61,7 +73,7 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.Custo
 @Designate(ocd = OrderManagementConfiguration.class)
 @CustomRsProvider(AppProperties.ADDRESS)
 public class OrderManagementResourceImpl extends AbstractResource<OrderManagementContext, OrderManagementConfiguration>
-	implements OrderManagementResource {
+	implements OrderManagementResource, JourneyProcess<CustomJourneyInstance>{
 
 	@Reference
 	private volatile OrderManagementFacade facade;
@@ -86,15 +98,89 @@ public class OrderManagementResourceImpl extends AbstractResource<OrderManagemen
 	public void modified(OrderManagementConfiguration config) {
 		prepare(config);
 	}
+
+	@Override
+	public void init() {
+		info("Entering init");
+		facade.init(AppProperties.JOURNEY_NAME, AppProperties.JOURNEY_VERSION);
+	}
+
+	@JourneyMethod(value = "CREATE", mode = ActionMode.CREATE)
+	@Override
+	public CustomJourneyDTO create() {
+		info("Entering create");
+		return facade.create(this);
+	}
+
+	@JourneyMethod(value = "READ PROCESS")
+	@Override
+	public CustomJourneyDTO read(@JourneyReference Long instanceId) {
+		info("Entering read");
+		return facade.read(this);
+	}
+
+	@JourneyMethod(value = "GET PRODUCTS LIST")
+	@Override
+	public List<ProductDTO> getProductList(@JourneyReference Long instanceId) {
+		info("Entering getProducts");
+		return facade.getProductList();
+	}
+
+	@JourneyMethod(value = "GET CATEGORIES LIST")
+	@Override
+	public CategoryDTO getCategory(@JourneyReference Long instanceId) {
+		info("Entering getCategory");
+		return facade.getCategory();
+	}
+
+	@JourneyMethod(value = "GET DELIVERY OPTIONS")
+	@Override
+	public List<HashMap<String, Object>> getDeliveryOptions(@JourneyReference Long instanceId) {
+		info("Entering getDeliveryOptions");
+		return facade.getDeliveryOptions();
+	}
+
+	@JourneyMethod(value = "UPDATE PRODUCT SELECTED")
+	@Override
+	public CustomJourneyDTO selectProduct(@JourneyReference Long instanceId, Integer productId) {
+		info("Entering selectProduct");
+		return facade.selectProduct(this, productId);
+	}
+
+	@JourneyMethod(value = "CREATE ORDER REQUEST")
+	@Override
+	public CustomJourneyDTO createOrder(@JourneyReference Long instanceId) {
+		info("Entering createOrder");
+		return facade.createOrder(this);
+	}
+
+	@JourneyMethod(value = "UPDATE CUSTOMER INFORMATION")
+	@Override
+	public CustomJourneyDTO updateCustomerInfo(@JourneyReference Long instanceId, CustomerInfoDTO customerInfo) {
+		info("Entering updateCustomerInfo");
+		return facade.updateCustomerInfo(this, customerInfo);
+	}
+
+	@JourneyMethod(value = "SUBMIT ORDER REQUEST")
+	@Override
+	public CustomJourneyDTO submitOrder(@JourneyReference Long instanceId) {
+		info("Entering submitOrder");
+		return facade.submitOrder(this);
+	}
 	
 	@Override
-	public String echo(String msg) {
-		return facade.echo(msg);
+	public String journeyName() {
+		return AppProperties.JOURNEY_NAME;
 	}
 
 	@Override
-	public String secureEcho(String channel, String msg) {
-		return facade.secureEcho(channel, msg);
+	public int majorVersion() {
+		return AppProperties.JOURNEY_VERSION;
+	}
+
+	@Override
+	public Class<CustomJourneyInstance> getInstanceClass() {
+		return CustomJourneyInstance.class;
 	}
 
 }

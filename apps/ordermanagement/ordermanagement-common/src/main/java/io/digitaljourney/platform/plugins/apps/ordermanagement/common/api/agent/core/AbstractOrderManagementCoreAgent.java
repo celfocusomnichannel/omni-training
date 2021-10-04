@@ -32,14 +32,6 @@ import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.
 
 public abstract class AbstractOrderManagementCoreAgent<A extends Annotation> extends AbstractConfigurableComponent<A> implements OrderManagementCoreAgent {
 
-	//FIXME Insert here your correlated microservice i.e resource
-	/**
-	 * Gets the corresponding <microservice_name>Resource implementation.
-	 *
-	 * @return <microservice_name>Resource
-	 */
-	//protected abstract <microservice_name>Resource getResource();	
-	
 	protected abstract ProductManagementResource getProductManagementResource();
 	
 	protected abstract JourneyBlueprintResource getJourneyBlueprintResource();

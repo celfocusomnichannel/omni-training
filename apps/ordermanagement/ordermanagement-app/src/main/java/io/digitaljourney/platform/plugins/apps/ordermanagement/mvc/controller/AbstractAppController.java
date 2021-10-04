@@ -1,6 +1,6 @@
 /*-
  * #%L
- * Apps :: Training JWE Order Management App :: Core Agent
+ * Apps :: Training JWE Order Management App App
  * %%
  * Copyright (C) 2016 - 2021 Digital Journey
  * %%
@@ -21,31 +21,27 @@
  * under applicable Laws.
  * #L%
  */
-package io.digitaljourney.platform.plugins.apps.ordermanagement.agents.core.impl;
+package io.digitaljourney.platform.plugins.apps.ordermanagement.mvc.controller;
 
-import org.osgi.service.metatype.annotations.AttributeDefinition;
-import org.osgi.service.metatype.annotations.AttributeType;
-import org.osgi.service.metatype.annotations.Icon;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+import org.eclipse.gemini.blueprint.extensions.annotation.ServiceReference;
 
-@ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/agent/core", icon = @Icon(resource = "OSGI-INF/icon/agent.png", size = 32))
-public @interface OrderManagementCoreAgentConfig {
-	/** Component Persistent Identifier */
-	static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.agent.core";
+import io.digitaljourney.platform.plugins.apps.ordermanagement.mvc.AppContext;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.JourneyWorkflowEngineResource;
+import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.controller.AbstractJourneyController;
 
-	/**
-	 * Gets the name of the user used to access core resources.
-	 *
-	 * @return System user name
-	 */
-	@AttributeDefinition(name = "%systemUserName.name", description = "%systemUserName.description")
-	String systemUserName();
+public abstract class AbstractAppController extends AbstractJourneyController<AppContext> {
 
-	/**
-	 * Gets the password of the user to access core resources.
-	 *
-	 * @return System user password
-	 */
-	@AttributeDefinition(name = "%systemPassword.name", type = AttributeType.PASSWORD, description = "%systemPassword.description")
-	String systemPassword();
+	@ServiceReference
+	private AppContext ctx;
+
+	@Override
+	protected AppContext getCtx() {
+		return this.ctx;
+	}
+
+	@Override
+	public JourneyWorkflowEngineResource getJourneyEngine() {
+		return journeyEngine();
+	}
+
 }

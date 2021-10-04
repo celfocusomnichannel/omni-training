@@ -112,12 +112,6 @@
 			<artifactId>paxexam-base</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- Rest Assured -->		
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<!-- JUnit -->		
 		<dependency>
 			<groupId>junit</groupId>
