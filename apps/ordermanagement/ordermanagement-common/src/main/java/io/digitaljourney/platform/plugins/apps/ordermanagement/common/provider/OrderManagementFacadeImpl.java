@@ -145,7 +145,8 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
 			throw getCtx().exception("Product does not exist");
 		}
 
-		instance.products.add(product);
+		if(!instance.products.contains(product))
+			instance.products.add(product);
 
 		return OrderManagementMapper.INSTANCE.toProcess(instance);
 	}
