@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+	name="platform-training-flagmicroservicersxml-modules-${project.version}"
+	xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+
+	<feature name="flagmicroservicersxml-api" description="FlagMicroServiceRSXML API" version="${project.version}">
+		<feature>base-ws-rs</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-service-api/${project.version}</bundle>
+	</feature>
+
+	<feature name="flagmicroservicersxml-modules"
+		description="FlagMicroServiceRSXML Modules" version="${project.version}">
+		<feature>rsprovider</feature>
+		<feature>flagmicroservicersxml-api</feature>
+		<feature>base-ws-xml</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-data-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-entity/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-service-ri/${project.version}</bundle>
+	</feature>
+
+	<feature name="flagmicroservicersxml" description="FlagMicroServiceRSXML" version="${project.version}">
+			<feature>flagmicroservicersxml-modules</feature>
+	</feature>
+</features>

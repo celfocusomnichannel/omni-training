@@ -1,0 +1,112 @@
+:docdir: ../appendices
+:icons: font
+:author: Digital Journey Product Development Team
+:imagesdir: ./images
+:imagesoutdir: ./images
+//embedded images
+:data-uri:
+// empty line
+:blank: pass:[ +]
+// Toc
+:toc: macro
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+// Variables
+:revnumber: 1.0
+:arrow: icon:angle-double-down[]
+:xrefstyle: short
+:ms_name: Training Product Microservice
+:source-highlighter: highlightjs
+
+image::shared/header.png[]
+
+= {ms_name} - Design Document
+v{revnumber}, {docdate}
+
+<<<
+
+.Change Log
+[%header,cols=3*]
+|===
+| Version
+| Date
+| Changes
+
+| 1.0
+| January/2019
+| Initial Version
+|===
+
+toc::[]
+
+<<<
+
+== Introduction
+
+The purpose of this document is to describe the design decisions of the {ms_name} micro-service.
+
+It will cover the following topics: first, a context is given, explaining what does the solution do as well as a high level view of the role it takes within the other modules.
+Then, an explanation about how its components works and the relation between them and in addition, a detailed view of the solution interfaces.
+
+
+== Context
+'''
+
+=== What is This
+'''
+{ms_name} is the micro-service responsible for ...
+
+=== High Level Diagram
+'''
+
+.High Level Diagram
+[ditaa, uam-high-level-diagram, png, round-corners=true]
+----
++--------------------------------------------------------------------------+
+| Front End                                                                |
+|                                                                          |
++--------------------------------------------------------------------------+
+        ^            ^             ^
+        |            |             |
+        v            v             v
++--------------------------------------------------------------------------+
+| CMS / APPS                                                               |
+|                                                                          |
++--------------------------------------------------------------------------+
+        ^            ^             ^
+        |            |             |
+        v            v             v
++--------------------------------------------------------------------------+
+|  Core                                                                    |
+|                                                                          |
+|  +-----------------------------------------+         +--------------+    |
+|  | UAM                                     | <---->  | Other        |    |
+|  |                                         |         | Microservice |    |
+|  +-----------------------------------------+         +--------------+    |
+|        ^           ^               ^                                     |
++--------|-----------|---------------|-------------------------------------+
+         |           |               |
+         v           v               v
++-------------+ +------------+ +---------------+
+|{s}          | |            | |               |
+|  Database   | | Custom     | | Custom        |
+|             | | Shiro      | | Authenticator |
+| +---------+ | | Realm 1..n | | 1..n          |
+| | User    | | |            | |               |
+| | metadata| | |            | |               |
+| +---------+ | |            | |               |
++-------------+ +------------+ +---------------+
+----
+
+== Design
+'''
+
+=== How Does This Work
+'''
+
+The {ms_name} micro-service provides REST endpoints to allow users to ...
+
+=== Detailed Design
+'''
+

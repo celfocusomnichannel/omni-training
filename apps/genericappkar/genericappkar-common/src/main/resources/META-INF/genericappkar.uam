@@ -1,0 +1,6 @@
+"GENERICAPPKAR_PERMISSION_ALL" : create permission "genericappkar:*" "Generic Kar App Description full permission";
+"GENERICAPPKAR_PERMISSION_CREATE" : create permission "genericappkar:create" "Generic Kar App Description create permission";
+"GENERICAPPKAR_PERMISSION_READ" : create permission "genericappkar:read" "Generic Kar App Description read permission";
+"GENERICAPPKAR_PERMISSION_UPDATE" : create permission "genericappkar:update" "Generic Kar App Description update permission";
+"GENERICAPPKAR_PERMISSION_DELETE" : create permission "genericappkar:delete" "Generic Kar App Description delete permission";
+"GENERICAPPKAR_PERMISSION_EXECUTE" : create permission "genericappkar:execute" "Generic Kar App Description execute permission";

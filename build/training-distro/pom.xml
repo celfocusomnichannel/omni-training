@@ -48,62 +48,77 @@
         <scm.path>celfocus/omni-platform-plugins.git</scm.path>
         <!-- GITFLOW MANAGEMENT -->
         <gitflow.versionTagPrefix>version/distro/</gitflow.versionTagPrefix>
-		
-		<!-- Laucher Overrides -->
-		<!-- CORE -->
-		<appserver.1.minMem>1536m</appserver.1.minMem>
-		<appserver.1.maxMem>1536m</appserver.1.maxMem>
-		<!-- CMS -->
-		<appserver.2.minMem>1536m</appserver.2.minMem>
-		<appserver.2.maxMem>1536m</appserver.2.maxMem>
-		
-		<lib.org.codehaus.groovy.groovy.version>2.4.21</lib.org.codehaus.groovy.groovy.version>		
-
-		
+        <!-- Laucher Overrides -->
+        <!-- CORE -->
+        <appserver.1.minMem>1536m</appserver.1.minMem>
+        <appserver.1.maxMem>1536m</appserver.1.maxMem>
+        <!-- CMS -->
+        <appserver.2.minMem>1536m</appserver.2.minMem>
+        <appserver.2.maxMem>1536m</appserver.2.maxMem>
+        <lib.org.codehaus.groovy.groovy.version>2.4.21</lib.org.codehaus.groovy.groovy.version>
         <!-- ###############################################      -->
         <!-- ###########   DISTRO MANAGEMENT   ############      -->
         <!-- ###############################################      -->
-        
-		<!-- Modules -->
-		<platform.plugins.modules.uam.version>13.5.0</platform.plugins.modules.uam.version>
-		<platform.plugins.modules.processcontinuity.version>4.2.3</platform.plugins.modules.processcontinuity.version>
-		<platform.plugins.modules.rulesengine.version>3.3.3</platform.plugins.modules.rulesengine.version>
-		<platform.plugins.modules.logservice.version>4.1.2</platform.plugins.modules.logservice.version>
-		<platform.plugins.modules.cachemanager.version>4.2.2</platform.plugins.modules.cachemanager.version>
-		<platform.plugins.modules.events.version>1.1.1</platform.plugins.modules.events.version>
-		<platform.plugins.modules.journeyworkflowengine.version>2.2.8</platform.plugins.modules.journeyworkflowengine.version>
-		<platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
-		<platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
-		<platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
-
-		<!-- Providers -->
-		<platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
-		<platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
-
-		<!-- Apps -->
-		<platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
-		<!-- UFE Current versions -->
-		<platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
-		<platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
-		<platform.plugins.apps.journeydesigner.version>2.12.0</platform.plugins.apps.journeydesigner.version> <!-- should be 3.1.1 but import widgets is causing some troubles -->
-		<!-- Generic Apps -->
-		<platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
-		<platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
-		<platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
-		<platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
-		
-		<!-- Training -->
-		<platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
-
-		<!-- TILE MANAGEMENT -->
-		<tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
-		<tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
-		<tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
-		
-		<!-- Dependency Management -->
-		<lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
-		<lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-
+        <!-- Modules -->
+        <platform.plugins.modules.uam.version>13.5.0</platform.plugins.modules.uam.version>
+        <platform.plugins.modules.processcontinuity.version>4.2.3</platform.plugins.modules.processcontinuity.version>
+        <platform.plugins.modules.rulesengine.version>3.3.3</platform.plugins.modules.rulesengine.version>
+        <platform.plugins.modules.logservice.version>4.1.2</platform.plugins.modules.logservice.version>
+        <platform.plugins.modules.cachemanager.version>4.2.2</platform.plugins.modules.cachemanager.version>
+        <platform.plugins.modules.events.version>1.1.1</platform.plugins.modules.events.version>
+        <platform.plugins.modules.journeyworkflowengine.version>2.2.8</platform.plugins.modules.journeyworkflowengine.version>
+        <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
+        <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
+        <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
+        <!-- Providers -->
+        <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
+        <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
+        <!-- Apps -->
+        <platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
+        <!-- UFE Current versions -->
+        <platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
+        <platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
+        <platform.plugins.apps.journeydesigner.version>2.12.0</platform.plugins.apps.journeydesigner.version>
+        <!-- should be 3.1.1 but import widgets is causing some troubles -->
+        <!-- Generic Apps -->
+        <platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
+        <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
+        <platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
+        <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
+        <!-- Training -->
+        <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
+        <io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>
+        <io.digitaljourney.platform.plugins.apps.genericappkar.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.genericappkar.version>
+        <!-- TILE MANAGEMENT -->
+        <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
+        <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
+        <tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+        <!-- Dependency Management -->
+        <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
+        <!-- Flag Microservice -->
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>
+        <!-- Product Service -->
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>
+        <!-- Generic App -->
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -124,6 +139,102 @@
                 <type>kar</type>
             </dependency>
             <!-- # Modules -->
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-data-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-data-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-entity</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-entity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-service-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-service-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-service-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>flagmicroservicersxml-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-data-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-data-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-entity</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-entity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-service-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-service-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-service-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-service-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>productservice-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-app</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-cms</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version}</version>
+                <type>kar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-agents-core</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-common</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-cxf</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- ====================================================================== -->
