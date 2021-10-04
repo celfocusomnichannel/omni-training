@@ -14,9 +14,9 @@ Import-Package: \
 	javax.validation;version="[1.1,2.1)", \
 	javax.validation.constraints;version="[1.1,2.1)", \
 	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect;version="[3.0.7,4.0)",\
-    io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation;version="[3.0.7,4.0)",\
-    io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.context;version="[3.0.7,4.0)",\
-    io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.controller;version="[3.0.7,4.0)",\
-    io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.dto;version="[3.0.7,4.0)",\
-    io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.session;version="[3.0.7,4.0)",\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation;version="[3.0.7,4.0)",\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.context;version="[3.0.7,4.0)",\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.controller;version="[3.0.7,4.0)",\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.dto;version="[3.0.7,4.0)",\
+	io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.session;version="[3.0.7,4.0)",\
 	*

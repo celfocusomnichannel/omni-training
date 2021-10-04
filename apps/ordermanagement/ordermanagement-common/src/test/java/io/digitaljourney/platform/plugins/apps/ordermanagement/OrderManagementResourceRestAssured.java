@@ -25,10 +25,6 @@ package io.digitaljourney.platform.plugins.apps.ordermanagement;
 
 import io.restassured.RestAssured;
 
-/**
- * Training JWE Order Management App integration tests.
- *
- */
 public class OrderManagementResourceRestAssured {
 
 	private static final String BASE_PATH = "/environment" + AppProperties.ADDRESS + "/path";//FIXME set up the environment (core, cms, bin/mvc.do) and path

@@ -65,13 +65,13 @@ public class OrderManagementController extends AbstractAppController implements 
 	private static final String ORDERMANAGEMENT = "ordermanagement";
 	
 	@ServiceReference
-	private OrderManagementFacade orderManagementFacade;
+	private OrderManagementFacade facade;
 	
 	@GetMapping("/init")
 	@Override
 	public @ResponseBody void init() {
 		info("Entering init");
-		orderManagementFacade.init(AppProperties.JOURNEY_NAME, AppProperties.JOURNEY_VERSION);
+		facade.init(AppProperties.JOURNEY_NAME, AppProperties.JOURNEY_VERSION);
 	}
 	
 	@PostMapping("/")
@@ -79,7 +79,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CustomJourneyDTO create() {
 		info("Entering create");
-		return orderManagementFacade.create(this);
+		return facade.create(this);
 	}
 	
 	@GetMapping("/{instanceId}")
@@ -87,7 +87,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CustomJourneyDTO read(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering read");
-		return orderManagementFacade.read(this);
+		return facade.read(this);
 	}
 	
 	@GetMapping("/{instanceId}/products")
@@ -105,8 +105,8 @@ public class OrderManagementController extends AbstractAppController implements 
 		} catch (IOException e) {
 			error("Could not publish message on websocket : exception - {}",e.getMessage());
 		}
-		
-		return orderManagementFacade.getProductList();
+	
+		return facade.getProductList();
 	}
 	
 	@GetMapping("/{instanceId}/category")
@@ -114,7 +114,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CategoryDTO getCategory(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering getCategory");
-		return orderManagementFacade.getCategory();
+		return facade.getCategory();
 	}
 	
 	@GetMapping("/{instanceId}/delivery-options")
@@ -122,7 +122,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody List<HashMap<String, Object>> getDeliveryOptions(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering getDeliveryOptions");
-		return orderManagementFacade.getDeliveryOptions();
+		return facade.getDeliveryOptions();
 	}
 
 	@PutMapping("/{instanceId}/products/{productId}")
@@ -141,7 +141,7 @@ public class OrderManagementController extends AbstractAppController implements 
 			error("Could not publish message on websocket : exception - {}",e.getMessage());
 		}
 		
-		return orderManagementFacade.selectProduct(this, productId);
+		return facade.selectProduct(this, productId);
 	}
 
 	@PostMapping("/{instanceId}/order-create")
@@ -160,7 +160,7 @@ public class OrderManagementController extends AbstractAppController implements 
 			error("Could not publish message on websocket : exception - {}",e.getMessage());
 		}
 		
-		return orderManagementFacade.createOrder(this);
+		return facade.createOrder(this);
 	}
 
 	@PostMapping("/{instanceId}/customer-info")
@@ -179,7 +179,7 @@ public class OrderManagementController extends AbstractAppController implements 
 			error("Could not publish message on websocket : exception - {}",e.getMessage());
 		}
 		
-		return orderManagementFacade.updateCustomerInfo(this, customerInfo);
+		return facade.updateCustomerInfo(this, customerInfo);
 	}
 
 	@PostMapping("/{instanceId}/order-submit")
@@ -198,7 +198,7 @@ public class OrderManagementController extends AbstractAppController implements 
 			error("Could not publish message on websocket : exception - {}",e.getMessage());
 		}
 		
-		return orderManagementFacade.submitOrder(this);
+		return facade.submitOrder(this);
 	}
 
 	@Override

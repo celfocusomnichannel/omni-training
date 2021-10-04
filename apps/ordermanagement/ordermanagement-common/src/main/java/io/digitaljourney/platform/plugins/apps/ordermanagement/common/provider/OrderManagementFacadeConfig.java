@@ -28,5 +28,5 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 @ObjectClassDefinition(name = "%name", description = "%description", localization = "OSGI-INF/l10n/ordermanagementfacade", icon = @Icon(resource = "OSGI-INF/icon/ordermanagementfacade.png", size = 32))
 public @interface OrderManagementFacadeConfig {
-    static final String CPID = "platform.plugins.apps.ordermanagement.facade";
+    static final String CPID = "io.digitaljourney.platform.plugins.apps.ordermanagement.facade";
 }

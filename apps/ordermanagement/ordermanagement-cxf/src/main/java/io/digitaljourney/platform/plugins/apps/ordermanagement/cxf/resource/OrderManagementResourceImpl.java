@@ -73,10 +73,10 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.Custo
 @Designate(ocd = OrderManagementConfiguration.class)
 @CustomRsProvider(AppProperties.ADDRESS)
 public class OrderManagementResourceImpl extends AbstractResource<OrderManagementContext, OrderManagementConfiguration>
-	implements OrderManagementResource, JourneyProcess<CustomJourneyInstance> {
+	implements OrderManagementResource, JourneyProcess<CustomJourneyInstance>{
 
 	@Reference
-	private volatile OrderManagementFacade orderManagementFacade;
+	private volatile OrderManagementFacade facade;
 
 	/**
 	 * Method called whenever the component is activated.
@@ -102,70 +102,70 @@ public class OrderManagementResourceImpl extends AbstractResource<OrderManagemen
 	@Override
 	public void init() {
 		info("Entering init");
-		orderManagementFacade.init(AppProperties.JOURNEY_NAME, AppProperties.JOURNEY_VERSION);
+		facade.init(AppProperties.JOURNEY_NAME, AppProperties.JOURNEY_VERSION);
 	}
 
 	@JourneyMethod(value = "CREATE", mode = ActionMode.CREATE)
 	@Override
 	public CustomJourneyDTO create() {
 		info("Entering create");
-		return orderManagementFacade.create(this);
+		return facade.create(this);
 	}
 
 	@JourneyMethod(value = "READ PROCESS")
 	@Override
 	public CustomJourneyDTO read(@JourneyReference Long instanceId) {
 		info("Entering read");
-		return orderManagementFacade.read(this);
+		return facade.read(this);
 	}
 
 	@JourneyMethod(value = "GET PRODUCTS LIST")
 	@Override
 	public List<ProductDTO> getProductList(@JourneyReference Long instanceId) {
 		info("Entering getProducts");
-		return orderManagementFacade.getProductList();
+		return facade.getProductList();
 	}
 
 	@JourneyMethod(value = "GET CATEGORIES LIST")
 	@Override
 	public CategoryDTO getCategory(@JourneyReference Long instanceId) {
 		info("Entering getCategory");
-		return orderManagementFacade.getCategory();
+		return facade.getCategory();
 	}
 
 	@JourneyMethod(value = "GET DELIVERY OPTIONS")
 	@Override
 	public List<HashMap<String, Object>> getDeliveryOptions(@JourneyReference Long instanceId) {
 		info("Entering getDeliveryOptions");
-		return orderManagementFacade.getDeliveryOptions();
+		return facade.getDeliveryOptions();
 	}
 
 	@JourneyMethod(value = "UPDATE PRODUCT SELECTED")
 	@Override
 	public CustomJourneyDTO selectProduct(@JourneyReference Long instanceId, Integer productId) {
 		info("Entering selectProduct");
-		return orderManagementFacade.selectProduct(this, productId);
+		return facade.selectProduct(this, productId);
 	}
 
 	@JourneyMethod(value = "CREATE ORDER REQUEST")
 	@Override
 	public CustomJourneyDTO createOrder(@JourneyReference Long instanceId) {
 		info("Entering createOrder");
-		return orderManagementFacade.createOrder(this);
+		return facade.createOrder(this);
 	}
 
 	@JourneyMethod(value = "UPDATE CUSTOMER INFORMATION")
 	@Override
 	public CustomJourneyDTO updateCustomerInfo(@JourneyReference Long instanceId, CustomerInfoDTO customerInfo) {
 		info("Entering updateCustomerInfo");
-		return orderManagementFacade.updateCustomerInfo(this, customerInfo);
+		return facade.updateCustomerInfo(this, customerInfo);
 	}
 
 	@JourneyMethod(value = "SUBMIT ORDER REQUEST")
 	@Override
 	public CustomJourneyDTO submitOrder(@JourneyReference Long instanceId) {
 		info("Entering submitOrder");
-		return orderManagementFacade.submitOrder(this);
+		return facade.submitOrder(this);
 	}
 	
 	@Override

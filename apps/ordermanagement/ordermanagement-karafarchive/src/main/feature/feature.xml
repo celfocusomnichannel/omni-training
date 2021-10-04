@@ -41,6 +41,7 @@
 
 	<feature name="ordermanagement-mvc-modules" description="OrderManagement MVC Modules" version="${project.version}"  install="manual">
 		<feature>ordermanagement-common-modules</feature>
+		<feature>cms-mvc</feature>
 		<feature>journeyworkflowengine-gateway-aspect-mvc</feature>
 		<feature>ordermanagement-agents-core</feature>
 

@@ -37,8 +37,6 @@ public final class AppProperties extends JourneyMVCProperties {
 	public static final String APP_VERSION = "/v" + CURRENT_VERSION;
 	public static final String ADDRESS = "/" + APP_NAME + APP_VERSION;
 	
-	public static final String SUBSERVICE_NAME = SUBSERVICE_PREFIX + APP_NAME;
-	
 	public static final String DOCS_ADDRESS = CMS_RESOURCE_PATTERN + ADDRESS + DOCS_PATH;
 
 	public static final String PERMISSION_ALL = APP_NAME + ACTION_ALL;
@@ -55,4 +53,5 @@ public final class AppProperties extends JourneyMVCProperties {
 	
 	public static final String JOURNEY_NAME = "PRODUCT_CHECKOUT";
 	public static final int JOURNEY_VERSION = 1;
+
 }
