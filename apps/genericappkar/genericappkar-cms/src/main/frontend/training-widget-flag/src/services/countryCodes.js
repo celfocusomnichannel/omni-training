@@ -250,4 +250,4 @@ const COUNTRY_CODE = [
   { code: "ZW", name: "Zimbabwe" }
 ];
 
-export default COUNTRY_code;
+export default COUNTRY_CODE;
