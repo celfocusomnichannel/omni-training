@@ -147,7 +147,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public CategoryDTO createCategory(CategoryDTO category) {
 		WSData<CategoryDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/category/");
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/category/");
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			CategoryDTO responseCall = clientPath.post(category, CategoryDTO.class);
@@ -162,7 +162,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public CategoryDTO getCategory(Integer id) {
 		WSData<CategoryDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/category/{id}", id);
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/category/{id}", id);
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			CategoryDTO responseCall = clientPath.get(CategoryDTO.class);
@@ -177,7 +177,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public CategoryDTO updateCategory(Integer id, CategoryDTO category) {
 		WSData<CategoryDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/category/{id}", id);
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/category/{id}", id);
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			CategoryDTO responseCall = clientPath.put(category, CategoryDTO.class);
@@ -207,7 +207,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public ProductDTO createProduct(ProductDTO product) {
 		WSData<ProductDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/product/");
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/product/");
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			ProductDTO responseCall = clientPath.post(product, ProductDTO.class);
@@ -222,7 +222,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public ProductDTO getProduct(Integer id) {
 		WSData<ProductDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/product/{id}", id);
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/product/{id}", id);
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			ProductDTO responseCall = clientPath.get(ProductDTO.class);
@@ -237,7 +237,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public List<ProductDTO> getProducts() {
 		WSData<List<ProductDTO>> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("/product/");
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/product/");
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			Collection<? extends ProductDTO> responseCall = clientPath.getCollection(ProductDTO.class);
@@ -256,7 +256,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public ProductDTO updateProduct(Integer id, ProductDTO product) {
 		WSData<ProductDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.MULTIPART_FORM_DATA).path("/product/{id}", id);
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/product/{id}", id);
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			ProductDTO responseCall = clientPath.put(product, ProductDTO.class);
@@ -271,7 +271,7 @@ public class ProductManagementClient extends AbstractWSRSClient<ProductManagemen
 	@Override
 	public ProductDTO deleteProduct(Integer id) {
 		WSData<ProductDTO> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("/product/{id}", id);
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON).path("/product/{id}", id);
 			// allow making changes to the client
 			executeClientHandlers(clientPath);
 			ProductDTO response = clientPath.delete().readEntity(ProductDTO.class);

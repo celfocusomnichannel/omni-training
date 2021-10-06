@@ -90,7 +90,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.read(this);
 	}
 	
-	@GetMapping("/{instanceId}/products")
+	@GetMapping("/products")
 	@JourneyMethod(value = "GET PRODUCTS LIST")
 	@Override
 	public @ResponseBody List<ProductDTO> getProductList(@PathVariable @JourneyReference Long instanceId) {
@@ -109,7 +109,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.getProductList();
 	}
 	
-	@GetMapping("/{instanceId}/category")
+	@GetMapping("/category")
 	@JourneyMethod(value = "GET CATEGORIES LIST")
 	@Override
 	public @ResponseBody CategoryDTO getCategory(@PathVariable @JourneyReference Long instanceId) {
@@ -117,7 +117,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.getCategory();
 	}
 	
-	@GetMapping("/{instanceId}/delivery-options")
+	@GetMapping("/delivery-options")
 	@JourneyMethod(value = "GET DELIVERY OPTIONS")
 	@Override
 	public @ResponseBody List<HashMap<String, Object>> getDeliveryOptions(@PathVariable @JourneyReference Long instanceId) {

@@ -95,6 +95,7 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
 			content = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines().collect(Collectors.joining(""));
 		} catch (IOException e) {
 		}
+		
 		getCoreAgent().createBlueprint(journeyName, journeyVersion, content);
 	}
 

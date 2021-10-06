@@ -48,7 +48,10 @@ import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.d
 import io.digitaljourney.platform.plugins.modules.journeyblueprint.service.api.dto.CreateBlueprintHeaderDTOBuilder;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.ProductManagementResource;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTOBuilder;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTOBuilder;
+import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.SaveCategoryDTOBuilder;
 
 //@formatter:off
 @Component(
@@ -111,7 +114,10 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	
 	@Override
 	public void createBlueprint(String journeyName, int journeyVersion, String blueprintContent) {
-
+		//Creates mocked category and products
+		createMockedData();
+		
+		
 		String expression = "isActive==true;journeyName==" + journeyName;
 //		List<BlueprintHeaderDTO> bts = AuthenticationUtils.systemCall(getConfig().systemUserName(), getConfig().systemPassword(), () -> journeyBlueprintResource.searchBlueprint(expression, null, null));
 		List<BlueprintHeaderDTO> bts = journeyBlueprintResource.searchBlueprint(expression, null, null);
@@ -141,6 +147,25 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 			// No Impersonate yet
 			journeyBlueprintResource.submitBlueprint(blueprintHeaderDTO.id, submit);
 			journeyBlueprintResource.publishBlueprint(blueprintHeaderDTO.id, submit);
+		}
+	}
+	
+	private void createMockedData() {
+		CategoryDTO category = new CategoryDTOBuilder().withCategoryName("Console").build();
+		
+		CategoryDTO saveCategory = productManagementResource.createCategory(category);
+		
+		
+		ProductDTO product = new ProductDTOBuilder()
+				.withCategory(new SaveCategoryDTOBuilder()
+						.withCategoryId(saveCategory.getCategoryId())
+						.build())
+				.withProductName("PS5")
+				.withProductPrice(800.0)
+				.build();
+		
+		for(int i = 0; i != 3; i++) {
+			productManagementResource.createProduct(product);
 		}
 	}
 
