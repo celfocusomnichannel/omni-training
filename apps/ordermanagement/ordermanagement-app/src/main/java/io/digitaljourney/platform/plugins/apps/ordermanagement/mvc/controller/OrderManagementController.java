@@ -1,6 +1,5 @@
 package io.digitaljourney.platform.plugins.apps.ordermanagement.mvc.controller;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,9 +25,7 @@ import io.digitaljourney.platform.plugins.apps.ordermanagement.api.OrderManageme
 import io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facade.OrderManagementFacade;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
-import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.websocket.JourneyStatusDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.websocket.JourneyUpdateDTO;
-import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.websocket.WebSocketDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.events.ProcessContinuityEvent;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.websocket.KarafWebSocketServlet;
@@ -36,6 +33,7 @@ import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.trig
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyProcess;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyMethod;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyReference;
+import io.digitaljourney.platform.plugins.modules.processcontinuity.service.api.ProcesscontinuityProperties;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CmsRsProvider;
@@ -56,13 +54,11 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CmsRs
 		service = {PlatformEventReceiver.class},
 	    property = {
 	            "digitaljourney.service.name=OrderManagement",
-	            PlatformEventManagerConstants.RECEIVER + "=events/topic1"
+	            PlatformEventManagerConstants.RECEIVER + "=" + ProcesscontinuityProperties.DEFAULT_EVENT_TOPIC
 	    }
 		
 	)
 public class OrderManagementController extends AbstractAppController implements OrderManagementResource, JourneyProcess<CustomJourneyInstance>, PlatformEventReceiver {
-
-	private static final String ORDERMANAGEMENT = "ordermanagement";
 	
 	@ServiceReference
 	private OrderManagementFacade facade;
@@ -95,17 +91,6 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody List<ProductDTO> getProductList(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering getProducts");
-		
-		WebSocketDTO dto = new WebSocketDTO();
-		
-		dto.setInstanceId(Long.toString(instanceId));
-		
-		try {
-			KarafWebSocketServlet.publishMessage(dto,ORDERMANAGEMENT);
-		} catch (IOException e) {
-			error("Could not publish message on websocket : exception - {}",e.getMessage());
-		}
-	
 		return facade.getProductList();
 	}
 	
@@ -129,18 +114,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@JourneyMethod(value = "UPDATE PRODUCT SELECTED")
 	@Override
 	public @ResponseBody CustomJourneyDTO selectProduct(@PathVariable @JourneyReference Long instanceId, @PathVariable Integer productId) {
-		info("Entering selectProduct");
-		
-		WebSocketDTO dto = new WebSocketDTO();
-		
-		dto.setInstanceId(Long.toString(instanceId));
-		
-		try {
-			KarafWebSocketServlet.publishMessage(dto,ORDERMANAGEMENT);
-		} catch (IOException e) {
-			error("Could not publish message on websocket : exception - {}",e.getMessage());
-		}
-		
+		info("Entering selectProduct");		
 		return facade.selectProduct(this, productId);
 	}
 
@@ -149,17 +123,6 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CustomJourneyDTO createOrder(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering createOrder");
-		
-		WebSocketDTO dto = new WebSocketDTO();
-		
-		dto.setInstanceId(Long.toString(instanceId));
-		
-		try {
-			KarafWebSocketServlet.publishMessage(dto,ORDERMANAGEMENT);
-		} catch (IOException e) {
-			error("Could not publish message on websocket : exception - {}",e.getMessage());
-		}
-		
 		return facade.createOrder(this);
 	}
 
@@ -168,17 +131,6 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CustomJourneyDTO updateCustomerInfo(@PathVariable @JourneyReference Long instanceId, @RequestBody CustomerInfoDTO customerInfo) {
 		info("Entering updateCustomerInfo");
-		
-		WebSocketDTO dto = new WebSocketDTO();
-		
-		dto.setInstanceId(Long.toString(instanceId));
-		
-		try {
-			KarafWebSocketServlet.publishMessage(dto,ORDERMANAGEMENT);
-		} catch (IOException e) {
-			error("Could not publish message on websocket : exception - {}",e.getMessage());
-		}
-		
 		return facade.updateCustomerInfo(this, customerInfo);
 	}
 
@@ -187,17 +139,6 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public @ResponseBody CustomJourneyDTO submitOrder(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering submitOrder");
-		
-		WebSocketDTO dto = new WebSocketDTO();
-		
-		dto.setInstanceId(Long.toString(instanceId));
-		
-		try {
-			KarafWebSocketServlet.publishMessage(dto,ORDERMANAGEMENT);
-		} catch (IOException e) {
-			error("Could not publish message on websocket : exception - {}",e.getMessage());
-		}
-		
 		return facade.submitOrder(this);
 	}
 
@@ -218,10 +159,11 @@ public class OrderManagementController extends AbstractAppController implements 
 
 	private static ObjectMapper mapper = new ObjectMapper();
 	static {
+		mapper.registerModule(new JavaTimeModule());
+		mapper.configure(DeserializationFeature.FAIL_ON_TRAILING_TOKENS, true);
 		mapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		mapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
-		mapper.registerModule(new JavaTimeModule());
 	}
 	
 	@Override
@@ -229,33 +171,20 @@ public class OrderManagementController extends AbstractAppController implements 
 		if (object != null && object instanceof String) {
 
 			try {
-
 				ProcessContinuityEvent event = mapper.readValue(object.toString(), ProcessContinuityEvent.class);
-
-				String processType = event.processType;
+				String processType = event.processType.toString();
 				String eventType = event.eventType.toString();
-
-				if (eventType == ProcessContinuityEvent.EventType.STATUS_CHANGED.toString()
-						&& AppProperties.JOURNEY_NAME.equals(processType) && event.instanceId != null) {
-
-					JourneyStatusDTO dto = new JourneyStatusDTO();
-					dto.id = event.instanceId.toString();
-					dto.state = event.state.toString();
-					dto.status = event.status;
-
-					KarafWebSocketServlet.publishMessage(dto, ORDERMANAGEMENT);
-				}
-
-				if (eventType == ProcessContinuityEvent.EventType.UPDATED.toString()
+				
+				if (eventType.equals(ProcessContinuityEvent.EventType.STATUS_CHANGED.toString())
 						&& AppProperties.JOURNEY_NAME.equals(processType) && event.instanceId != null) {
 
 					JourneyUpdateDTO dto = new JourneyUpdateDTO();
 					dto.id = event.instanceId.toString();
 					dto.state = event.state.toString();
-					dto.status = event.status;
-					dto.updatedBy = event.updatedBy;
-					dto.updatedChannel = event.updatedChannel;
-					KarafWebSocketServlet.publishMessage(dto, ORDERMANAGEMENT);
+					dto.status = event.status.toString();
+					dto.updatedBy = event.updatedBy.toString();
+					dto.updatedChannel = event.updatedChannel.toString();
+					KarafWebSocketServlet.publishMessage(dto, event.instanceId.toString());
 				}
 
 			} catch (Throwable t) {

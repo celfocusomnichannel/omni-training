@@ -117,9 +117,7 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 		//Creates mocked category and products
 		createMockedData();
 		
-		
 		String expression = "isActive==true;journeyName==" + journeyName;
-//		List<BlueprintHeaderDTO> bts = AuthenticationUtils.systemCall(getConfig().systemUserName(), getConfig().systemPassword(), () -> journeyBlueprintResource.searchBlueprint(expression, null, null));
 		List<BlueprintHeaderDTO> bts = journeyBlueprintResource.searchBlueprint(expression, null, null);
 
 		if(bts == null || bts.isEmpty()){
@@ -134,17 +132,11 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 							.build())
 					.build();
 
-//			BlueprintHeaderDTO blueprintHeaderDTO = AuthenticationUtils.systemCall(getConfig().systemUserName(), getConfig().systemPassword(), () -> journeyBlueprintResource.createBlueprint(createBlueprintDTO));
 			BlueprintHeaderDTO blueprintHeaderDTO = journeyBlueprintResource.createBlueprint(createBlueprintDTO);
 
 			ActionBlueprintDTO submit = new ActionBlueprintDTOBuilder()
 					.withUpdatedby(AppProperties.APP_NAME + "-app")
 					.build();
-//			AuthenticationUtils.systemRun(getConfig().systemUserName(), getConfig().systemPassword(), ()->  {
-//				journeyBlueprintResource.submitBlueprint(blueprintHeaderDTO.id, submit);
-//				journeyBlueprintResource.publishBlueprint(blueprintHeaderDTO.id, submit);
-//				});
-			// No Impersonate yet
 			journeyBlueprintResource.submitBlueprint(blueprintHeaderDTO.id, submit);
 			journeyBlueprintResource.publishBlueprint(blueprintHeaderDTO.id, submit);
 		}
@@ -172,7 +164,6 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 
 	@Override
 	public List<ProductDTO> getProducts() {
-		// No Impersonate yet
 		return productManagementResource.getProducts();
 	}
 
@@ -193,7 +184,6 @@ public class OrderManagementCoreAgentImpl extends AbstractOrderManagementCoreAge
 	public ConfigurationSearchResultDTO getCategoryFromConfiguration() {
 		ConfigurationSearchFilterDTO filter = new ConfigurationSearchFilterDTO();
 		filter.target = "io.digitaljourney.platform.plugins.apps.ordermanagement.category";
-		//FIX:ME by default 0 and 150 but this needs to be fixed in order to receive this values or made this defaults as configurations
 		filter.offset = 0;
 		filter.limit = 150;
 		return fromConfigResource((config) -> config.searchByFilter(filter), null);

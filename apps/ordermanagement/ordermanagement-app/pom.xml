@@ -134,6 +134,13 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId>processcontinuity-service-api</artifactId>
+			<version>4.2.3</version>
+			<scope>compile</scope>
+		</dependency>
+
 		<!-- Test -->
 		<!-- PaxExam -->
 		<dependency>
@@ -165,6 +172,10 @@
 			<artifactId>websocket-servlet</artifactId>
 			<version>9.3.14.v20161028</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
 		</dependency>
 	</dependencies>
 

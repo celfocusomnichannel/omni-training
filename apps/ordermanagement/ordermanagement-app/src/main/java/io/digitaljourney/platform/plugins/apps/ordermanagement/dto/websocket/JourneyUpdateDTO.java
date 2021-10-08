@@ -6,7 +6,11 @@ import net.karneim.pojobuilder.GeneratePojoBuilder;
 
 @GeneratePojoBuilder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class JourneyUpdateDTO extends WebSocketJourneyDTO {
+public class JourneyUpdateDTO {
+	public String id;
+	public String origin;
+	public String state;
+	public String status;
 	public String action = "UPDATE";
 	public String updatedBy;
 	public String updatedChannel;

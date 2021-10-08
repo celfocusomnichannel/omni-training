@@ -13,8 +13,10 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.http.HttpService;
 
+import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
+
 @Component(
-        name = "ordermanagement-websocket",
+        name = AppProperties.APP_NAME + "-websocket",
         immediate = true,
         configurationPid = "io.digitaljourney.platform.plugins.apps.ordermanagement.websocket"
 )
@@ -28,12 +30,12 @@ public class KarafWebSocket {
 	
     @Activate
     public void activate() throws Exception {
-        httpService.registerServlet("/ordermanagement/v1/websocket", new KarafWebSocketServlet(), null, null);
+        httpService.registerServlet(AppProperties.ADDRESS + "/websocket", new KarafWebSocketServlet(), null, null);
     }
 
     @Deactivate
     public void deactivate() throws Exception {
-        httpService.unregister("/ordermanagement/v1/websocket");
+        httpService.unregister(AppProperties.ADDRESS + "/websocket");
     }	
 	
 	@OnWebSocketConnect
@@ -65,7 +67,7 @@ public class KarafWebSocket {
 	private String getJourneyId(Session session) {
 		String path = session.getUpgradeRequest().getRequestURI().getPath();
 		String[] parts = path.split(JOURNEY_ID_TOKEN);
-		return parts == null ? null : parts[1];
+		return parts == null ? null : parts[parts.length-1];
 	}
 }
 

@@ -1,6 +1,6 @@
 package io.digitaljourney.platform.plugins.apps.ordermanagement.events;
 
-import java.time.LocalDateTime;
+import org.joda.time.LocalDateTime;
 
 public class ProcessContinuityEvent {
 	/**
