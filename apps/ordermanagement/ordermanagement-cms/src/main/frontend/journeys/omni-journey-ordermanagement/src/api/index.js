@@ -3,33 +3,70 @@ import { Config } from '../config';
 let httpClientService;
 
 export const setHttpClient = (HttpClient) => (httpClientService = HttpClient);
-export const fetchUsers = () => {
+export const createInstance = () => {
     const config = {
-        url: Config.API_URL,
-        method: 'get'
+        url: Config.CREATE_INSTANCE,
+        method: 'POST'
     };
     return httpClientService.request(config);
 };
-export const createUser = (newUser) => {
+
+export const getProducts = (instanceId) => {
     const config = {
-        url: Config.API_URL,
-        method: 'post',
-        data: newUser
+        url: Config.GET_PRODUCTS(instanceId),
+        method: 'GET'
     };
     return httpClientService.request(config);
 };
-export const updateUser = (id, updatedUser) => {
+export const getCategories = (instanceId) => {
     const config = {
-        url: `${Config.API_URL}/${id}`,
-        method: 'post',
-        data: updatedUser
+        url: Config.GET_CATEGORIES(instanceId),
+        method: 'GET'
     };
     return httpClientService.request(config);
 };
-export const deleteUser = (id) => {
+export const getDeliveryOptions = (instanceId) => {
     const config = {
-        url: `${Config.API_URL}/${id}`,
-        method: 'delete'
+        url: Config.GET_DELIVERY_OPTIONS(instanceId),
+        method: 'GET'
+    };
+    return httpClientService.request(config);
+};
+
+export const readUpdateProcess = (instanceId) => {
+    const config = {
+        url: Config.READ_INSTANCE(instanceId),
+        method: 'GET'
+    };
+    return httpClientService.request(config);
+};
+export const selectProducts = (instanceId, productId) => {
+    const config = {
+        url: Config.SELECT_PRODUCTS(instanceId, productId),
+        method: 'PUT'
+    };
+    return httpClientService.request(config);
+};
+
+export const createOrder = (instanceId) => {
+    const config = {
+        url: Config.CREATE_ORDER(instanceId),
+        method: 'POST'
+    };
+    return httpClientService.request(config);
+};
+export const updateCustomerInfo = (instanceId, customerInformation) => {
+    const config = {
+        url: Config.UPDATE_CUSTOMER_INFO(instanceId),
+        method: 'POST',
+        data: customerInformation
+    };
+    return httpClientService.request(config);
+};
+export const submitOrder = (instanceId) => {
+    const config = {
+        url: Config.SUBMIT_ORDER(instanceId),
+        method: 'POST'
     };
     return httpClientService.request(config);
 };

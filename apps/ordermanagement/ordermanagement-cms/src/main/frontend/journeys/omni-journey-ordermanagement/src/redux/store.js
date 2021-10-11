@@ -1,8 +1,8 @@
 import { createStoreSingleton } from 'omni-journey';
 
-import users from './users/reducer';
+import products from './products/reducer';
 
-const reducers = { users };
+const reducers = { products };
 
 const store = createStoreSingleton(reducers);
 
