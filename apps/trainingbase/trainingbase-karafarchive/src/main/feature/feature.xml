@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features name="omni-telco-trainingbase-modules-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+<features name="omni-training-trainingbase-modules-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
 
 	<feature name="trainingbase-modules" description="trainingbase Modules" version="${project.version}">
 		<feature>cms-mvc</feature>
