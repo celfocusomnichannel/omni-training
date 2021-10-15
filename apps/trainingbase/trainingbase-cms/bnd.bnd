@@ -3,4 +3,6 @@ Bundle-Name: ${bundle.name}
 Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
 Bundle-Category: ${bundle.category}
 Sling-Initial-Content: \
-	SLING-INF/content/libs/trainingbase;overwrite:=true;ignoreImportProviders:=json;path:=/libs/training
+	SLING-INF/content/libs/trainingbase;overwrite:=true;ignoreImportProviders:="zip,json";path:=/libs/training,\
+	SLING-INF/content/libs/trainingbase/foundation/v3/templates;overwrite:=true;ignoreImportProviders:="zip,json";path:=/libs/training/foundation/v3/templates
+	
