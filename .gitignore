@@ -25,6 +25,8 @@
 /.dbeaver-data-sources.xml
 
 /.dbeaver-data-sources.xml
+/**/*-data-ri/src/generated
+
 
 
 ## OS Specific ##
