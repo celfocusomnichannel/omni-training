@@ -173,7 +173,7 @@
       "icon": "icon-journeydesigner_big",
       "listIcon": "icon-journeydesigner_small",
       "i18NLabel": "journey_designer",
-      "journeyUrl": "/content/digitaljourney/journeydesigner/v2/journeys/omni-journey-journeydesigner/modules/",
+      "journeyUrl": "/content/digitaljourney/journeydesigner/v3/journeys/omni-journey-journeydesigner/modules/",
       "useBackoffice": true,
       "subHeaderContent": {
         "style": "secondary"
