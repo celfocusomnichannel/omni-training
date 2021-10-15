@@ -1,0 +1,250 @@
+{
+  "palette": {
+    "common": {
+      "black": "#000",
+      "white": "#fff",
+      "grey": "#bdbdbd",
+      "green": "#1eb980",
+      "greenBackground": "#dffaf0",
+      "yellow": "#ffc107",
+      "yellowBackground": "#fff4d3",
+      "blue": "#38ABFF",
+      "blueBackground": "#DDEEFD"
+    },
+    "primaryLight": {
+      "300": "#e0f7fa",
+      "main": "#aa0b00",
+      "700": "#0097a7",
+      "900": "#59687A",
+      "contrastText": "#fff"
+    },
+    "primaryDark": {
+      "300": "#00b8d4",
+      "main": "#00bcd4",
+      "700": "#0097a7",
+      "900": "#ffffff",
+      "contrastText": "#fff"
+    },
+    "secondaryLight": {
+      "300": "#fcc570",
+      "main": "#ff9800",
+      "700": "#f57c00",
+      "contrastText": "#fff"
+    },
+    "secondaryDark": {
+      "300": "#ff9800",
+      "main": "#ff9800",
+      "700": "#f57c00",
+      "contrastText": "#fff"
+    },
+    "errorLight": {
+      "100": "#ffe2df",
+      "300": "#ffe2df",
+      "main": "#ff6859",
+      "contrastText": "#fff"
+    },
+    "errorDark": {
+      "100": "#ffe2df",
+      "300": "#ff877b",
+      "main": "#ff6859",
+      "contrastText": "#fff"
+    },
+    "greyLight": {
+      "50": "#ffffff",
+      "100": "#f5f5f5",
+      "200": "#eeeeee",
+      "300": "#e0e0e0",
+      "400": "#e0e0e0",
+      "900": "#232323"
+    },
+    "greyDark": {
+      "50": "#59687a",
+      "100": "#434f5d",
+      "200": "#808994",
+      "300": "#3c4653",
+      "400": "#bbbbbb",
+      "900": "#353e49"
+    },
+    "action": {
+      "disabledBackgroundLight": "#eeeeee",
+      "disabledBackgroundDark": "#59687a",
+      "disabledLight": "#bdbdbd",
+      "disabledDark": "#8e8e8e"
+    },
+    "background": {
+      "paperLight": "#f5f5f5",
+      "paperDark": "#59687a",
+      "defaultLight": "#FFFFFF",
+      "defaultDark": "#4A5767",
+      "successBgLight": "#dffaf0",
+      "successBgDark": "#1eb980",
+      "warningBgLight": "#fff4d3",
+      "warningBgDark": "#ffc107",
+      "errorBgLight": "#ffe2df",
+      "errorBgDark": "#FF6859",
+      "infoBgLight": "#DDEEFD",
+      "infoBgDark": "#38ABFF"
+    },
+    "textLight": {
+      "primary": "#333333",
+      "secondary": "#8e8e8e",
+      "disabled": "#bdbdbd"
+    },
+    "textDark": {
+      "primary": "#ffffff",
+      "secondary": "#bbbbbb",
+      "disabled": "#8e8e8e"
+    }
+  },
+  "fonts": [
+    "/foundation/v3/canvas/ufe/assets/fonts/bariol/stylesheet.css",
+    "/foundation/v3/canvas/ufe/assets/fonts/icomoon/style.css",
+    "/foundation/v3/canvas/ufe/assets/fonts/material/stylesheet.css",
+    "/foundation/v3/canvas/ufe/assets/fonts/sourcesanspro/stylesheet.css"
+  ],
+  "interactionColorPalette": {
+    "colors": [
+      {
+        "textColor": "white",
+        "backgroundColor": "#659ECE"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#C75146"
+      },
+      {
+        "textColor": "black",
+        "backgroundColor": "#F7D174"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#75B09C"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#EC1C24"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#246A73"
+      },
+      {
+        "textColor": "black",
+        "backgroundColor": "#C5EBC3"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#6B161B"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#F89E37"
+      },
+      {
+        "textColor": "white",
+        "backgroundColor": "#8EA9EF"
+      }
+    ],
+    "default": {
+      "textColor": "white",
+      "backgroundColor": "#659ECE"
+    }
+  },
+  "typography": {
+    "fontFamily": " \"SourceSansPro-Regular\" , \"Bariol-Regular\" , \"Helvetica\" , \"Arial\" , sans-serif",
+    "body2": {
+      "fontSize": "14px",
+      "fontWeight": "normal",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"SourceSansPro-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "body1": {
+      "fontSize": "16px",
+      "fontWeight": "normal",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"SourceSansPro-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "button": {
+      "fontSize": "16px",
+      "color": "inherit",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif ",
+      "textTransform": "none",
+      "lineHeight": "normal",
+      "fontWeight": "normal"
+    },
+    "caption": {
+      "fontSize": "12px",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "color": "inherit",
+      "fontFamily": " \"SourceSansPro-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "overline": {
+      "fontSize": "12px",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "textTransform": "none",
+      "color": "inherit",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "subtitle1": {
+      "fontSize": "16px",
+      "fontWeight": "normal",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Bold\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "subtitle2": {
+      "fontSize": "16px",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "color": "inherit",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h1": {
+      "fontSize": "30px",
+      "lineHeight": "normal",
+      "color": "inherit",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h2": {
+      "fontSize": "24px",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h3": {
+      "fontSize": "20px",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h4": {
+      "fontSize": "18px",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h5": {
+      "fontSize": "16px",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    },
+    "h6": {
+      "fontSize": "12px",
+      "color": "inherit",
+      "lineHeight": "normal",
+      "fontFamily": " \"Bariol-Regular\" , \"Helvetica\", \"Arial\", sans-serif "
+    }
+  },
+  "canvasSettings": {
+    "headerBackgroundColorLight": "@palette.grey.900",
+    "headerBackgroundColorDark": "@palette.grey.900",
+    "loginSideBarBackgroundColorLight": "rgba(255,255,255,0.9)",
+    "loginSideBarBackgroundColorDark": "rgba(67,79,93,0.94)"
+  },
+  "journeySharedProperties": {}
+}

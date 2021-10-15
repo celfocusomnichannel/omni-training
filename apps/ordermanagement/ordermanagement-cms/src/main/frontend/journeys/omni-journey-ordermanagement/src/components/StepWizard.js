@@ -11,7 +11,7 @@ import OrderConfirmartion from './OrderConfirmation';
 import { useSelector, useDispatch } from 'react-redux';
 import { createOrder, updateCustomerInfo, submitOrder } from '../redux/products/httpActions';
 
-const styles = () => {
+const styles = (theme) => {
     return {
         root: {
             width: '94vw',

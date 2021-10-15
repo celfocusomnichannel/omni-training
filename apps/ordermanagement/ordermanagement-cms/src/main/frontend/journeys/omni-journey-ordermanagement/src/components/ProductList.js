@@ -8,7 +8,6 @@ import CardContent from '@ui-lib/core/CardContent';
 import CardMedia from '@ui-lib/core/CardMedia';
 import Button from '@ui-lib/core/Button';
 import Typography from '@ui-lib/core/Typography';
-import IconButton from '@ui-lib/core/IconButton';
 import Icon from '@ui-lib/core/Icon';
 import DialogTitle from '@ui-lib/core/DialogTitle';
 import Dialog from '@ui-lib/core/Dialog';

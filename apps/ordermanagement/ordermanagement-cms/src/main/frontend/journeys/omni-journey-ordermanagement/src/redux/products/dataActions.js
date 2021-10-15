@@ -24,6 +24,6 @@ export const selectProducts = (instance) => ({ type: SELECT_PRODUCTS, instance }
 
 export const createOrder = (instance) => ({ type: CREATE_ORDER, instance });
 export const updateCustomerInfo = (instance) => ({ type: UPDATE_CUSTOMER_INFO, instance });
-export const submitOrder = () => ({ type: SUBMIT_ORDER });
+export const submitOrder = (instance) => ({ type: SUBMIT_ORDER, instance });
 
 export const setPreferences = (preferences) => ({ type: SET_PREFERENCES, preferences });

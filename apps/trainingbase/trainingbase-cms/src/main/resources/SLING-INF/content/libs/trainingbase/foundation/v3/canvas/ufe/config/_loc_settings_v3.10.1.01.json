@@ -458,6 +458,7 @@
       "id": 20,
       "title": "Order Management",
       "version": "1.0",
+      "entitlement": "OPEN_ORDER_MANAGEMENT",
       "icon": "icon-appmanual_big",
       "i18NLabel": "order_management_label",
       "journeyUrl": "http://content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/"
