@@ -49,9 +49,7 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
-                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${platform.plugins.modules.productmanagement.version}/xml/features</repository>
-                            
-                            
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>
                         </bootRepositories>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
