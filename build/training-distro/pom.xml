@@ -70,29 +70,33 @@
         <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
         <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
         <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+        
         <!-- Providers -->
         <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
         <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
+        
         <!-- Apps -->
         <platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
         <!-- UFE Current versions -->
         <platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
         <platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
-        <platform.plugins.apps.journeydesigner.version>2.12.0</platform.plugins.apps.journeydesigner.version>
-        <!-- should be 3.1.1 but import widgets is causing some troubles -->
+        <platform.plugins.apps.journeydesigner.version>3.1.1-training</platform.plugins.apps.journeydesigner.version>
         <!-- Generic Apps -->
         <platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
         <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
         <platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
         <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
+        
         <!-- Training -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
         <io.digitaljourney.platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productmanagement.version>
         <io.digitaljourney.platform.plugins.apps.categorymanagementapp.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.categorymanagementapp.version>
+        
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
         <tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+        
         <!-- Dependency Management -->
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
@@ -102,6 +106,7 @@
         <lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-api.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-ri.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-data-ri.version>
         <lib.io.digitaljourney.platform.plugins.modules.productmanagement-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productmanagement.version}</lib.io.digitaljourney.platform.plugins.modules.productmanagement-karafarchive.version>
+        
         <!-- Category Management App -->
         <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-app.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-app.version>
         <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cms.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cms.version>
