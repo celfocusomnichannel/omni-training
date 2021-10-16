@@ -74,6 +74,7 @@
 									<extraargs>
 										<extraarg>-p</extraarg>
 										<extraarg>${flagservice.build.wsPackage}</extraarg>
+										<extraarg>-suppress-generated-date</extraarg>
 									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
