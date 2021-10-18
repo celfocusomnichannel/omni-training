@@ -15,6 +15,7 @@ import org.osgi.service.metatype.annotations.Designate;
 import io.digitaljourney.platform.modules.ws.rs.api.resource.AbstractResource;
 import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
+import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.BookProductDTO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
 import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CustomRsProvider;
 
@@ -47,5 +48,12 @@ public class ProductServiceResourceImpl extends AbstractResource<ProductServiceC
 	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		return ProductServiceResourceMapper.INSTANCE.toMusicProductDTO(productDao.getArtistMusics(artistName, limit));
+	}
+
+	@Override
+	@RequiresAuthentication
+	@RequiresPermissions(ProductServiceResourceProperties.PERMISSION_READ)
+	public List<BookProductDTO> getWriterBooks(String writerName, String limit) {
+		return ProductServiceResourceMapper.INSTANCE.toBookProductDTO(productDao.getWriterBooks(writerName, limit));
 	}
 }
