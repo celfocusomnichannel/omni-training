@@ -20,6 +20,7 @@ import org.osgi.service.metatype.annotations.Designate;
 import io.digitaljourney.platform.modules.ws.api.dao.WSData;
 import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
 import io.digitaljourney.platform.plugins.modules.productservice.data.api.ProductDAO;
+import io.digitaljourney.platform.plugins.modules.productservice.entity.BookProduct;
 import io.digitaljourney.platform.plugins.modules.productservice.entity.MusicProduct;
 
 //@formatter:off
@@ -50,6 +51,8 @@ public final class ProductDAOImpl extends AbstractProductDAO<ProductDAOConfig> i
 	public static final String ARTWORK_KEY = "artworkUrl100";
 	public static final String COUNTRY_KEY = "country";
 	public static final String GENRE_KEY = "primaryGenreName";
+	
+	public static final String EBOOK_MEDIA_VALUE = "ebook";
 
 	@Activate
 	public void activate(ComponentContext ctx, ProductDAOConfig config) {
@@ -102,6 +105,54 @@ public final class ProductDAOImpl extends AbstractProductDAO<ProductDAOConfig> i
 			musicProduct.setCountry(resultsElement.optString(COUNTRY_KEY));
 			musicProduct.setPrimaryGenreName(resultsElement.optString(GENRE_KEY));
 			res.add(musicProduct);
+		}
+		return res;
+	}
+
+	@Override
+	public List<BookProduct> getWriterBooks(String writerName, String limit) {
+		try {
+			WSData<String> rsp = invoke((WebClient client) -> {
+				String response = prepare(client).path(getConfig().address())
+						.query(TERM_KEY, writerName)
+						.query(MEDIA_KEY, EBOOK_MEDIA_VALUE)
+						.query(LIMIT_KEY, limit)
+						.invoke(HttpMethod.GET, null, String.class);
+				return WSData.of(response).build();
+			});
+
+			if (rsp.success()) {
+				return createBookProductsArray(rsp);
+			}
+			return null;
+		} catch (Throwable e) {
+			getLogger().error("Failed to get writer books", e);
+			return null;
+		}
+	}
+	
+	public static final String GENRES_KEY = "genres";
+	public static final String DESCRIPTION_KEY = "genres";
+	public static final String RELEASE_DATE_KEY = "releaseDate";
+	public static final String PRICE_KEY = "price";
+	
+	private List<BookProduct> createBookProductsArray(WSData<String> rsp) {
+		List<BookProduct> res = new ArrayList<>();
+		JSONObject responseJson = new JSONObject(rsp.data());
+		JSONArray responseResultsArray = responseJson.getJSONArray("results");
+		for (int i = 0; i < responseResultsArray.length(); i++) {
+			JSONObject resultsElement = responseResultsArray.getJSONObject(i);
+
+			BookProduct bookProduct = new BookProduct();
+			bookProduct.setArtistName(resultsElement.optString(ARTIST_NAME_KEY));
+			bookProduct.setPrice(resultsElement.optString(PRICE_KEY));
+			bookProduct.setReleaseDate(resultsElement.optString(RELEASE_DATE_KEY));
+			bookProduct.setTrackName(resultsElement.optString(TRACK_NAME_KEY));
+			bookProduct.setTrackViewUrl(resultsElement.optString(TRACK_VIEW_KEY));
+			bookProduct.setArtworkUrl100(resultsElement.optString(ARTWORK_KEY));
+			bookProduct.setDescription(resultsElement.optString(DESCRIPTION_KEY));
+			bookProduct.setArtistName(resultsElement.optString(ARTIST_NAME_KEY));
+			res.add(bookProduct);
 		}
 		return res;
 	}
