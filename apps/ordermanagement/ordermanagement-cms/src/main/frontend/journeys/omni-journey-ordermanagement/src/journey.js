@@ -32,6 +32,7 @@ const Journey = () => {
         User.requestUser().then((user) => {
             UserPreferences.queryUserPreferences(user.id, query)
                 .then((preference) => {
+                    debugger;
                     /**
                      * No preferences found
                      */
@@ -54,6 +55,7 @@ const Journey = () => {
                     console.log(e);
                 });
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     React.useEffect(() => {

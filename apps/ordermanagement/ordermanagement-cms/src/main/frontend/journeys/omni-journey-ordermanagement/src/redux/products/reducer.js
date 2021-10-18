@@ -26,8 +26,7 @@ const INITIAL_STATE = {
         fetchedDeliveryOptions: false,
         fetchedInstance: false,
         fetchedPreferences: false
-    },
-    preferences: undefined
+    }
 };
 
 export default (state = INITIAL_STATE, action) => {

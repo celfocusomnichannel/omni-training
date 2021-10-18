@@ -25,6 +25,7 @@ function Root({ classes }) {
             console.log(instance);
             console.log(preferences);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return <div>{readyInstance ? <StepWizard /> : <div>loading</div>}</div>;
