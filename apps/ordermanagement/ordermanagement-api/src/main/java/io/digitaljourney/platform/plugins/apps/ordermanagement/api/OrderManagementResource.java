@@ -128,7 +128,7 @@ public interface OrderManagementResource {
 	 * Retrieves products for instance with a given ID
 	 */
 	@GET
-	@Path("/{instanceId}/products")
+	@Path("/products")
 	@ApiOperation(value = "Get product list", response = CustomJourneyDTO.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, response = ProductDTO.class, responseContainer = "Array", message = "OK"),
@@ -142,7 +142,7 @@ public interface OrderManagementResource {
 	 * Retrieves category for instance with a given ID
 	 */
 	@GET
-	@Path("/{instanceId}/category")
+	@Path("/category")
 	@ApiOperation(value = "Get category", response = CustomJourneyDTO.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, response = CategoryDTO.class, message = "OK"),
@@ -156,7 +156,7 @@ public interface OrderManagementResource {
 	 * Retrieves delivery options for instance with a given ID
 	 */
 	@GET
-	@Path("/{instanceId}/delivery-options")
+	@Path("/delivery-options")
 	@ApiOperation(value = "Get delivery option list", response = CustomJourneyDTO.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "OK"),

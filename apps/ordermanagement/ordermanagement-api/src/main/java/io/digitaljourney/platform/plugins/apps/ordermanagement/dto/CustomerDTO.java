@@ -1,6 +1,11 @@
 package io.digitaljourney.platform.plugins.apps.ordermanagement.dto;
 
-public class CustomerDTO {
+import org.osgi.dto.DTO;
+
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+
+@GeneratePojoBuilder
+public class CustomerDTO extends DTO {
 
 	public String name;
 	public String address;

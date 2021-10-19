@@ -87,7 +87,7 @@
         <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
         <!-- Training -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
-        <platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</platform.plugins.modules.productmanagement.version>
+        <io.digitaljourney.platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productmanagement.version>
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>

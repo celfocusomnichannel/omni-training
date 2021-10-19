@@ -14,16 +14,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import io.digitaljourney.platform.modules.events.api.PlatformEventManagerConstants;
+import io.digitaljourney.platform.modules.events.api.PlatformEventReceiver;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.AppProperties;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.api.OrderManagementResource;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.common.api.facade.OrderManagementFacade;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourneyDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.websocket.JourneyUpdateDTO;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.events.ProcessContinuityEvent;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
+import io.digitaljourney.platform.plugins.apps.ordermanagement.websocket.KarafWebSocketServlet;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.api.trigger.ActionMode;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyProcess;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyMethod;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.annotation.JourneyReference;
+import io.digitaljourney.platform.plugins.modules.processcontinuity.service.api.ProcesscontinuityProperties;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.ProductDTO;
 import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CmsRsProvider;
@@ -41,12 +51,15 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.CmsRs
 @RequestMapping(AppProperties.ADDRESS + "/app")
 @CmsRsProvider(value = AppProperties.ADDRESS + "/app")
 @Component(
+		service = {PlatformEventReceiver.class},
 	    property = {
-	            "digitaljourney.service.name=OrderManagement"
+	            "digitaljourney.service.name=OrderManagement",
+	            PlatformEventManagerConstants.RECEIVER + "=" + ProcesscontinuityProperties.DEFAULT_EVENT_TOPIC
 	    }
+		
 	)
-public class OrderManagementController extends AbstractAppController implements OrderManagementResource, JourneyProcess<CustomJourneyInstance> {
-
+public class OrderManagementController extends AbstractAppController implements OrderManagementResource, JourneyProcess<CustomJourneyInstance>, PlatformEventReceiver {
+	
 	@ServiceReference
 	private OrderManagementFacade facade;
 	
@@ -73,7 +86,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.read(this);
 	}
 	
-	@GetMapping("/{instanceId}/products")
+	@GetMapping("/products")
 	@JourneyMethod(value = "GET PRODUCTS LIST")
 	@Override
 	public @ResponseBody List<ProductDTO> getProductList(@PathVariable @JourneyReference Long instanceId) {
@@ -81,7 +94,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.getProductList();
 	}
 	
-	@GetMapping("/{instanceId}/category")
+	@GetMapping("/category")
 	@JourneyMethod(value = "GET CATEGORIES LIST")
 	@Override
 	public @ResponseBody CategoryDTO getCategory(@PathVariable @JourneyReference Long instanceId) {
@@ -89,7 +102,7 @@ public class OrderManagementController extends AbstractAppController implements 
 		return facade.getCategory();
 	}
 	
-	@GetMapping("/{instanceId}/delivery-options")
+	@GetMapping("/delivery-options")
 	@JourneyMethod(value = "GET DELIVERY OPTIONS")
 	@Override
 	public @ResponseBody List<HashMap<String, Object>> getDeliveryOptions(@PathVariable @JourneyReference Long instanceId) {
@@ -101,7 +114,7 @@ public class OrderManagementController extends AbstractAppController implements 
 	@JourneyMethod(value = "UPDATE PRODUCT SELECTED")
 	@Override
 	public @ResponseBody CustomJourneyDTO selectProduct(@PathVariable @JourneyReference Long instanceId, @PathVariable Integer productId) {
-		info("Entering selectProduct");
+		info("Entering selectProduct");		
 		return facade.selectProduct(this, productId);
 	}
 
@@ -142,6 +155,43 @@ public class OrderManagementController extends AbstractAppController implements 
 	@Override
 	public Class<CustomJourneyInstance> getInstanceClass() {
 		return CustomJourneyInstance.class;
+	}
+
+	private static ObjectMapper mapper = new ObjectMapper();
+	static {
+		mapper.registerModule(new JavaTimeModule());
+		mapper.configure(DeserializationFeature.FAIL_ON_TRAILING_TOKENS, true);
+		mapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		mapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
+	}
+	
+	@Override
+	public void handleEvent(String topic, Object object) {
+		if (object != null && object instanceof String) {
+
+			try {
+				ProcessContinuityEvent event = mapper.readValue(object.toString(), ProcessContinuityEvent.class);
+				String processType = event.processType.toString();
+				String eventType = event.eventType.toString();
+				
+				if (eventType.equals(ProcessContinuityEvent.EventType.STATUS_CHANGED.toString())
+						&& AppProperties.JOURNEY_NAME.equals(processType) && event.instanceId != null) {
+
+					JourneyUpdateDTO dto = new JourneyUpdateDTO();
+					dto.id = event.instanceId.toString();
+					dto.state = event.state.toString();
+					dto.status = event.status.toString();
+					dto.updatedBy = event.updatedBy.toString();
+					dto.updatedChannel = event.updatedChannel.toString();
+					KarafWebSocketServlet.publishMessage(dto, event.instanceId.toString());
+				}
+
+			} catch (Throwable t) {
+				error("Failed to handle event", t);
+			}
+		}
+
 	}
 	
 }
