@@ -149,7 +149,7 @@ public class ProductServiceClient
 	@Override
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		WSData<List<MusicProductDTO>> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = super.client.type(MediaType.APPLICATION_JSON_TYPE).path("/search");
+			WebClient clientPath = super.client.type(MediaType.APPLICATION_JSON_TYPE).path("/getArtistMusics");
 			query(clientPath, "term", artistName);
 			query(clientPath, "limit", limit);
 			

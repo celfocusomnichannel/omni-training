@@ -26,6 +26,7 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -49,6 +50,7 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/xml/features</repository>
                         </bootRepositories>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
@@ -67,6 +69,7 @@
                             <feature>journeyblueprint</feature>
                             <feature>events-rdb</feature>
                             <feature>journeyworkflowengine-gateway-rest-cxf</feature>
+                            <feature>flagmicroservicersxml</feature>
                             <feature>productservice</feature>
                         </bootFeatures>
                         <installedFeatures combine.children="append">
