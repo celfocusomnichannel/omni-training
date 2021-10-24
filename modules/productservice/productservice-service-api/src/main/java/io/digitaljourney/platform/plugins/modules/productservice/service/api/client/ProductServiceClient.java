@@ -22,7 +22,6 @@ import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
 import io.digitaljourney.platform.modules.ws.rs.api.client.AbstractWSRSClient;
 import io.digitaljourney.platform.modules.ws.rs.api.dao.WSRSConfig;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.ProductServiceResource;
-import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.BookProductDTO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
 
 //@formatter:off
@@ -149,7 +148,7 @@ public class ProductServiceClient
 	@Override
 	public List<MusicProductDTO> getArtistMusics(String artistName, String limit) {
 		WSData<List<MusicProductDTO>> result = super.invoke((WebClient client) -> {
-			WebClient clientPath = super.client.type(MediaType.APPLICATION_JSON_TYPE).path("/getArtistMusics");
+			WebClient clientPath =  client.type(MediaType.APPLICATION_JSON_TYPE).path("/search");
 			query(clientPath, "term", artistName);
 			query(clientPath, "limit", limit);
 			
@@ -157,28 +156,6 @@ public class ProductServiceClient
 			executeClientHandlers(clientPath);
 			Collection<? extends MusicProductDTO> responseCall = clientPath.getCollection(MusicProductDTO.class);
 			List<MusicProductDTO> responseCollection = null;
-			if (responseCall != null) {
-				responseCollection = new ArrayList<>(responseCall);
-			}
-			return WSData.of(responseCollection).build();
-		});
-		if (!result.success() || result.data() == null) {
-			throw resultException(result);
-		}
-		return result.data();
-	}
-
-	@Override
-	public List<BookProductDTO> getWriterBooks(String writerName, String limit) {
-		WSData<List<BookProductDTO>> result = invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("");
-			query(clientPath, "term", writerName);
-			query(clientPath, "limit", limit);
-			
-			// allow making changes to the client
-			executeClientHandlers(clientPath);
-			Collection<? extends BookProductDTO> responseCall = clientPath.getCollection(BookProductDTO.class);
-			List<BookProductDTO> responseCollection = null;
 			if (responseCall != null) {
 				responseCollection = new ArrayList<>(responseCall);
 			}

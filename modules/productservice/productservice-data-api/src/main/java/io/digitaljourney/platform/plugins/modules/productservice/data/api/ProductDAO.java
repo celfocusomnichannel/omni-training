@@ -4,13 +4,10 @@ import java.util.List;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import io.digitaljourney.platform.plugins.modules.productservice.entity.BookProduct;
 import io.digitaljourney.platform.plugins.modules.productservice.entity.MusicProduct;
 
 @ProviderType
 public interface ProductDAO {
 	
 	List<MusicProduct> getArtistMusics(String artistName, String limit);
-	
-	List<BookProduct> getWriterBooks(String writerName, String limit);
 }

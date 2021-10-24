@@ -11,7 +11,6 @@ import org.osgi.annotation.versioning.ProviderType;
 
 import io.digitaljourney.platform.modules.commons.type.HttpStatusCode;
 import io.digitaljourney.platform.modules.ws.rs.api.RSProperties;
-import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.BookProductDTO;
 import io.digitaljourney.platform.plugins.modules.productservice.service.api.dto.MusicProductDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiKeyAuthDefinition;
@@ -46,14 +45,8 @@ import java.util.List;
 public interface ProductServiceResource {
 
 	@GET
-	@Path("/getArtistMusics")
+	@Path("/search")
 	List<MusicProductDTO> getArtistMusics(
 			@QueryParam("term") @ApiParam(value = "Artist name", required = true) String artistName,
-			@QueryParam("limit") @ApiParam(value = "Limit", required = false) String limit);
-	
-	@GET
-	@Path("/getWriterBooks")
-	List<BookProductDTO> getWriterBooks(
-			@QueryParam("term") @ApiParam(value = "Writer name", required = true) String writerName,
 			@QueryParam("limit") @ApiParam(value = "Limit", required = false) String limit);
 }
