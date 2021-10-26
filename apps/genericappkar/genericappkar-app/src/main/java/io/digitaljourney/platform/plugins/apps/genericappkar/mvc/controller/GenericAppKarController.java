@@ -40,12 +40,14 @@ public class GenericAppKarController extends AbstractAppController implements Ge
 	@GetMapping(path = "/{isoCode}") 
 	@CacheResult(cacheName = AppProperties.GENERICAPPKAR_CACHE)
 	public @ResponseBody FlagResponseDTO getFlag(@PathVariable String isoCode) {
+		info("Entering getFlag");
 		return facade.getFlag(isoCode);
 	}
 
 	@Override
 	@GetMapping(path = "/search")
 	public @ResponseBody List<MusicProductResponseDTO> getArtistMusics(@RequestParam String artistName,@RequestParam String limit) {
+		info("Entering getArtistMusics");
 		Cache c = getCtx().getCacheManager().getCache(AppProperties.GENERICAPPKAR_CACHE);
 		List<MusicProductResponseDTO> dto = null;
 		String[] key = {artistName, limit};
