@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/main.919143c5.chunk.js",
+    "main.js.map": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/main.919143c5.chunk.js.map",
+    "runtime-main.js": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/runtime-main.8be8950d.js",
+    "runtime-main.js.map": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/runtime-main.8be8950d.js.map",
+    "static/js/2.7052e0d6.chunk.js": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/2.7052e0d6.chunk.js",
+    "static/js/2.7052e0d6.chunk.js.map": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/static/js/2.7052e0d6.chunk.js.map",
+    "index.html": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/index.html",
+    "precache-manifest.03cdceb58f4ee59e7127abf945628aae.js": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/precache-manifest.03cdceb58f4ee59e7127abf945628aae.js",
+    "service-worker.js": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/service-worker.js"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8be8950d.js",
+    "static/js/2.7052e0d6.chunk.js",
+    "static/js/main.919143c5.chunk.js"
+  ]
+}

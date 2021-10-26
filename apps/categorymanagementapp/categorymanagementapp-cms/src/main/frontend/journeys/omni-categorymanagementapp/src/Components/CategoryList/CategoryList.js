@@ -91,6 +91,13 @@ function CategoryList({ classes, data, handleDelete, handleAdd, handleEdit }) {
 
     return (
         <div className={classes.listContainer}>
+            <div>
+                {data.map((item) => (
+                    <div>
+                        {item.categoryId} - {item.categoryName}
+                    </div>
+                ))}
+            </div>
             <div className={classes.buttonsContainer}>
                 <Button className={classes.buttonContainer} size="small" variant="contained" color="primary" onClick={onPressAdd}>
                     <span className={classes.button}>

@@ -2,7 +2,7 @@
     "name": "omni-journey-categorymanagement",
     "version": "1.0.0",
     "description": "Category Management App Frontend",
-    "homepage": "<%= homepage %>",
+    "homepage": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/",
     "parent": "categorymanagementapp",
     "main": "index.js",
     "scripts": {
