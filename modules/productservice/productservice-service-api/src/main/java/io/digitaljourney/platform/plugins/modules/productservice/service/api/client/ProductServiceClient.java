@@ -170,8 +170,8 @@ public class ProductServiceClient
 
 	@Override
 	public List<BookProductDTO> getWriterBooks(String writerName, String limit) {
-		WSData<List<BookProductDTO>> result = invoke((WebClient client) -> {
-			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("");
+		WSData<List<BookProductDTO>> result = super.invoke((WebClient client) -> {
+			WebClient clientPath = client.type(MediaType.APPLICATION_JSON_TYPE).path("/getWriterBooks");
 			query(clientPath, "term", writerName);
 			query(clientPath, "limit", limit);
 			

@@ -46,7 +46,7 @@ import java.util.List;
 public interface ProductServiceResource {
 
 	@GET
-	@Path("/getArtistMusics")
+	@Path("/search")
 	List<MusicProductDTO> getArtistMusics(
 			@QueryParam("term") @ApiParam(value = "Artist name", required = true) String artistName,
 			@QueryParam("limit") @ApiParam(value = "Limit", required = false) String limit);
