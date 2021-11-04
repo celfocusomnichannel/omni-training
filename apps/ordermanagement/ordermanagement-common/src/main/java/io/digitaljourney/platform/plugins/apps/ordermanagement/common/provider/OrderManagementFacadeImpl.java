@@ -31,6 +31,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -53,6 +54,7 @@ import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomJourney
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.CustomerInfoDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.dto.OrderDTO;
 import io.digitaljourney.platform.plugins.apps.ordermanagement.instance.CustomJourneyInstance;
+import io.digitaljourney.platform.plugins.modules.configurationmanager.service.api.dto.ConfigurationDTO;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.JourneyProcess;
 import io.digitaljourney.platform.plugins.modules.journeyworkflowengine.gateway.aspect.session.JourneySession;
 import io.digitaljourney.platform.plugins.modules.productmanagement.service.api.dto.CategoryDTO;
@@ -236,7 +238,12 @@ public class OrderManagementFacadeImpl extends AbstractSecurityComponent<OrderMa
 	}
 
 	private Integer getCategoryId() {
-		return Integer.parseInt(getCoreAgent().getCategoryFromConfiguration().result.stream().findFirst().get().value);
+		Optional<ConfigurationDTO> findFirst = getCoreAgent().getCategoryFromConfiguration().result.stream().findFirst();
+		if(!findFirst.isPresent()) {
+			error("Couldn't find configuration!");
+			throw getCtx().exception("Couldn't find configuration!");
+		}
+		return Integer.parseInt(findFirst.get().value);
 	}
 
 }
