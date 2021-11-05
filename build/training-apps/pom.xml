@@ -16,5 +16,6 @@
         <module>../../apps/trainingbase/trainingbase</module>
         <module>../../apps/ordermanagement/ordermanagement</module>
         <module>../../apps/genericappkar/genericappkar</module>
+        <module>../../apps/categorymanagementapp/categorymanagementapp</module>
     </modules>
 </project>

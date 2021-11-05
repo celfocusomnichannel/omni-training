@@ -1,5 +1,7 @@
 package io.digitaljourney.platform.plugins.modules.productmanagement.data.ri.category;
 
+import java.util.List;
+
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -61,6 +63,12 @@ public final class CategoryDAOImpl extends AbstractJPADAO<CategoryDAOConfig> imp
 		info("Entered getCategory");
 		PAsserts.notNull(id, ATTRIBUTE_IS_NULL_MSG);
 		return findOne(Category.class, id);
+	}
+	
+	@Override
+	public List<Category> getCategories() {
+		info("Entered getCategories");
+		return findAll(Category.class);
 	}
 
 	@Override

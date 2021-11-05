@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Apps :: App to manage categories :: Common
+  %%
+  Copyright (C) 2016 - 2021 Digital Journey
+  %%
+  All rights reserved. This software is protected under several
+  Laws in various countries. All content, layout, design of this document are the
+  intellectual property of Digital Journey, Novabase Business Solutions S.A. 
+  and its licensors. The disclosure,copying, adaptation, citation, transcription, 
+  translation, modification, decompilation, reverse engineering, derivatives, 
+  integration, development and/or any other form of total or partial use of the 
+  content of this document and/or accessible through or via the contents, by any 
+  possible means without the respective authorization or licensing by the owner of 
+  the intellectual property rights is prohibited, the offenders being subject to civil 
+  and/or criminal prosecution and liability. The user or licensee of all or part of this 
+  document by any means may only use the document under the terms and conditions agreed
+  upon with the owner of the intellectual property rights, and for the purposes
+  justifying the granting of the license or authorization, without which the
+  unauthorized use may subject the offenders to civil or criminal prosecution
+  under applicable Laws.
+  #L%
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+		<artifactId>categorymanagementapp</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../categorymanagementapp</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+	
+	<artifactId>categorymanagementapp-common</artifactId>
+	
+	<name>Apps :: App to manage categories :: Common</name>
+	<description>App to manage categories Common Package</description>
+
+	<!-- ====================================================================== -->
+	<!-- B U I L D D E F I N I T I O N -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-annotation-processor-sources</id>
+						<phase>generate-sources</phase>
+					</execution>
+					<execution>
+						<id>add-generated-webapp</id>
+						<phase>generate-resources</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.service-ws-rs.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+		<dependency>
+			<groupId>io.digitaljourney.platform.modules</groupId>
+			<artifactId>ws-rs</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.apps</groupId>
+			<artifactId>categorymanagementapp-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+			<artifactId>productmanagement-service-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+    </dependencies>
+</project>

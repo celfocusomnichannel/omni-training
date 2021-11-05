@@ -1,5 +1,7 @@
 package io.digitaljourney.platform.plugins.modules.productmanagement.data.api;
 
+import java.util.List;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 import io.digitaljourney.platform.plugins.modules.productmanagement.entity.Category;
@@ -14,5 +16,7 @@ public interface CategoryDAO {
   Category getCategory(Integer id);
 
   Category deleteCategory(Integer id);
+  
+  List<Category> getCategories();
   
 }

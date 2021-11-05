@@ -70,9 +70,11 @@
         <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
         <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
         <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+        
         <!-- Providers -->
         <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
         <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
+        
         <!-- Apps -->
         <platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
         <!-- UFE Current versions -->
@@ -84,6 +86,7 @@
         <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
         <platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
         <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
+        
         <!-- Training -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
         <io.digitaljourney.platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productmanagement.version>
@@ -93,11 +96,13 @@
         <io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>
         <io.digitaljourney.platform.plugins.apps.ordermanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.ordermanagement.version>        
         <io.digitaljourney.platform.plugins.apps.genericappkar.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.genericappkar.version>
+        <io.digitaljourney.platform.plugins.apps.categorymanagementapp.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.categorymanagementapp.version>
         
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
         <tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+        
         <!-- Dependency Management -->
         <!-- Trainingbase -->        
         <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
@@ -139,6 +144,14 @@
         <lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>
         <lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>
         <lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>
+        <!-- Category Management App -->
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-app.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-app.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cms.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-karafarchive.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-agents-core.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-agents-core.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-api.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-api.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-common.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-common.version>
+        <lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cxf.version>${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}</lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cxf.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -225,7 +238,44 @@
                 <groupId>io.digitaljourney.platform.plugins.apps</groupId>
                 <artifactId>genericappkar-cxf</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version}</version>
-            </dependency>            
+            </dependency>
+            <!-- # categorymanagementapp-->
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-app</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-cms</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-karafarchive.version}</version>
+                <type>kar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-agents-core</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-agents-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-common</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>categorymanagementapp-cxf</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.categorymanagementapp-cxf.version}</version>
+            </dependency>                     
             <!-- # Modules -->
             <!-- # productmanagement -->            
             <dependency>
