@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"defaults": {
+		"targetVersion": "1",
+		"roles": [],
+		"category": "APPS",
+		"section": "OrderManagement",
+		"source": "digitaljourney",
+		"instance": "core"
+	},
+	"configs": [{
+			"target": "io.digitaljourney.platform.plugins.apps.ordermanagement.category",
+			"info": "Category Id",
+			"roles": [],
+			"type": "NUMBER",
+			"value": "1",
+			"attributes": {
+				"labeli18n": "Default category",
+				"validations": {
+					"min": {
+						"value": 1,
+						"errori18n": "ERROR_MIN_VALUE_i18n"
+					},
+					"max": {
+						"value": 20,
+						"errori18n": "ERROR_MAX_VALUE_i18n"
+					},
+					"required": {
+						"value": true,
+						"errori18n": "ERROR_FIELD_REQUIRED_i18n"
+					},
+					"readonly": false,
+					"width": "half"
+				}
+			}
+		}
+
+	]
+}

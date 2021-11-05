@@ -36,6 +36,7 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/kar/archive</dependency>
                             <!--  Training -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -72,6 +73,8 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/xml/features</repository>
                             <!-- Training -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>
@@ -87,6 +90,7 @@
                             <feature>journeyworkflowengine-gateway-aspect-mvc</feature>
                             <!-- Training -->
                             <feature>trainingbase</feature>
+                            <feature>ordermanagement</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->

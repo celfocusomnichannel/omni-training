@@ -1,0 +1,12 @@
+{
+    "jcr:primaryType" : "sling:Folder",
+    "security:acl": [
+        { 
+            "principal": "app-foundation", 
+            "granted": [
+                "jcr:read",
+                "jcr:write"
+            ]
+        }
+    ]
+}

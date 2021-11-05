@@ -79,6 +79,7 @@
         <platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
         <platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
         <platform.plugins.apps.journeydesigner.version>3.1.1-training</platform.plugins.apps.journeydesigner.version>
+        <!-- should be 3.1.1 but import widgets is causing some troubles -->
         <!-- Generic Apps -->
         <platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
         <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
@@ -89,6 +90,7 @@
         <io.digitaljourney.platform.plugins.modules.productmanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productmanagement.version>
         <io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version>
         <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>        
+        <io.digitaljourney.platform.plugins.apps.ordermanagement.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.ordermanagement.version>        
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
@@ -114,6 +116,13 @@
         <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-data-ri.version>
         <lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}</lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-app.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-app.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cms.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-karafarchive.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-agents-core.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-agents-core.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-api.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-api.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-common.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-common.version>
+        <lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cxf.version>${io.digitaljourney.platform.plugins.apps.ordermanagement.version}</lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cxf.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -217,6 +226,42 @@
                 <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>flagmicroservicersxml-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.flagmicroservicersxml-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-app</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-cms</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-karafarchive.version}</version>
+                <type>kar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-agents-core</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-agents-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-common</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>ordermanagement-cxf</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.ordermanagement-cxf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
