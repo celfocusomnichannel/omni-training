@@ -138,6 +138,13 @@
           "w": 1,
           "h": 1
         },
+		{ 
+			"id":11,
+			"x": 0,
+			"y": 2,
+			"w": 1,
+			"h": 1
+		},		
 		{
 			"id": 12,
 			"x": 1,
@@ -812,6 +819,29 @@
       "shouldWidgetWait": "true",
       "awaitTime": 10000
     },
+	{
+		"id": 11,
+		"name": "UFE_WIDGET_TRAINING_WIDGET_FLAG",
+		"type": "umd",
+		"identifier": "TrainingWidgetFlag",
+		"info":
+		{
+			"i18NTitle": "TRAINING_WIDGET_FLAG",
+			"i18NDescription": "UFE_WIDGET_DEPENDENCY_TEST_DESCRIPTION"
+		},
+		"version": "1.0",
+		"defaultSize":
+		{
+			"x": 0,
+			"y": 5,
+			"w": 2,
+			"h": 2
+		},
+		"category": "add_widget_screen_business",
+		"url": "/content/training/genericappkar/v1/widgets/omni-widget-training-flag/TrainingWidgetFlag.js",
+		"entitlements": "OPEN_DASHBOARD"
+
+	},	
 	{
 		"id": 12,
 		"name": "UFE_WIDGET_TRAINING_WIDGET_ARTIST",
