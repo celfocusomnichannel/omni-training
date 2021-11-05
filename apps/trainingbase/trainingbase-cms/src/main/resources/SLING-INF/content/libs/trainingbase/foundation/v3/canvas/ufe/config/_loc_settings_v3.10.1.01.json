@@ -468,6 +468,17 @@
       },
       "libraryJourneyId": 15
     },
+	{
+	    "id": 18,
+        "title": "Category Management",
+        "version": "1.0",
+        "icon": "icon-notes-edition",
+        "i18NLabel": "category_management_app",
+        "journeyUrl": "/content/training/categorymanagementapp/journeys/omni-journey-categorymanagement/modules/",
+        "subHeaderContent": {
+            "style": "secondary"
+        }
+	},	
     {
       "id": 20,
       "title": "Order Management",
@@ -496,7 +507,11 @@
         {
           "order": 3,
           "processId": 20
-        }
+        },
+        {
+			"order": 4,
+			"processId": 18
+		}		
       ]
     },
     {
