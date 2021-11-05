@@ -1,0 +1,135 @@
+pipeline {
+	agent any
+
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '2'))
+	}
+
+	parameters {
+		choice(
+			name: 'Action',
+			description: '\nActions available:\n\n- Verify: Verifies the plugin\n- Release: Releases a new plugin version\n- Register: Registers a feature repository\n- Unregister: Unregisters a feature repository\n- Install: Install plugin feature(s)\n- Uninstall: Uninstall plugin feature(s)\n- Publish: Perform a release, a feature repository registration and a feature install\n- Unpublish: Uninstall the feature and unregister the feature repository\n',
+			choices: 'Verify\nRelease\nRegister\nUnregister\nInstall\nUninstall\nPublish\nUnpublish'
+		)
+		booleanParam(
+			name: 'Delivery', 
+			defaultValue: true,
+			description: 'Enable delivery')
+		choice(
+			name: 'Connection',
+			description: '\nThe cave connection:\n\n- core: Core Delivery\n',
+			choices: 'core'
+		)
+		choice(
+			name: 'Group',
+			description: '\nThe karaf cluster group:\n\n- default: Default cluster group\n',
+			choices: 'default'
+		)
+		string(
+			name: 'Features', 
+			defaultValue: 'productservice', 
+			description: '\nList of features to install/uninstall\n'
+		)
+	}
+
+	environment {
+		CAVE_URL = credentials('platform-delivery-cave-url')
+		CAVE_CREDENTIALS = credentials('platform-delivery-cave-deployer')
+		POM_FILE = 'modules/productservice/productservice/pom.xml'
+		GROUP_ID = ''
+		ARTIFACT_ID = ''
+	}
+
+	stages {
+		stage('Verify') {
+			when {
+				expression { params.Action == 'Verify' } 
+			}
+			steps {
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+					sh "mvn -Pverify-profile -f ${POM_FILE} clean install"
+				}
+			}
+		}
+
+		stage('Release') {
+			when {
+				expression { params.Action == 'Release' || params.Action == 'Publish' } 
+			}
+			steps {
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+						sshagent (credentials: ['platform-bitbucket-sshkey']) {
+							sh "mvn -Prelease-profile -f ${POM_FILE} jgitflow:release-start"
+							sh "mvn -Ddelivery=${params.Delivery} -Prelease-profile -f ${POM_FILE} jgitflow:release-finish"
+						}
+				}
+			}
+		}
+
+		stage('Register') {
+			when {
+				expression { params.Action == 'Register' || params.Action == 'Publish' } 
+			}
+			steps {
+				script {
+					def pom = readMavenPom file : "${POM_FILE}"
+					GROUP_ID = pom.getGroupId()
+					ARTIFACT_ID = pom.getArtifactId()
+				}
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+						sh "mvn cave:add-cluster-feature-repository -Dcave.url=${CAVE_URL} -Dcave.user=${CAVE_CREDENTIALS_USR} -Dcave.password=${CAVE_CREDENTIALS_PSW} -Dcave.connection=${params.Connection} -Dcave.group=${params.Group} -Dcave.featureRepository=mvn:${GROUP_ID}/${ARTIFACT_ID}-karafarchive/LATEST/xml/features"
+				}
+			}
+		}
+
+		stage('Install') {
+			when {
+				expression { params.Action == 'Install' || params.Action == 'Publish' } 
+			}
+			steps {
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+						sh "mvn cave:install-cluster-features -Dcave.url=${CAVE_URL} -Dcave.user=${CAVE_CREDENTIALS_USR} -Dcave.password=${CAVE_CREDENTIALS_PSW} -Dcave.connection=${params.Connection} -Dcave.group=${params.Group} -Dcave.features=${params.Features}"
+				}
+			}
+		}
+
+		stage('Uninstall') {
+			when {
+				expression { params.Action == 'Uninstall' || params.Action == 'Unpublish' } 
+			}
+			steps {
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+						sh "mvn cave:uninstall-cluster-features -Dcave.url=${CAVE_URL} -Dcave.user=${CAVE_CREDENTIALS_USR} -Dcave.password=${CAVE_CREDENTIALS_PSW} -Dcave.connection=${params.Connection} -Dcave.group=${params.Group} -Dcave.features=${params.Features}"
+				}
+			}
+		}
+
+		stage('Unregister') {
+			when {
+				expression { params.Action == 'Unregister' || params.Action == 'Unpublish' } 
+			}
+			steps {
+				script {
+					def pom = readMavenPom file : "${POM_FILE}"
+					GROUP_ID = pom.getGroupId()
+					ARTIFACT_ID = pom.getArtifactId()
+				}
+				withMaven(
+					maven: 'maven33',
+					mavenSettingsConfig: 'platform-maven-settings') {
+						sh "mvn cave:remove-cluster-feature-repository -Dcave.url=${CAVE_URL} -Dcave.user=${CAVE_CREDENTIALS_USR} -Dcave.password=${CAVE_CREDENTIALS_PSW} -Dcave.connection=${params.Connection} -Dcave.group=${params.Group} -Dcave.featureRepository=mvn:${GROUP_ID}/${ARTIFACT_ID}-karafarchive/LATEST/xml/features"
+				}
+			}
+		}
+	}
+}

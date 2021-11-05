@@ -1,0 +1,54 @@
+:docdir: ../appendices
+:icons: font
+:author: Digital Journey Product Development Team
+:imagesdir: ./images
+:imagesoutdir: ./images
+//embedded images
+:data-uri:
+// empty line
+:blank: pass:[ +]
+// Toc
+:toc: macro
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+// Variables
+:revnumber: 1.0
+:arrow: icon:angle-double-down[]
+:ms_name: Training Product Microservice
+:source-highlighter: highlightjs
+
+image::shared/header.png[]
+
+= {ms_name} - Documentation
+v{revnumber}, {docdate}
+
+<<<
+
+.Change Log
+[%header,cols=3*]
+|===
+| Version
+| Date
+| Changes
+
+| 1.0
+| January/2019
+| Initial Version
+|===
+
+toc::[]
+
+<<<
+
+== Introduction
+
+The purpose of this document is to provide an index to existing documentation.
+
+== Documentation
+
+* link:design-document.html[Design Document] - Design documentation of the microservice;
+* link:developer-manual.html[Developer Manual] - How to develop the microservice;
+//* link:sample.html[Sample] - Microservice code samples;
+* link:user-manual.html[User Manual] - Microservice user manual;
+* link:security-guidelines.html[Security Guidelines] - Security guidelines followed during the development of the micro-service.

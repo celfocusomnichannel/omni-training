@@ -15,5 +15,6 @@
     <!-- ====================================================================== -->
     <modules>
         <module>../../modules/productmanagement/productmanagement</module>
+        <module>../../modules/productservice/productservice</module>
     </modules>
 </project>
