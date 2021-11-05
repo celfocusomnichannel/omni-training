@@ -11,4 +11,10 @@
 	<Logger name="io.digitaljourney.platform.plugins.modules" level="ERROR"/>
 	<Logger name="io.digitaljourney.platform.apps" level="ERROR"/>
 	<Logger name="io.digitaljourney.platform.plugins.apps" level="ERROR"/>
+	
+	<Logger name="org.apache.aries.spifly.dynamic.bundle" level="INFO"/>
+	<Logger name="io.digitaljourney.platform.modules" level="INFO"/>
+	<Logger name="io.digitaljourney.platform.plugins.modules" level="INFO"/>
+	<Logger name="io.digitaljourney.platform.apps" level="INFO"/>
+	<Logger name="io.digitaljourney.platform.plugins.apps" level="INFO"/>
 </Loggers>

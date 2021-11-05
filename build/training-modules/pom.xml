@@ -15,7 +15,7 @@
     <!-- ====================================================================== -->
     <modules>
         <module>../../modules/productmanagement/productmanagement</module>
-        <module>../../modules/productservice/productservice</module>
         <module>../../modules/flagmicroservicersxml/flagmicroservicersxml</module>
+        <module>../../modules/productservice/productservice</module>
     </modules>
 </project>

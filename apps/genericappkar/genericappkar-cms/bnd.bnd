@@ -1,0 +1,7 @@
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Sling-Initial-Content: \
+	SLING-INF/content/libs/training/genericappkar;overwrite:=true;ignoreImportProviders:=json;path:=/libs/training/genericappkar,\
+	SLING-INF/content/libs/training/genericappkar-data;overwrite:=true;path:=/libs/training/genericappkar-data

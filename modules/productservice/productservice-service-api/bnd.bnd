@@ -4,3 +4,8 @@ Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.$
 Bundle-Category: ${bundle.category}
 Export-Package: \
 	io.digitaljourney.platform.plugins.modules.productservice.service.api.*
+Import-Package: \
+	org.hibernate.validator.constraints;version="[5.4,7.0)", \
+	javax.validation;version="[1.1,2.1)", \
+	javax.validation.constraints;version="[1.1,2.1)", \
+	*	

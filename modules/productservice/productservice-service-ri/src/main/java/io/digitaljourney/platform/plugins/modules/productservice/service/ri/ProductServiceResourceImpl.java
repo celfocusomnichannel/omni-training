@@ -27,7 +27,7 @@ import io.digitaljourney.platform.plugins.providers.rsprovider.annotations.Custo
 			name = ProductServiceResourceProperties.REF_CONTEXT,
 			service = ProductServiceContext.class,
 			cardinality = ReferenceCardinality.MANDATORY)
-})
+}) 
 @Designate(ocd = ProductServiceResourceConfig.class)
 @CustomRsProvider (ProductServiceResourceProperties.ADDRESS)
 //@formatter:on

@@ -29,6 +29,8 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>                            
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -75,6 +77,7 @@
                             <feature>productmanagement</feature>
                             <feature>productservice</feature>
                             <feature>flagmicroservicersxml</feature>
+                            <feature>productservice</feature>
                         </bootFeatures>
                         <installedFeatures combine.children="append">
                             <!-- Add additional features here -->

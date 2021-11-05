@@ -37,6 +37,7 @@
                             <!--  Training -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-karafarchive/${io.digitaljourney.platform.plugins.apps.genericappkar.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -74,7 +75,11 @@
                             <!-- Training -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/xml/features</repository>
-                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-karafarchive/${io.digitaljourney.platform.plugins.apps.genericappkar.version}/xml/features</repository>
+                            <!-- Modules -->
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>                            
                         </bootRepositories>
                         <bootFeatures combine.children="append">
                             <feature>foundation</feature>
@@ -91,6 +96,7 @@
                             <!-- Training -->
                             <feature>trainingbase</feature>
                             <feature>ordermanagement</feature>
+                            <feature>genericappkar</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
