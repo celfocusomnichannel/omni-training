@@ -28,6 +28,7 @@
                             <!--  Training -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>                            
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -52,6 +53,7 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/xml/features</repository>
                         </bootRepositories>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
@@ -72,6 +74,7 @@
                             <feature>journeyworkflowengine-gateway-rest-cxf</feature>
                             <feature>productmanagement</feature>
                             <feature>productservice</feature>
+                            <feature>flagmicroservicersxml</feature>
                         </bootFeatures>
                         <installedFeatures combine.children="append">
                             <!-- Add additional features here -->

@@ -1,0 +1,7 @@
+-plugin.annotationProperties: ${bundle.plugin.annotationProperties}
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Change-Log: uam
+Change-Log-Script: /META-INF/flagmicroservicersxml.uam

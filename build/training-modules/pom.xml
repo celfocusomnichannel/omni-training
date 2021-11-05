@@ -16,5 +16,6 @@
     <modules>
         <module>../../modules/productmanagement/productmanagement</module>
         <module>../../modules/productservice/productservice</module>
+        <module>../../modules/flagmicroservicersxml/flagmicroservicersxml</module>
     </modules>
 </project>
