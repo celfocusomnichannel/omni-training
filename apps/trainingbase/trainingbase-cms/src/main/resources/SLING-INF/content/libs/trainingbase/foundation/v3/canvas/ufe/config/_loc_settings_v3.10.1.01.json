@@ -137,7 +137,14 @@
           "y": 2,
           "w": 1,
           "h": 1
-        }
+        },
+		{
+			"id": 12,
+			"x": 1,
+			"y": 2,
+			"w": 4,
+			"h": 4
+		}		
       ]
     },
     {
@@ -461,15 +468,7 @@
       "entitlement": "OPEN_ORDER_MANAGEMENT",
       "icon": "icon-appmanual_big",
       "i18NLabel": "order_management_label",
-      "journeyUrl": "http://content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/"
-    },
-    {
-      "id": 21,
-      "title": "Local Sandbox (Development)",
-      "version": "1.0",
-      "icon": "icon-appmanual_big",
-      "i18NLabel": "local_sandbox_label",
-      "journeyUrl": "http://localhost:3000"
+      "journeyUrl": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/"
     }
   ],
   "categories": [
@@ -510,10 +509,6 @@
         {
           "order": 3,
           "processId": 12
-        },
-        {
-          "order": 4,
-          "processId": 21
         }
       ]
     },
@@ -816,7 +811,27 @@
       "entitlements": "FES_WGT_WORK_QUEUE:SHOW || FES_WGT_WORK_QUEUE:DISPATCH",
       "shouldWidgetWait": "true",
       "awaitTime": 10000
-    }
+    },
+	{
+		"id": 12,
+		"name": "UFE_WIDGET_TRAINING_WIDGET_ARTIST",
+		"type": "umd",
+		"identifier": "TrainingWidgetArtist",
+		"info": {
+			"i18NTitle": "TRAINING_WIDGET_ARTIST",
+			"i18NDescription": "UFE_WIDGET_DEPENDENCY_TEST_DESCRIPTION"
+		},
+		"version": "1.0",
+		"defaultSize": {
+			"x": 0,
+			"y": 5,
+			"w": 2,
+			"h": 2
+		},
+		"category": "add_widget_screen_business",
+		"url": "/content/training/genericappkar/v1/widgets/omni-widget-training-artist/TrainingWidgetArtist.js",
+		"entitlements": "OPEN_DASHBOARD"
+	}	
   ],
   "loginCustomFields": [],
   "userInfoFields": {
