@@ -102,6 +102,8 @@
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
         <tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+		<tile.platform.plugins.distro.core.training.coordinates>io.digitaljourney.platform.plugins.distro.core:training-core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.training.coordinates>
+		<tile.platform.plugins.distro.cms.training.coordinates>io.digitaljourney.platform.plugins.distro.cms:training-cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.training.coordinates>        
         
         <!-- Dependency Management -->
         <!-- Trainingbase -->        
