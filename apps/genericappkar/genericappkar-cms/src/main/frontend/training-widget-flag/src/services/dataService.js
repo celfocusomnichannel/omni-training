@@ -26,7 +26,7 @@ export const getFlagInfo = function (HttpClient, countryCode) {
 export const getRandomCountry = function (HttpClient) {
   const randomIndex = Math.floor(Math.random() * COUNTRY_CODE.length - 1);
   const country = COUNTRY_CODE[randomIndex];
-  return getFlagInfo(HttpClient, country.Code).then((data) => {
+  return getFlagInfo(HttpClient, country.code).then((data) => {
     return { ...data, ...country };
   });
 };
