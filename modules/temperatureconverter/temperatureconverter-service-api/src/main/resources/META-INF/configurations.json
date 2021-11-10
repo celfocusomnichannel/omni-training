@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "defaults": {
+    "targetVersion": "1",
+    "tags": ["karaf","io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.client"],
+    "roles": [],
+    "category": "PLATFORM",
+    "section": "TemperatureConverter",
+    "subSection": "HTTP Client",
+    "source": "digitaljourney"
+  },
+  "configs": [
+    {
+      "target": "io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.client.address",
+      "value": null,
+      "type": "STRING",
+      "info": "TemperatureConverter endpoint address"
+    },
+    {
+      "target": "io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.client.userName",
+      "value": "",
+      "type": "STRING",
+      "info": "TemperatureConverter service user name"
+    },
+    {
+      "target": "io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.client.password",
+      "value": "",
+      "type": "PASSWORD",
+      "info": "TemperatureConverter service user password"
+    }
+  ]
+}

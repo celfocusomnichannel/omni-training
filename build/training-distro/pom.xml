@@ -48,62 +48,58 @@
         <scm.path>celfocus/omni-platform-plugins.git</scm.path>
         <!-- GITFLOW MANAGEMENT -->
         <gitflow.versionTagPrefix>version/distro/</gitflow.versionTagPrefix>
-		
-		<!-- Laucher Overrides -->
-		<!-- CORE -->
-		<appserver.1.minMem>1536m</appserver.1.minMem>
-		<appserver.1.maxMem>1536m</appserver.1.maxMem>
-		<!-- CMS -->
-		<appserver.2.minMem>1536m</appserver.2.minMem>
-		<appserver.2.maxMem>1536m</appserver.2.maxMem>
-		
-		<lib.org.codehaus.groovy.groovy.version>2.4.21</lib.org.codehaus.groovy.groovy.version>		
-
-		
+        <!-- Laucher Overrides -->
+        <!-- CORE -->
+        <appserver.1.minMem>1536m</appserver.1.minMem>
+        <appserver.1.maxMem>1536m</appserver.1.maxMem>
+        <!-- CMS -->
+        <appserver.2.minMem>1536m</appserver.2.minMem>
+        <appserver.2.maxMem>1536m</appserver.2.maxMem>
+        <lib.org.codehaus.groovy.groovy.version>2.4.21</lib.org.codehaus.groovy.groovy.version>
         <!-- ###############################################      -->
         <!-- ###########   DISTRO MANAGEMENT   ############      -->
         <!-- ###############################################      -->
-        
-		<!-- Modules -->
-		<platform.plugins.modules.uam.version>13.5.0</platform.plugins.modules.uam.version>
-		<platform.plugins.modules.processcontinuity.version>4.2.3</platform.plugins.modules.processcontinuity.version>
-		<platform.plugins.modules.rulesengine.version>3.3.3</platform.plugins.modules.rulesengine.version>
-		<platform.plugins.modules.logservice.version>4.1.2</platform.plugins.modules.logservice.version>
-		<platform.plugins.modules.cachemanager.version>4.2.2</platform.plugins.modules.cachemanager.version>
-		<platform.plugins.modules.events.version>1.1.1</platform.plugins.modules.events.version>
-		<platform.plugins.modules.journeyworkflowengine.version>2.2.8</platform.plugins.modules.journeyworkflowengine.version>
-		<platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
-		<platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
-		<platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
-
-		<!-- Providers -->
-		<platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
-		<platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
-
-		<!-- Apps -->
-		<platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
-		<!-- UFE Current versions -->
-		<platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
-		<platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
-		<platform.plugins.apps.journeydesigner.version>3.1.1-training</platform.plugins.apps.journeydesigner.version>
-		<!-- Generic Apps -->
-		<platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
-		<platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
-		<platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
-		<platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
-		
-		<!-- Training -->
-		<platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
-
-		<!-- TILE MANAGEMENT -->
-		<tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
-		<tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
-		<tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
-		
-		<!-- Dependency Management -->
-		<lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
-		<lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
-
+        <!-- Modules -->
+        <platform.plugins.modules.uam.version>13.5.0</platform.plugins.modules.uam.version>
+        <platform.plugins.modules.processcontinuity.version>4.2.3</platform.plugins.modules.processcontinuity.version>
+        <platform.plugins.modules.rulesengine.version>3.3.3</platform.plugins.modules.rulesengine.version>
+        <platform.plugins.modules.logservice.version>4.1.2</platform.plugins.modules.logservice.version>
+        <platform.plugins.modules.cachemanager.version>4.2.2</platform.plugins.modules.cachemanager.version>
+        <platform.plugins.modules.events.version>1.1.1</platform.plugins.modules.events.version>
+        <platform.plugins.modules.journeyworkflowengine.version>2.2.8</platform.plugins.modules.journeyworkflowengine.version>
+        <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
+        <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
+        <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
+        <!-- Providers -->
+        <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
+        <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
+        <!-- Apps -->
+        <platform.plugins.apps.foundation.version>4.4.0</platform.plugins.apps.foundation.version>
+        <!-- UFE Current versions -->
+        <platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
+        <platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
+        <platform.plugins.apps.journeydesigner.version>3.1.1-training</platform.plugins.apps.journeydesigner.version>
+        <!-- Generic Apps -->
+        <platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
+        <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
+        <platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
+        <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
+        <!-- Training -->
+        <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
+        <!-- TILE MANAGEMENT -->
+        <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
+        <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
+        <tile.platform.plugins.distro.generic.coordinates>io.digitaljourney.platform.plugins.distro.generic:generic-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.generic.coordinates>
+        <!-- Dependency Management -->
+        <lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>${platform.plugins.apps.trainingbase.version}</lib.io.digitaljourney.platform.plugins.apps.trainingbase-karafarchive.version>
+        <io.digitaljourney.platform.plugins.modules.temperatureconverter.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.temperatureconverter.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -124,6 +120,36 @@
                 <type>kar</type>
             </dependency>
             <!-- # Modules -->
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-data-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-data-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-entity</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-service-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-service-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- ====================================================================== -->

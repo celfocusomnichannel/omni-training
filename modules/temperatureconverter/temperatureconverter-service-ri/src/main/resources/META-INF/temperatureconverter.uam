@@ -1,0 +1,6 @@
+"TEMPERATURECONVERTER_PERMISSION_ALL" : create permission "temperatureconverter:*" "Temperature Converter Microservice consuming SOAP Webservice full permission";
+"TEMPERATURECONVERTER_PERMISSION_CREATE" : create permission "temperatureconverter:create" "Temperature Converter Microservice consuming SOAP Webservice create permission";
+"TEMPERATURECONVERTER_PERMISSION_READ" : create permission "temperatureconverter:read" "Temperature Converter Microservice consuming SOAP Webservice read permission";
+"TEMPERATURECONVERTER_PERMISSION_UPDATE" : create permission "temperatureconverter:update" "Temperature Converter Microservice consuming SOAP Webservice update permission";
+"TEMPERATURECONVERTER_PERMISSION_DELETE" : create permission "temperatureconverter:delete" "Temperature Converter Microservice consuming SOAP Webservice delete permission";
+"TEMPERATURECONVERTER_PERMISSION_EXECUTE" : create permission "temperatureconverter:execute" "Temperature Converter Microservice consuming SOAP Webservice execute permission";

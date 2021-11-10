@@ -1,0 +1,12 @@
+Bundle-SymbolicName: ${bundle.symbolicName}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${parsedVersion.plainVersion}${if;${parsedVersion.isSnapshot};.${tstamp}}
+Bundle-Category: ${bundle.category}
+Import-Package: \
+	org.hibernate.validator.constraints;version="[5.4,7.0)", \
+	javax.validation;version="[1.1,2.1)", \
+	javax.validation.constraints;version="[1.1,2.1)", \
+	*
+Export-Package: \
+	io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.*
+Configurations-Import-Script: META-INF/configurations.json

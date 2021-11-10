@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- ====================================================================== -->
+	<!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+	<!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.modules</groupId>
+		<artifactId>temperatureconverter</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../temperatureconverter</relativePath>
+	</parent>
+
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+	<!-- ====================================================================== -->
+
+	<artifactId>temperatureconverter-entity</artifactId>
+
+	<name>Modules :: Temperature Converter Microservice consuming SOAP Webservice Entity</name>
+	<description>Temperature Converter Microservice consuming SOAP Webservice Entity</description>
+
+	<!-- ====================================================================== -->
+	<!-- = B U I L D- D E F I N I T I O N ===================================== -->
+	<!-- ====================================================================== -->
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-annotation-processor-sources</id>
+
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>io.digitaljourney.omnichannel.plugins</groupId>
+				<artifactId>tiles-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<tiles>
+						<tile>${tile.entity-generic.coordinates}</tile>
+					</tiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ====================================================================== -->
+	<!-- = D E P E N D E N C I E S ============================================ -->
+	<!-- ====================================================================== -->
+
+	<dependencies>
+		<!-- Provided -->
+
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi.annotation</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.karneim</groupId>
+			<artifactId>pojobuilder</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
+	</dependencies>
+</project>
