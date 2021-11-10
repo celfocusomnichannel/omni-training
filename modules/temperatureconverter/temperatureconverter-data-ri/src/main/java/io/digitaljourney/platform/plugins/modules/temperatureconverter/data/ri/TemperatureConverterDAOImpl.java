@@ -57,4 +57,19 @@ public class TemperatureConverterDAOImpl extends AbstractXMLDAO<TempConvertSoap,
 		return result.data();
 	}
 
+	@Override
+	public String getCelsiusTemp(Double tempFahrenheit) {
+		WSData<String> result = invoke((TempConvertSoap proxy) ->{
+			String output = proxy.fahrenheitToCelsius(String.valueOf(tempFahrenheit));
+			
+			return WSData.of(output).build();
+		});
+		
+		if(!result.success()) {
+			throw resultException(result);
+		}
+		
+		return result.data();
+	}
+
 }

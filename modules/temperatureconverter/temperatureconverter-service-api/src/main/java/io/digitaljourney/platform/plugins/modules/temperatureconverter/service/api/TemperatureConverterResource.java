@@ -59,5 +59,10 @@ public interface TemperatureConverterResource {
 	@Path("/fahrenheit/{temperature}")
 	@ApiOperation(value = "Convert Celsius to Fahrenheit", response=TemperatureDTO.class)
 	TemperatureDTO convertCelsius(@ApiParam(value="Temperature in Celsius (°C)", required = true) @PathParam("temperature") Double temperature);
+	
+	@GET
+	@Path("/celsius/{temperature}")
+	@ApiOperation(value = "Convert Fahrenheit to Celsius", response=TemperatureDTO.class)
+	TemperatureDTO convertFahrenheit(@ApiParam(value="Temperature in Fahrenheit (°F)", required = true) @PathParam("temperature") Double temperature);	
 
 }

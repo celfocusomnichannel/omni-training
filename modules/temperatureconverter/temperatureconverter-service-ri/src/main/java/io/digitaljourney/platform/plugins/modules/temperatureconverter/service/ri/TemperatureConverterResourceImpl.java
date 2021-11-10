@@ -61,4 +61,10 @@ public class TemperatureConverterResourceImpl extends AbstractResource<Temperatu
 		return new TemperatureDTO(tempDAO.getFahrenheitTemp(temperature), "F");
 	}
 
+	@Override
+	public TemperatureDTO convertFahrenheit(Double temperature) {
+		
+		return new TemperatureDTO(tempDAO.getCelsiusTemp(temperature), "C");
+	}
+
 }

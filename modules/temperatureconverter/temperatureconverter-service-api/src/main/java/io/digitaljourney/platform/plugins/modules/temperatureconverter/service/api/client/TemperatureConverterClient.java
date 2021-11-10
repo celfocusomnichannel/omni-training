@@ -165,4 +165,10 @@ public class TemperatureConverterClient extends AbstractWSRSClient<TemperatureCo
 		return null;
 	}
 
+	@Override
+	public TemperatureDTO convertFahrenheit(Double temperature) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
