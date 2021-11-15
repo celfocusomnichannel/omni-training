@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="platform-training-genericappkar-modules-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+	<!-- Added necessary modules repositories here -->
+	<!-- Example for UAM, variable is defined in pom 
+		<repository>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/xml/features</repository>
+	-->
+	<feature name="genericappkar-api" description="GenericAppKar API" version="${project.version}" install="manual">
+		<feature>base-ws-rs</feature>
+		<feature>productservice-api</feature>
+		<feature>temperatureconverter-api</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-api/${project.version}</bundle>
+	</feature>
+
+	<feature name="genericappkar-common-modules" description="GenericAppKar Common Modules" version="${project.version}" install="manual">
+		<feature>standard-cxf-jaxrs-swagger</feature>
+		<feature>standard-groovy</feature>
+		<feature>standard-mapstruct</feature>
+		<feature>rsprovider</feature>
+		<feature>genericappkar-api</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-common/${project.version}</bundle>
+	</feature>
+	
+	<feature name="genericappkar-agents-core" description="GenericAppKar Core Agent" version="${project.version}" install="manual">
+		<feature>genericappkar-common-modules</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-agents-core/${project.version}</bundle>
+	</feature>
+
+	<feature name="genericappkar-cxf-modules" description="GenericAppKar CXF Modules" version="${project.version}" install="manual">
+		<feature>genericappkar-common-modules</feature>
+		<feature>genericappkar-agents-core</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-cxf/${project.version}</bundle>
+	</feature>
+
+	<feature name="genericappkar-sling-data" description="GenericAppKar Sling Data" version="${project.version}" install="manual">
+		<feature>sling</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-cms/${project.version}</bundle>
+	</feature>
+
+	<feature name="genericappkar-mvc-modules" description="GenericAppKar MVC Modules" version="${project.version}"  install="manual">
+		<feature>genericappkar-common-modules</feature>
+		<feature>cms-mvc</feature>
+		<feature>genericappkar-agents-core</feature>
+
+		<bundle>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-app/${project.version}</bundle>
+		<feature>genericappkar-sling-data</feature>
+	</feature>
+	
+	<feature name="genericappkar" description="GenericAppKar" version="${project.version}">
+		<feature>genericappkar-mvc-modules</feature>
+	</feature>
+</features>

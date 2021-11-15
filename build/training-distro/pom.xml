@@ -90,7 +90,6 @@
         <io.digitaljourney.platform.plugins.modules.temperatureconverter.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.temperatureconverter.version>
         <!-- Apps -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
-        
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
@@ -110,6 +109,14 @@
         <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>
         <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>
+        <io.digitaljourney.platform.plugins.apps.genericappkar.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.apps.genericappkar.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version>
+        <lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>${io.digitaljourney.platform.plugins.apps.genericappkar.version}</lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -189,6 +196,42 @@
                 <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>temperatureconverter-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-app</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-app.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-cms</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-cms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-karafarchive.version}</version>
+                <type>kar</type>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-agents-core</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-agents-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-common</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.apps</groupId>
+                <artifactId>genericappkar-cxf</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.apps.genericappkar-cxf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

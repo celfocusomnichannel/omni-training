@@ -1,0 +1,1 @@
+package io.digitaljourney.platform.plugins.apps.genericappkar.common.api.mapper;

@@ -1,0 +1,77 @@
+{
+	"schemaVersion": 1,
+	"defaults": {
+		"targetVersion": "2",
+		"roles": [],
+		"category": "APPS",
+		"section": "GenericAppKar",
+		"source": "digitaljourney",
+		"instance": "core"
+	},
+	"configs": [
+		{
+			"target": "ufe.genericappkar.omni-journey-genericappkar.i18n.pt-PT",
+			"info": "GenericAppKar Portuguese Dictionaries",
+			"roles": [],
+			"tags": [
+				"genericappkar",
+				"i18n"
+			],
+			"value": "{ }",
+			"type": "JSON",
+			"subSection": "Language",
+			"attributes": {
+				"labeli18n": "Portuguese | pt-PT",
+				"indexTopic": "Dictionaries"
+			}
+		},
+		{
+			"target": "ufe.genericappkar.omni-journey-genericappkar.i18n.en-US",
+			"roles": [],
+			"tags": [
+				"genericappkar",
+				"i18n"
+			],
+			"value": "{ }",
+			"type": "JSON",
+			"info": "GenericAppKar English Dictionaries",
+			"subSection": "Language",
+			"attributes": {
+				"labeli18n": "English | en-US",
+				"indexTopic": "Dictionaries"
+			}
+		},
+		{
+			"target": "ufe.genericappkar.omni-journey-genericappkar.theme.default",
+			"info": "Theme default",
+			"roles": [],
+			"tags": [
+				"genericappkar",
+				"theme"
+			],
+			"value": "{ }",
+			"type": "JSON",
+			"subSection": "THEME",
+			"attributes": {
+				"labeli18n": "Theme default",
+				"indexTopic": "Theme / Overrides"
+			}
+		},
+		{
+			"target": "ufe.genericappkar.omni-journey-genericappkar.theme.overrides",
+			"info": "Theme overrides",
+			"roles": [],
+			"tags": [
+				"genericappkar",
+				"theme"
+			],
+			"value": "{ }",
+			"type": "JSON",
+			"subSection": "THEME",
+			"attributes": {
+				"labeli18n": "Theme overrides",
+				"indexTopic": "Theme / Overrides"
+			}
+		}
+	]
+}

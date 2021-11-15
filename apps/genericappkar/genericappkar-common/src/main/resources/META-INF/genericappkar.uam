@@ -1,0 +1,6 @@
+"GENERICAPPKAR_PERMISSION_ALL" : create permission "genericappkar:*" "App using soap and rest microservices integration full permission";
+"GENERICAPPKAR_PERMISSION_CREATE" : create permission "genericappkar:create" "App using soap and rest microservices integration create permission";
+"GENERICAPPKAR_PERMISSION_READ" : create permission "genericappkar:read" "App using soap and rest microservices integration read permission";
+"GENERICAPPKAR_PERMISSION_UPDATE" : create permission "genericappkar:update" "App using soap and rest microservices integration update permission";
+"GENERICAPPKAR_PERMISSION_DELETE" : create permission "genericappkar:delete" "App using soap and rest microservices integration delete permission";
+"GENERICAPPKAR_PERMISSION_EXECUTE" : create permission "genericappkar:execute" "App using soap and rest microservices integration execute permission";

@@ -1,6 +1,8 @@
 package io.digitaljourney.platform.plugins.modules.temperatureconverter.service.api.dto;
 
-public class TemperatureDTO {
+import org.osgi.dto.DTO;
+
+public class TemperatureDTO extends DTO {
 
 	public String temperatureConverted;
 	public String symbol;
