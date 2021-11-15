@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+	name="platform-training-temperatureconverter-modules-${project.version}"
+	xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+
+	<feature name="temperatureconverter-api" description="TemperatureConverter API" version="${project.version}">
+		<feature>base-ws-rs</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/temperatureconverter-service-api/${project.version}</bundle>
+	</feature>
+
+	<feature name="temperatureconverter-modules"
+		description="TemperatureConverter Modules" version="${project.version}">
+		<feature>rsprovider</feature>
+		<feature>temperatureconverter-api</feature>
+		<feature>base-ws-xml</feature>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/temperatureconverter-data-ri/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/temperatureconverter-entity/${project.version}</bundle>
+		<bundle>mvn:io.digitaljourney.platform.plugins.modules/temperatureconverter-service-ri/${project.version}</bundle>
+	</feature>
+
+	<feature name="temperatureconverter" description="TemperatureConverter" version="${project.version}">
+			<feature>temperatureconverter-modules</feature>
+	</feature>
+</features>

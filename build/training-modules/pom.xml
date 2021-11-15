@@ -15,5 +15,6 @@
     <!-- ====================================================================== -->
     <modules>
         <module>../../modules/productservice/productservice</module>
+        <module>../../modules/temperatureconverter/temperatureconverter</module>
     </modules>
 </project>

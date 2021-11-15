@@ -70,7 +70,6 @@
         <platform.plugins.modules.journeyblueprint.version>1.2.3</platform.plugins.modules.journeyblueprint.version>
         <platform.plugins.modules.configurationmanager.version>2.2.1</platform.plugins.modules.configurationmanager.version>
         <platform.plugins.modules.message.version>6.2.1</platform.plugins.modules.message.version>
-        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
         <!-- Providers -->
         <platform.plugins.providers.rsprovider.version>1.2.3</platform.plugins.providers.rsprovider.version>
         <platform.plugins.providers.xmlprovider.version>1.1.4</platform.plugins.providers.xmlprovider.version>
@@ -80,14 +79,18 @@
         <platform.plugins.apps.ufe.version>3.14.0</platform.plugins.apps.ufe.version>
         <platform.plugins.apps.operationconsole.version>3.13.0</platform.plugins.apps.operationconsole.version>
         <platform.plugins.apps.journeydesigner.version>3.1.1-training</platform.plugins.apps.journeydesigner.version>
-        <!-- should be 3.1.1 but import widgets is causing some troubles -->
         <!-- Generic Apps -->
         <platform.plugins.apps.errorpages.version>1.0.38</platform.plugins.apps.errorpages.version>
         <platform.plugins.apps.logviewer.version>2.3.0</platform.plugins.apps.logviewer.version>
         <platform.plugins.apps.cachemanagerapp.version>1.4.0</platform.plugins.apps.cachemanagerapp.version>
         <platform.plugins.apps.backoffice.version>2.1.0</platform.plugins.apps.backoffice.version>
         <!-- Training -->
+        <!-- modules -->
+        <io.digitaljourney.platform.plugins.modules.productservice.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.productservice.version>
+        <io.digitaljourney.platform.plugins.modules.temperatureconverter.version>1.0.0-SNAPSHOT</io.digitaljourney.platform.plugins.modules.temperatureconverter.version>
+        <!-- Apps -->
         <platform.plugins.apps.trainingbase.version>1.0.0-SNAPSHOT</platform.plugins.apps.trainingbase.version>
+        
         <!-- TILE MANAGEMENT -->
         <tile.platform.plugins.distro.core.coordinates>io.digitaljourney.platform.plugins.distro.core:core-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.core.coordinates>
         <tile.platform.plugins.distro.cms.coordinates>io.digitaljourney.platform.plugins.distro.cms:cms-tile:${io.digitaljourney.platform.plugins.version}</tile.platform.plugins.distro.cms.coordinates>
@@ -101,6 +104,12 @@
         <lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-api.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-data-ri.version>
         <lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>${io.digitaljourney.platform.plugins.modules.productservice.version}</lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version>
+        <lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>${io.digitaljourney.platform.plugins.modules.temperatureconverter.version}</lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version>
     </properties>
     <!-- ====================================================================== -->
     <!-- = D E P E N D E N C Y M A N A G E M E N T =========================== -->
@@ -148,8 +157,38 @@
             </dependency>
             <dependency>
                 <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-data-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
                 <artifactId>productservice-karafarchive</artifactId>
                 <version>${lib.io.digitaljourney.platform.plugins.modules.productservice-karafarchive.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-data-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-data-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-entity</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-entity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-service-api</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-service-ri</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-service-ri.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.digitaljourney.platform.plugins.modules</groupId>
+                <artifactId>temperatureconverter-karafarchive</artifactId>
+                <version>${lib.io.digitaljourney.platform.plugins.modules.temperatureconverter-karafarchive.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
