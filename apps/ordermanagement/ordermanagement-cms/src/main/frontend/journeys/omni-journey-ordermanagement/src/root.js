@@ -2,6 +2,7 @@ import React from 'react';
 import StepWizard from './components/StepWizard';
 import { useSelector } from 'react-redux';
 import { withStyles } from '@ui-lib/core/styles';
+import Loading from './components/Loading';
 
 const styles = (theme) => ({});
 
@@ -28,7 +29,7 @@ function Root({ classes }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    return <div>{readyInstance ? <StepWizard /> : <div>loading</div>}</div>;
+    return <div>{readyInstance ? <StepWizard /> : <Loading />}</div>;
 }
 
 export default withStyles(styles)(Root);

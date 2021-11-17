@@ -19,12 +19,12 @@ export default function Details() {
             </div>
             <div>
                 <Typography variant={'h1'}>Products:</Typography>
-                {instance.order.products.map((product) => {
+                {instance.order.products.map((product, i) => {
                     return (
-                        <>
+                        <div key={product.productName + i}>
                             Name: {product.productName} <br />
                             Price: {product.productPrice} <br />
-                        </>
+                        </div>
                     );
                 })}
             </div>

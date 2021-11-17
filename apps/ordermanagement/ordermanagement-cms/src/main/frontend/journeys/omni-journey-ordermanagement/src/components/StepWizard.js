@@ -9,8 +9,10 @@ import ProductList from './ProductList';
 import CustomerInformation from './CustomerInformation';
 import OrderConfirmartion from './OrderConfirmation';
 import Details from './Details';
+import WaitingForStore from './WaitingForStore';
 import { useSelector, useDispatch } from 'react-redux';
 import { createOrder, updateCustomerInfo, submitOrder } from '../redux/products/httpActions';
+import { reset } from '../redux/products/dataActions';
 
 const styles = (theme) => {
     return {
@@ -35,6 +37,7 @@ function StepWizard({ classes }) {
     const { instance, UserPreferences, User, preferences, defaultDeliveryOptions } = useSelector((state) => {
         return {
             instance: state.products.instance,
+            preferences: state.products.preferences,
             defaultDeliveryOptions: state.products.deliveryOptions,
             UserPreferences: state.journey.services.UserPreferences,
             User: state.journey.services.User
@@ -53,7 +56,7 @@ function StepWizard({ classes }) {
             component: <CustomerInformation setName={setName} setAddress={setAddress} setDeliveryOption={setDeliveryOption} name={name} address={address} deliveryOption={deliveryOption} />
         },
         { name: 'Submit Order', component: <OrderConfirmartion /> },
-        { name: 'Waiting for Store', component: null },
+        { name: 'Waiting for Store', component: <WaitingForStore /> },
         { name: 'Finish', component: <Details /> }
     ];
 
@@ -83,9 +86,11 @@ function StepWizard({ classes }) {
         } else if (instance.jwcontext.status === 'SUBMIT ORDER') {
             dispatch(submitOrder(instance.jwcontext.id));
         } else if (instance.jwcontext.status === 'END') {
-            console.log(preferences);
-            console.log(preferences.id);
-            return 4;
+            User.requestUser().then((user) => {
+                UserPreferences.deleteUserPreference(user.id, preferences.id).then(() => {
+                    window.location.reload();
+                });
+            });
         }
     }
 
@@ -101,6 +106,24 @@ function StepWizard({ classes }) {
                 return;
             case 4:
                 return 'Create a new order';
+            default:
+                return;
+        }
+    }
+
+    function buttonDisabled(step) {
+        switch (step) {
+            case 0:
+                if (instance.products.length > 0) return false;
+                return true;
+            case 1:
+                return false;
+            case 2:
+                return false;
+            case 3:
+                return false;
+            case 4:
+                return false;
             default:
                 return;
         }
@@ -128,7 +151,7 @@ function StepWizard({ classes }) {
                         {steps[activeStep].component}
                         <div className={classes.navigationButtons}>
                             {activeStep !== 3 && (
-                                <Button variant="contained" color="primary" onClick={handleNext}>
+                                <Button disabled={buttonDisabled(activeStep)} variant="contained" color="primary" onClick={handleNext}>
                                     {getButtonLabel(activeStep)}
                                 </Button>
                             )}

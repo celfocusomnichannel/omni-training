@@ -87,25 +87,22 @@ public class OrderManagementController extends AbstractAppController implements 
 	}
 	
 	@GetMapping("/products")
-	@JourneyMethod(value = "GET PRODUCTS LIST")
 	@Override
-	public @ResponseBody List<ProductDTO> getProductList(@PathVariable @JourneyReference Long instanceId) {
+	public @ResponseBody List<ProductDTO> getProductList() {
 		info("Entering getProducts");
 		return facade.getProductList();
 	}
 	
 	@GetMapping("/category")
-	@JourneyMethod(value = "GET CATEGORIES LIST")
 	@Override
-	public @ResponseBody CategoryDTO getCategory(@PathVariable @JourneyReference Long instanceId) {
+	public @ResponseBody CategoryDTO getCategory() {
 		info("Entering getCategory");
 		return facade.getCategory();
 	}
 	
 	@GetMapping("/delivery-options")
-	@JourneyMethod(value = "GET DELIVERY OPTIONS")
 	@Override
-	public @ResponseBody List<HashMap<String, Object>> getDeliveryOptions(@PathVariable @JourneyReference Long instanceId) {
+	public @ResponseBody List<HashMap<String, Object>> getDeliveryOptions() {
 		info("Entering getDeliveryOptions");
 		return facade.getDeliveryOptions();
 	}
@@ -140,6 +137,13 @@ public class OrderManagementController extends AbstractAppController implements 
 	public @ResponseBody CustomJourneyDTO submitOrder(@PathVariable @JourneyReference Long instanceId) {
 		info("Entering submitOrder");
 		return facade.submitOrder(this);
+	}
+	
+	@PostMapping("/{instanceId}/notify-store")
+	@JourneyMethod(value = "UPDATE ORDER STATUS")
+	@Override
+	public @ResponseBody CustomJourneyDTO notifyStore(@PathVariable @JourneyReference Long instanceId) {
+		return facade.read(this);
 	}
 
 	@Override

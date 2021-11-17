@@ -13,3 +13,5 @@ export const UPDATE_CUSTOMER_INFO = 'UPDATE_CUSTOMER_INFO';
 export const SUBMIT_ORDER = 'SUBMIT_ORDER';
 
 export const SET_PREFERENCES = 'SET_PREFERENCES';
+
+export const RESET = 'RESET';
