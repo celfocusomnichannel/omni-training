@@ -16,6 +16,21 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-karafarchive/${platform.plugins.providers.xmlprovider.version}/kar/archive</dependency>
                             <!-- modules -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyworkflowengine-karafarchive/${platform.plugins.modules.journeyworkflowengine.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/processcontinuity-karafarchive/${platform.plugins.modules.processcontinuity.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/rulesengine-karafarchive/${platform.plugins.modules.rulesengine.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/events-karafarchive/${platform.plugins.modules.events.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/logservice-karafarchive/${platform.plugins.modules.logservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/kar/archive</dependency>
+                            <!--  Training -->
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>                            
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -28,7 +43,19 @@
                             <repository>mvn:io.digitaljourney.platform.plugins.providers/rsprovider-karafarchive/${platform.plugins.providers.rsprovider.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-karafarchive/${platform.plugins.providers.xmlprovider.version}/xml/features</repository>
                             <!-- modules -->
-                            <repository>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/xml/features</repository>							
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyworkflowengine-karafarchive/${platform.plugins.modules.journeyworkflowengine.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/processcontinuity-karafarchive/${platform.plugins.modules.processcontinuity.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/rulesengine-karafarchive/${platform.plugins.modules.rulesengine.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/events-karafarchive/${platform.plugins.modules.events.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/logservice-karafarchive/${platform.plugins.modules.logservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/xml/features</repository>
                         </bootRepositories>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
@@ -37,8 +64,22 @@
                         </installedBundles>
                         <bootFeatures combine.children="append">
                             <!-- Add additional features here -->
+                            <feature>core-postgresql</feature>
                             <feature>uam</feature>
-                        </bootFeatures>
+                            <feature>processcontinuity</feature>
+                            <feature>rulesengine</feature>
+                            <feature>logservice</feature>
+                            <feature>cachemanager</feature>
+                            <feature>configurationmanager</feature>
+                            <feature>message</feature>
+                            <feature>journeyblueprint</feature>
+                            <feature>events-rdb</feature>
+                            <feature>journeyworkflowengine-gateway-rest-cxf</feature>
+                            <feature>productmanagement</feature>
+                            <feature>productservice</feature>
+                            <feature>flagmicroservicersxml</feature>
+                            <feature>productservice</feature>
+                        </bootFeatures>                        
                         <installedFeatures combine.children="append">
 							<!-- Add additional features here -->
                         </installedFeatures>

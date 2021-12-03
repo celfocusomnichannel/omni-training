@@ -55,5 +55,6 @@
 		<module>../training-cms-tile</module>
 		<module>../training-cms-configuration</module>
 		<module>../training-cms-karafassembly</module>
+		<module>../training-cms-karafdockerimage</module>
 	</modules>
 </project>

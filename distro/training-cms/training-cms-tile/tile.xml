@@ -16,12 +16,31 @@
                             <dependency>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-karafarchive/${platform.plugins.providers.xmlprovider.version}/kar/archive</dependency>
                             <!-- Modules -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyworkflowengine-karafarchive/${platform.plugins.modules.journeyworkflowengine.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/processcontinuity-karafarchive/${platform.plugins.modules.processcontinuity.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/rulesengine-karafarchive/${platform.plugins.modules.rulesengine.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/events-karafarchive/${platform.plugins.modules.events.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/logservice-karafarchive/${platform.plugins.modules.logservice.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/kar/archive</dependency>
+                            <!-- Training -->
+                            <dependency>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/kar/archive</dependency>
                             <!-- Apps -->
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/foundation-karafarchive/${platform.plugins.apps.foundation.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/ufe-karafarchive/${platform.plugins.apps.ufe.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/operationconsole-karafarchive/${platform.plugins.apps.operationconsole.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/journeydesigner-karafarchive/${platform.plugins.apps.journeydesigner.version}/kar/archive</dependency>
                             <dependency>mvn:io.digitaljourney.platform.plugins.apps/errorpages-karafarchive/${platform.plugins.apps.errorpages.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/logviewer-karafarchive/${platform.plugins.apps.logviewer.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/cachemanagerapp-karafarchive/${platform.plugins.apps.cachemanagerapp.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/kar/archive</dependency>
+                            <!--  Training -->
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-karafarchive/${io.digitaljourney.platform.plugins.apps.genericappkar.version}/kar/archive</dependency>
+                            <dependency>mvn:io.digitaljourney.platform.plugins.apps/categorymanagementapp-karafarchive/${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}/kar/archive</dependency>
                         </dependencies>
                     </configuration>
                 </plugin>
@@ -34,20 +53,57 @@
                             <!-- Providers -->
                             <repository>mvn:io.digitaljourney.platform.plugins.providers/rsprovider-karafarchive/${platform.plugins.providers.rsprovider.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.providers/xmlprovider-karafarchive/${platform.plugins.providers.xmlprovider.version}/xml/features</repository>
+                            <!-- JWE -->
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyworkflowengine-karafarchive/${platform.plugins.modules.journeyworkflowengine.version}/xml/features</repository>
                             <!-- modules -->
                             <repository>mvn:io.digitaljourney.platform.plugins.modules/uam-karafarchive/${platform.plugins.modules.uam.version}/xml/features</repository>
-							<repository>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/xml/features</repository>
-							<repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/rulesengine-karafarchive/${platform.plugins.modules.rulesengine.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/processcontinuity-karafarchive/${platform.plugins.modules.processcontinuity.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/logservice-karafarchive/${platform.plugins.modules.logservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/configurationmanager-karafarchive/${platform.plugins.modules.configurationmanager.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/cachemanager-karafarchive/${platform.plugins.modules.cachemanager.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/journeyblueprint-karafarchive/${platform.plugins.modules.journeyblueprint.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/events-karafarchive/${platform.plugins.modules.events.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/message-karafarchive/${platform.plugins.modules.message.version}/xml/features</repository>
                             <!-- Apps -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/foundation-karafarchive/${platform.plugins.apps.foundation.version}/xml/features</repository>
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/errorpages-karafarchive/${platform.plugins.apps.errorpages.version}/xml/features</repository>
                             <!-- Latest UFEv3 versions -->
                             <repository>mvn:io.digitaljourney.platform.plugins.apps/ufe-karafarchive/${platform.plugins.apps.ufe.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/journeydesigner-karafarchive/${platform.plugins.apps.journeydesigner.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/operationconsole-karafarchive/${platform.plugins.apps.operationconsole.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/logviewer-karafarchive/${platform.plugins.apps.logviewer.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/cachemanagerapp-karafarchive/${platform.plugins.apps.cachemanagerapp.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/backoffice-karafarchive/${platform.plugins.apps.backoffice.version}/xml/features</repository>
+                            <!-- Training -->
+							<repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>                            
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/trainingbase-karafarchive/${platform.plugins.apps.trainingbase.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/ordermanagement-karafarchive/${io.digitaljourney.platform.plugins.apps.ordermanagement.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/genericappkar-karafarchive/${io.digitaljourney.platform.plugins.apps.genericappkar.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.apps/categorymanagementapp-karafarchive/${io.digitaljourney.platform.plugins.apps.categorymanagementapp.version}/xml/features</repository>                            
+                            <!-- Modules -->
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/flagmicroservicersxml-karafarchive/${io.digitaljourney.platform.plugins.modules.flagmicroservicersxml.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productservice-karafarchive/${io.digitaljourney.platform.plugins.modules.productservice.version}/xml/features</repository>
+                            <repository>mvn:io.digitaljourney.platform.plugins.modules/productmanagement-karafarchive/${io.digitaljourney.platform.plugins.modules.productmanagement.version}/xml/features</repository>                            
                         </bootRepositories>
                         <bootFeatures combine.children="append">
+                        	<feature>cms-postgresql</feature>
                             <feature>foundation</feature>
                             <featuer>errorpages</featuer>
                             <feature>ufe</feature>
+                            <feature>operationconsole</feature>
+                            <feature>logviewer</feature>
+                            <feature>journeydesigner</feature>
+                            <feature>omnichannel-backoffice</feature>
+                            <feature>cachemanagerapp</feature>
+                            <feature>events-rdb</feature>
+                            <feature>journeyworkflowengine-gateway-rest-spring</feature>
+                            <feature>journeyworkflowengine-gateway-aspect-mvc</feature>
+                            <!-- Training -->
+                            <feature>trainingbase</feature>
+                            <feature>ordermanagement</feature>
+                            <feature>genericappkar</feature>
+                            <feature>categorymanagementapp</feature>
                         </bootFeatures>
                         <installedBundles combine.children="append">
                             <!-- Add additional installed bundles here -->
@@ -56,7 +112,7 @@
                         </installedBundles>
                         <bootBundles combine.children="append">
                             <!-- Add any extra boot bundles here -->
-                            <!-- This prevents a JWE induced restart --> 
+                            <!-- This prevents a JWE induced restart -->
                             <bundle>mvn:org.codehaus.groovy/groovy-all/${lib.org.codehaus.groovy.groovy.version}</bundle>
                             <!-- This prevents a JD induced restart -->
                             <bundle>mvn:io.swagger/swagger-core/${grp.swagger.version}_1</bundle>
@@ -68,6 +124,7 @@
                             <!--bundle>mvn:org.mongodb/mongo-java-driver/3.6.0</bundle-->
                         </bootBundles>
                         <blacklistedBundles combine.children="append">
+                        	<bundle>mvn:io.digitaljourney.platform.plugins.apps/journeydesigner/3.1.1</bundle>
                             <!-- Add any blacklisted module here -->
                             <bundle>mvn:com.fasterxml/classmate/1.3.0</bundle>
                             <bundle>mvn:io.swagger/swagger-core/${grp.swagger.version}</bundle>

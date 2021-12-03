@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- ====================================================================== -->
+  <!-- = P A R E N T- P R O J E C T- D E S C R I P T I O N ================== -->
+  <!-- ====================================================================== -->
+
+	<parent>
+		<groupId>io.digitaljourney.platform.plugins.distro.core</groupId>
+		<artifactId>training-core</artifactId>
+		<version>2.9.99-SNAPSHOT</version>
+		<relativePath>../training-core</relativePath>
+	</parent>
+
+  <!-- ====================================================================== -->
+  <!-- = P R O J E C T- D E S C R I P T I O N =============================== -->
+  <!-- ====================================================================== -->
+
+  <artifactId>training-core-karafdockerimage</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Distro :: Core :: Training :: Karaf Docker Image</name>
+  <description>Core Training karaf docker image</description>
+  
+	<!-- ====================================================================== -->
+	<!-- = P R O J E C T- P R O P E R T I E S ================================= -->
+	<!-- ====================================================================== -->
+
+	<properties>
+		<karafassembly.group>karaf</karafassembly.group>
+		<karafassembly.user>karaf</karafassembly.user>  
+		<karafassembly.baseName>apache</karafassembly.baseName>
+		<karafassembly.baseDirectory>/opt/${karafassembly.baseName}</karafassembly.baseDirectory>
+		<distro.name>training-core</distro.name>
+	</properties>   
+
+  <!-- ====================================================================== -->
+  <!-- = B U I L D- D E F I N I T I O N ===================================== -->
+  <!-- ====================================================================== -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.digitaljourney.omnichannel.plugins</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <tiles>
+          	<tile>${tile.platform.plugins.distro.core.training.coordinates}</tile>
+            <tile>${tile.platform.distro.core.coordinates}</tile>
+            <tile>${tile.docker.coordinates}</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- ====================================================================== -->
+  <!-- = P R O F I L E S ==================================================== -->
+  <!-- ====================================================================== -->
+
+  <profiles>
+    <profile>
+      <id>startContainer</id>
+    </profile>
+
+    <profile>
+      <id>stopContainer</id>
+    </profile>
+  </profiles>
+</project>

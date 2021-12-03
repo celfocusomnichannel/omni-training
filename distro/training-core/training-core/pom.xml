@@ -56,5 +56,6 @@
 		<module>../training-core-tile</module>
 		<module>../training-core-configuration</module>
 		<module>../training-core-karafassembly</module>
+		<module>../training-core-karafdockerimage</module>
 	</modules>
 </project>
