@@ -1,0 +1,1 @@
+CREATE DATABASE plocal:/orientdb-data/databases/processcontinuity;

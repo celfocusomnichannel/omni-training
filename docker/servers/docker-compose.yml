@@ -1,0 +1,58 @@
+version: '3'
+services:
+  omni-zookeeper:
+    image: digitaljourney.azurecr.io/zookeeper:2.1.27
+    container_name: omni-zookeeper
+    restart: always
+    ports:
+     - "2181:2181"
+    networks:
+     - repository_omni_network
+  omni-core:
+    image: digitaljourney.azurecr.io/platform-training-core:2.9.99
+    container_name: omni-core1
+    restart: always
+    environment:
+     - KARAF_CLEAN_CACHE=false
+     - KARAF_CUSTOM_OPTS="-Dsling.run.modes=training,core,remote"
+     - KARAF_ADMIN_USER=trainingcore   
+     - KARAF_ADMIN_PASSWORD=training
+     - KARAF_DEBUG=true
+     - KARAF_MAX_MEM=4G
+    ports:
+     - "4501:8181"
+     - "5005:5005"
+    tty: true
+    volumes:
+     - omni-core1-data:/opt/apache/karaf-work
+     - ./omni-core/omni-config:/karaf-config
+     - ./omni-core/omni-config/deploy:/opt/apache/karaf/deploy   
+    networks:
+     - repository_omni_network
+  omni-cms:
+    image: digitaljourney.azurecr.io/platform-training-cms:2.9.99
+    container_name: omni-cms1
+    restart: always
+    environment:
+     - KARAF_CLEAN_CACHE=false
+     - KARAF_CUSTOM_OPTS="-Dsling.run.modes=training,cms,remote"
+     - KARAF_ADMIN_USER=trainingcms
+     - KARAF_ADMIN_PASSWORD=training
+     - KARAF_DEBUG=true
+     - KARAF_MAX_MEM=4G
+    ports:
+     - "4502:8181"
+     - "5006:5005"
+    tty: true
+    volumes:
+     - omni-cms1-data:/opt/apache/karaf-work
+     - ./omni-cms/omni-config:/karaf-config
+     - ./omni-cms/omni-config/deploy:/opt/apache/karaf/deploy
+    networks:
+     - repository_omni_network
+volumes:
+  omni-core1-data:
+  omni-cms1-data:
+networks:
+  repository_omni_network:
+    external: true

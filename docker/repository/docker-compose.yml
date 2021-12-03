@@ -1,0 +1,48 @@
+version: '3'
+services:
+  postgres:
+    image: digitaljourney.azurecr.io/postgres:2.1.31
+    container_name: omni-postgres
+    restart: always
+    ports:
+     - "5432:5432"
+    volumes:
+     - ./postgres/postgres-config:/postgres-config
+     - postgres-data:/postgres-data
+    networks:
+     - omni_network
+  elasticsearch:
+    image: digitaljourney.azurecr.io/elasticsearch:2.1.26
+    container_name: omni-elasticsearch
+    restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    environment:
+     - ELASTICSEARCH_HOST=0.0.0.0
+    ports:
+     - "5601:5601"
+     - "9200:9200"
+    volumes:
+     - elasticsearch-data:/elasticsearch-data
+    networks:
+     - omni_network
+  orientdb:
+    image: digitaljourney.azurecr.io/orientdb:2.1.27
+    container_name: omni-orientdb
+    restart: always
+    ports:
+     - "2424:2424"
+    volumes:
+     - ./orientdb/orientdb-config:/orientdb-config
+     - orientdb-data:/orientdb-data/databases
+    networks:
+     - omni_network
+volumes:
+  postgres-data:
+  elasticsearch-data:
+  orientdb-data:
+networks:
+  omni_network:
+    driver: bridge
