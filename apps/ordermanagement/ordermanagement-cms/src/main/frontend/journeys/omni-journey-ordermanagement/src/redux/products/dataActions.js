@@ -9,7 +9,8 @@ import {
     SUBMIT_ORDER,
     SELECT_PRODUCTS,
     SET_INSTANCE_ID,
-    SET_PREFERENCES
+    SET_PREFERENCES,
+    RESET
 } from './actionTypes';
 
 export const setInstanceId = (instanceId) => ({ type: SET_INSTANCE_ID, instanceId });
@@ -27,3 +28,5 @@ export const updateCustomerInfo = (instance) => ({ type: UPDATE_CUSTOMER_INFO, i
 export const submitOrder = (instance) => ({ type: SUBMIT_ORDER, instance });
 
 export const setPreferences = (preferences) => ({ type: SET_PREFERENCES, preferences });
+
+export const reset = () => ({ type: RESET });

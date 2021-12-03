@@ -135,8 +135,7 @@ public interface OrderManagementResource {
 			@ApiResponse(code = 404, message = "Not Found"),		
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
-	public List<ProductDTO> getProductList(
-			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	public List<ProductDTO> getProductList();
 	
 	/**
 	 * Retrieves category for instance with a given ID
@@ -149,8 +148,7 @@ public interface OrderManagementResource {
 			@ApiResponse(code = 404, message = "Not Found"),		
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
-	public CategoryDTO getCategory(
-			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	public CategoryDTO getCategory();
 	
 	/**
 	 * Retrieves delivery options for instance with a given ID
@@ -163,8 +161,7 @@ public interface OrderManagementResource {
 			@ApiResponse(code = 404, message = "Not Found"),		
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
-	public List<HashMap<String, Object>> getDeliveryOptions(
-			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	public List<HashMap<String, Object>> getDeliveryOptions();
 	
 	@PUT
 	@Path("/{instanceId}/products/{productId}")
@@ -210,6 +207,9 @@ public interface OrderManagementResource {
 			@ApiResponse(code = 500, message = "Internal Server Error")
 	})
 	public CustomJourneyDTO submitOrder(
+			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
+	
+	public CustomJourneyDTO notifyStore(
 			@ApiParam(value = "The unique identifier of the process instance", required = true, example = "1") @PathParam("instanceId") Long instanceId);
 
 }

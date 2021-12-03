@@ -37,8 +37,8 @@ function OrderConfirmartion({ classes }) {
             </div>
             <div className={classes.productInformation}>
                 <Typography variant={'h2'}>Products:</Typography>
-                {instance.products.map((product) => (
-                    <div className={classes.productSeparation}>
+                {instance.products.map((product, i) => (
+                    <div className={classes.productSeparation} key={product.productName + i}>
                         <Typography>Product Name: {product.productName}</Typography>
                         <Typography>Price: {product.productPrice}€</Typography>
                     </div>

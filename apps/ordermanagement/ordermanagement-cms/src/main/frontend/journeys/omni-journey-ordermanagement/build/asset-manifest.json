@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/main.94742111.chunk.js",
-    "main.js.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/main.94742111.chunk.js.map",
+    "main.css": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/css/main.75c76818.chunk.css",
+    "main.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/main.8eaeab68.chunk.js",
+    "main.js.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/main.8eaeab68.chunk.js.map",
     "runtime-main.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/runtime-main.ef140b0c.js",
     "runtime-main.js.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/runtime-main.ef140b0c.js.map",
-    "static/js/2.ed22656d.chunk.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/2.ed22656d.chunk.js",
-    "static/js/2.ed22656d.chunk.js.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/2.ed22656d.chunk.js.map",
+    "static/js/2.43f5a005.chunk.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/2.43f5a005.chunk.js",
+    "static/js/2.43f5a005.chunk.js.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/js/2.43f5a005.chunk.js.map",
     "index.html": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/index.html",
-    "precache-manifest.e4f5f27195005b3b8b4af3e42f9564aa.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/precache-manifest.e4f5f27195005b3b8b4af3e42f9564aa.js",
-    "service-worker.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/service-worker.js"
+    "precache-manifest.09c8bf7a763db1d2a8e755d2936368b8.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/precache-manifest.09c8bf7a763db1d2a8e755d2936368b8.js",
+    "service-worker.js": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/service-worker.js",
+    "static/css/main.75c76818.chunk.css.map": "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/static/css/main.75c76818.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.ef140b0c.js",
-    "static/js/2.ed22656d.chunk.js",
-    "static/js/main.94742111.chunk.js"
+    "static/js/2.43f5a005.chunk.js",
+    "static/css/main.75c76818.chunk.css",
+    "static/js/main.8eaeab68.chunk.js"
   ]
 }

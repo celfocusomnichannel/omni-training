@@ -121,21 +121,21 @@ public class OrderManagementResourceImpl extends AbstractResource<OrderManagemen
 
 	@JourneyMethod(value = "GET PRODUCTS LIST")
 	@Override
-	public List<ProductDTO> getProductList(@JourneyReference Long instanceId) {
+	public List<ProductDTO> getProductList() {
 		info("Entering getProducts");
 		return facade.getProductList();
 	}
 
 	@JourneyMethod(value = "GET CATEGORIES LIST")
 	@Override
-	public CategoryDTO getCategory(@JourneyReference Long instanceId) {
+	public CategoryDTO getCategory() {
 		info("Entering getCategory");
 		return facade.getCategory();
 	}
 
 	@JourneyMethod(value = "GET DELIVERY OPTIONS")
 	@Override
-	public List<HashMap<String, Object>> getDeliveryOptions(@JourneyReference Long instanceId) {
+	public List<HashMap<String, Object>> getDeliveryOptions() {
 		info("Entering getDeliveryOptions");
 		return facade.getDeliveryOptions();
 	}
@@ -181,6 +181,12 @@ public class OrderManagementResourceImpl extends AbstractResource<OrderManagemen
 	@Override
 	public Class<CustomJourneyInstance> getInstanceClass() {
 		return CustomJourneyInstance.class;
+	}
+
+	@JourneyMethod(value = "UPDATE ORDER STATUS")
+	@Override
+	public CustomJourneyDTO notifyStore(Long instanceId) {
+		return facade.read(this);
 	}
 
 }

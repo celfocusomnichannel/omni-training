@@ -52,8 +52,8 @@ function ProductList({ classes }) {
                 </Button>
             </div>
             <div className={classes.content}>
-                {listProducts.map((e) => (
-                    <Card key={e.productName} className={classes.card}>
+                {listProducts.map((e, i) => (
+                    <Card key={e.productName + i} className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.media} image="https://cuoredimamma.pt/wp-content/uploads/2018/11/blog-ph.jpg" title="Product" />
                             <CardContent>

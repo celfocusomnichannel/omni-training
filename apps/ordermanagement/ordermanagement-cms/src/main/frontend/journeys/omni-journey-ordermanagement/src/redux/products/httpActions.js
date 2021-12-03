@@ -14,25 +14,25 @@ export const createInstance = () => async (dispatch) => {
     }
 };
 
-export const getProducts = (instanceId) => async (dispatch) => {
+export const getProducts = () => async (dispatch) => {
     try {
-        const { data } = await api.getProducts(instanceId);
+        const { data } = await api.getProducts();
         dispatch(actions.getProducts(data));
     } catch (error) {
         console.log(error.message);
     }
 };
-export const getCategories = (instanceId) => async (dispatch) => {
+export const getCategories = () => async (dispatch) => {
     try {
-        const { data } = await api.getCategories(instanceId);
+        const { data } = await api.getCategories();
         dispatch(actions.getCategories(data));
     } catch (error) {
         console.log(error.message);
     }
 };
-export const getDeliveryOptions = (instanceId) => async (dispatch) => {
+export const getDeliveryOptions = () => async (dispatch) => {
     try {
-        const { data } = await api.getDeliveryOptions(instanceId);
+        const { data } = await api.getDeliveryOptions();
         dispatch(actions.getDeliveryOptions(data));
     } catch (error) {
         console.log(error.message);

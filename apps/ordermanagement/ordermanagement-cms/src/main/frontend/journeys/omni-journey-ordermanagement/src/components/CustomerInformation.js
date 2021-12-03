@@ -34,8 +34,10 @@ function CustomerInformation({ classes, setDeliveryOption, setAddress, setName, 
                         id: 'delivert-options-simple'
                     }}
                 >
-                    {defaultDeliveryOptions.map((option) => (
-                        <MenuItem value={option.name}>{option.name}</MenuItem>
+                    {defaultDeliveryOptions.map((option, i) => (
+                        <MenuItem value={option.name} key={option.name + i}>
+                            {option.name}
+                        </MenuItem>
                     ))}
                 </Select>
             </div>

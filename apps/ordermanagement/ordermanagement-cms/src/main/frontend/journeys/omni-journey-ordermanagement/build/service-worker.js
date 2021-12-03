@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/precache-manifest.e4f5f27195005b3b8b4af3e42f9564aa.js"
+  "/content/training/ordermanagement/journeys/omni-journey-ordermanagement/modules/precache-manifest.09c8bf7a763db1d2a8e755d2936368b8.js"
 );
 
 self.addEventListener('message', (event) => {
