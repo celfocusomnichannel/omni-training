@@ -100,7 +100,7 @@
       "listIcon": "icon-dashboard_small",
       "i18NLabel": "dashboard_customer",
       "notificationsAutoTimeoutInms": 3000,
-      "journeyUrl": "/content/digitaljourney/foundation/v3/journeys/omni-journey-dashboard/modules/",
+      "journeyUrl": "/content/training/foundation/v3/journeys/omni-journey-dashboard/modules/",
       "useBackoffice": false,
       "ignoreUserPrefs": false,
       "editable": {
