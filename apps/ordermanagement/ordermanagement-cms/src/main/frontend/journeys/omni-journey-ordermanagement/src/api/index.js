@@ -11,23 +11,23 @@ export const createInstance = () => {
     return httpClientService.request(config);
 };
 
-export const getProducts = (instanceId) => {
+export const getProducts = () => {
     const config = {
-        url: Config.GET_PRODUCTS(instanceId),
+        url: Config.GET_PRODUCTS(),
         method: 'GET'
     };
     return httpClientService.request(config);
 };
-export const getCategories = (instanceId) => {
+export const getCategories = () => {
     const config = {
-        url: Config.GET_CATEGORIES(instanceId),
+        url: Config.GET_CATEGORIES(),
         method: 'GET'
     };
     return httpClientService.request(config);
 };
-export const getDeliveryOptions = (instanceId) => {
+export const getDeliveryOptions = () => {
     const config = {
-        url: Config.GET_DELIVERY_OPTIONS(instanceId),
+        url: Config.GET_DELIVERY_OPTIONS(),
         method: 'GET'
     };
     return httpClientService.request(config);

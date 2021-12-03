@@ -9,7 +9,8 @@ import {
     SUBMIT_ORDER,
     UPDATE_CUSTOMER_INFO,
     SET_INSTANCE_ID,
-    SET_PREFERENCES
+    SET_PREFERENCES,
+    RESET
 } from './actionTypes';
 
 const INITIAL_STATE = {
@@ -26,8 +27,7 @@ const INITIAL_STATE = {
         fetchedDeliveryOptions: false,
         fetchedInstance: false,
         fetchedPreferences: false
-    },
-    preferences: undefined
+    }
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -49,12 +49,13 @@ export default (state = INITIAL_STATE, action) => {
         case SELECT_PRODUCTS:
             return { ...state, instance: action.instance };
         case SUBMIT_ORDER:
-            //TO COMPLETE
-            return state;
+            return { ...state, instance: action.instance };
         case UPDATE_CUSTOMER_INFO:
             return { ...state, instance: action.instance };
         case SET_PREFERENCES:
             return { ...state, preferences: action.preferences, dependencies: { ...state.dependencies, fetchedPreferences: true } };
+        case RESET:
+            return INITIAL_STATE;
         default:
             return state;
     }

@@ -8,8 +8,11 @@ import Typography from '@ui-lib/core/Typography';
 import ProductList from './ProductList';
 import CustomerInformation from './CustomerInformation';
 import OrderConfirmartion from './OrderConfirmation';
+import Details from './Details';
+import WaitingForStore from './WaitingForStore';
 import { useSelector, useDispatch } from 'react-redux';
 import { createOrder, updateCustomerInfo, submitOrder } from '../redux/products/httpActions';
+import { reset } from '../redux/products/dataActions';
 
 const styles = (theme) => {
     return {
@@ -31,12 +34,19 @@ const styles = (theme) => {
 
 function StepWizard({ classes }) {
     const dispatch = useDispatch();
-    const instance = useSelector((state) => state.products.instance);
-    const [activeStep, setActiveStep] = React.useState(getActiveStepGivenJWE());
+    const { instance, UserPreferences, User, preferences, defaultDeliveryOptions } = useSelector((state) => {
+        return {
+            instance: state.products.instance,
+            preferences: state.products.preferences,
+            defaultDeliveryOptions: state.products.deliveryOptions,
+            UserPreferences: state.journey.services.UserPreferences,
+            User: state.journey.services.User
+        };
+    });
+    const [activeStep, setActiveStep] = React.useState(0);
 
     const [name, setName] = React.useState('');
     const [address, setAddress] = React.useState('');
-    const defaultDeliveryOptions = useSelector((state) => state.products.deliveryOptions);
     const [deliveryOption, setDeliveryOption] = React.useState(defaultDeliveryOptions[0].name);
 
     const steps = [
@@ -46,27 +56,27 @@ function StepWizard({ classes }) {
             component: <CustomerInformation setName={setName} setAddress={setAddress} setDeliveryOption={setDeliveryOption} name={name} address={address} deliveryOption={deliveryOption} />
         },
         { name: 'Submit Order', component: <OrderConfirmartion /> },
-        { name: 'Waiting for Store', component: null },
-        { name: 'Finish', component: null }
+        { name: 'Waiting for Store', component: <WaitingForStore /> },
+        { name: 'Finish', component: <Details /> }
     ];
 
     React.useEffect(() => {
+        function getActiveStepGivenJWE() {
+            if (instance.jwcontext.status === 'PRODUCT CHOSEN') {
+                return 0;
+            } else if (instance.jwcontext.status === 'SUBMIT ORDER' && !instance.customer) {
+                return 1;
+            } else if (instance.jwcontext.status === 'SUBMIT ORDER') {
+                return 2;
+            } else if (instance.jwcontext.status === 'WAITING FOR \nORDER IN STORE') {
+                return 3;
+            } else if (instance.jwcontext.status === 'END') {
+                return 4;
+            }
+        }
+
         setActiveStep(getActiveStepGivenJWE());
     }, [instance]);
-
-    function getActiveStepGivenJWE() {
-        if (instance.jwcontext.status === 'PRODUCT CHOSEN') {
-            return 0;
-        } else if (instance.jwcontext.status === 'SUBMIT ORDER' && !instance.customer) {
-            return 1;
-        } else if (instance.jwcontext.status === 'SUBMIT ORDER') {
-            return 2;
-        } else if (instance.jwcontext.status === 'WAITING FOR \nORDER IN STORE') {
-            return 3;
-        } else if (instance.jwcontext.status === 'END') {
-            return 4;
-        }
-    }
 
     function handleNext() {
         if (instance.jwcontext.status === 'PRODUCT CHOSEN') {
@@ -76,7 +86,46 @@ function StepWizard({ classes }) {
         } else if (instance.jwcontext.status === 'SUBMIT ORDER') {
             dispatch(submitOrder(instance.jwcontext.id));
         } else if (instance.jwcontext.status === 'END') {
-            return 4;
+            User.requestUser().then((user) => {
+                UserPreferences.deleteUserPreference(user.id, preferences.id).then(() => {
+                    window.location.reload();
+                });
+            });
+        }
+    }
+
+    function getButtonLabel(step) {
+        switch (step) {
+            case 0:
+                return 'Create Order';
+            case 1:
+                return 'Submit Customer Information';
+            case 2:
+                return 'Submit Order';
+            case 3:
+                return;
+            case 4:
+                return 'Create a new order';
+            default:
+                return;
+        }
+    }
+
+    function buttonDisabled(step) {
+        switch (step) {
+            case 0:
+                if (instance.products.length > 0) return false;
+                return true;
+            case 1:
+                return false;
+            case 2:
+                return false;
+            case 3:
+                return false;
+            case 4:
+                return false;
+            default:
+                return;
         }
     }
 
@@ -101,9 +150,11 @@ function StepWizard({ classes }) {
                     <div>
                         {steps[activeStep].component}
                         <div className={classes.navigationButtons}>
-                            <Button variant="contained" color="primary" onClick={handleNext}>
-                                {activeStep === 0 ? 'Create Order' : activeStep === 1 ? 'Submit Customer Information' : 'Submit Order'}
-                            </Button>
+                            {activeStep !== 3 && (
+                                <Button disabled={buttonDisabled(activeStep)} variant="contained" color="primary" onClick={handleNext}>
+                                    {getButtonLabel(activeStep)}
+                                </Button>
+                            )}
                         </div>
                     </div>
                 )}
