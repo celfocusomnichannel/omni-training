@@ -1,2 +1,1 @@
--- CREATE USER ${k8s.postgres.db.configurationmanager .owner.user} with password '${k8s.postgres.db.configurationmanager .owner.password}';
 CREATE DATABASE configurationmanager with owner postgres encoding 'UTF8';
